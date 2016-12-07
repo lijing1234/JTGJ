@@ -147,7 +147,7 @@ public class MyFragment extends Fragment
 
       startActivity(intent);
     } else {
-      Intent intent=new Intent(getActivity(),MovieActivity.class);
+      Intent intent=new Intent(getActivity(),PdfActivity.class);
       intent.putExtra("a", mStaggeredAdapter.mDatas.get(position));
 
 

@@ -46,4 +46,5 @@ dependencies {
   compile 'com.android.support:recyclerview-v7:24.0.0'
   compile 'fm.jiecao:jiecaovideoplayer:4.8.2'
   compile 'com.github.bumptech.glide:glide:3.5.2'
+  compile 'es.voghdev.pdfviewpager:library:1.0.1'
 }
