@@ -19,6 +19,7 @@
 
 package com.sunjiajia.androidnewwidgetsdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -136,11 +137,27 @@ public class MyFragment extends Fragment
     }, 1000);
   }
 
-  @Override public void onItemClick(View view, int position) {
-    SnackbarUtil.show(mRecyclerView, getString(R.string.item_clicked), 0);
+  @Override
+  public void onItemClick(View view, int position) {
+//    SnackbarUtil.show(mRecyclerView, getString(R.string.item_clicked), 0);
+    if (flag != STAGGERED_GRID) {
+      Intent intent=new Intent(getActivity(),MovieActivity.class);
+      intent.putExtra("a", mRecyclerViewAdapter.mDatas.get(position));
+
+
+      startActivity(intent);
+    } else {
+      Intent intent=new Intent(getActivity(),MovieActivity.class);
+      intent.putExtra("a", mStaggeredAdapter.mDatas.get(position));
+
+
+      startActivity(intent);
+    }
+
   }
 
   @Override public void onItemLongClick(View view, int position) {
     SnackbarUtil.show(mRecyclerView, getString(R.string.item_longclicked), 0);
+    Intent intent=new Intent(getActivity(),MovieActivity.class);
   }
 }
