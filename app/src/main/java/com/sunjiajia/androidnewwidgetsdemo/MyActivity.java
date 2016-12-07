@@ -70,6 +70,10 @@ public class MyActivity extends AppCompatActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_my);
 
+
+
+
+
     // 初始化各种控件
     initViews();
 

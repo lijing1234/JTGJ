@@ -134,5 +134,37 @@
       app:pressedTranslationZ="12dp"
       app:rippleColor="@color/main_blue_dark"
       />
+  <android.support.design.widget.FloatingActionButton
+      android:id="@+id/id_floatingactionbutton1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+
+      android:layout_gravity="bottom|end"
+      android:layout_marginBottom="80dp"
+      android:layout_marginRight="16dp"
+
+      android:src="@mipmap/ic_action_plusone"
+      app:backgroundTint="@color/fab_red"
+      app:elevation="6dp"
+      app:fabSize="normal"
+      app:pressedTranslationZ="12dp"
+      app:rippleColor="@color/main_blue_dark"
+      />
+  <android.support.design.widget.FloatingActionButton
+      android:id="@+id/id_floatingactionbutton2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+
+      android:layout_gravity="bottom|end"
+      android:layout_marginBottom="140dp"
+      android:layout_marginRight="16dp"
+
+      android:src="@mipmap/ic_action_plusone"
+      app:backgroundTint="@color/fab_red"
+      app:elevation="6dp"
+      app:fabSize="normal"
+      app:pressedTranslationZ="12dp"
+      app:rippleColor="@color/main_blue_dark"
+      />
 
 </android.support.design.widget.CoordinatorLayout>
