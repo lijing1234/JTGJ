@@ -44,6 +44,8 @@ import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.OkHttpClient;
+
 import static android.support.design.widget.TabLayout.*;
 
 public class MyActivity extends AppCompatActivity
@@ -57,6 +59,8 @@ public class MyActivity extends AppCompatActivity
   private TabLayout mTabLayout;
   private ViewPager mViewPager;
   private FloatingActionButton mFloatingActionButton;
+  private FloatingActionButton mFloatingActionButton1;
+  private FloatingActionButton mFloatingActionButton2;
   private NavigationView mNavigationView;
 
   // TabLayout中的tab标题
@@ -99,6 +103,7 @@ public class MyActivity extends AppCompatActivity
       mFragment.setArguments(mBundle);
       mFragments.add(i, mFragment);
     }
+
   }
 
   private void configViews() {
@@ -136,6 +141,8 @@ public class MyActivity extends AppCompatActivity
 
     // 设置FloatingActionButton的点击事件
     mFloatingActionButton.setOnClickListener(this);
+    mFloatingActionButton1.setOnClickListener(this);
+    mFloatingActionButton2.setOnClickListener(this);
   }
 
   /**
@@ -184,6 +191,8 @@ public class MyActivity extends AppCompatActivity
     mTabLayout = (TabLayout) findViewById(R.id.id_tablayout);
     mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
     mFloatingActionButton = (FloatingActionButton) findViewById(R.id.id_floatingactionbutton);
+    mFloatingActionButton1 = (FloatingActionButton) findViewById(R.id.id_floatingactionbutton1);
+    mFloatingActionButton2 = (FloatingActionButton) findViewById(R.id.id_floatingactionbutton2);
     mNavigationView = (NavigationView) findViewById(R.id.id_navigationview);
   }
 
@@ -215,11 +224,18 @@ public class MyActivity extends AppCompatActivity
 
   }
 
-  @Override public void onClick(View v) {
+  @Override
+  public void onClick(View v) {
     switch (v.getId()) {
       // FloatingActionButton的点击事件
       case R.id.id_floatingactionbutton:
         SnackbarUtil.show(v, getString(R.string.plusone), 0);
+        break;
+      case R.id.id_floatingactionbutton1:
+        SnackbarUtil.show(v, getString(R.string.plustwo), 0);
+        break;
+      case R.id.id_floatingactionbutton2:
+        SnackbarUtil.show(v, getString(R.string.plusthree), 0);
         break;
     }
   }
