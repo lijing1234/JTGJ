@@ -33,18 +33,32 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.RotateAnimation;
+import android.widget.Toast;
 
+import com.google.common.collect.Maps;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.convert.StringConvert;
+import com.lzy.okgo.request.BaseRequest;
+import com.lzy.okrx.RxAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyViewPagerAdapter;
+import com.sunjiajia.androidnewwidgetsdemo.utils.RopUtils;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import okhttp3.Call;
 import okhttp3.OkHttpClient;
+import okhttp3.Response;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 
 import static android.support.design.widget.TabLayout.*;
 
@@ -73,7 +87,7 @@ public class MyActivity extends AppCompatActivity
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_my);
-
+    attemptLeaveMsg();
 
 
 
@@ -104,8 +118,36 @@ public class MyActivity extends AppCompatActivity
       mFragments.add(i, mFragment);
     }
 
-  }
 
+  }
+  private void attemptLeaveMsg() {
+
+    Map<String, String> form = Maps.newHashMap();
+    form.put("method", "rop.productclass.get");
+    form.put("appKey", "00001");
+    form.put("v", "1.0");
+    form.put("format", "json");
+    String sing = RopUtils.signString(form, "qwertyuiop");
+    form.put("sign", sing);
+
+
+
+
+    OkGo.post(new Urls().SERVER)
+            .params(form)
+            .getCall(StringConvert.create(), RxAdapter.<String>create())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(new Action1<String>() {
+
+
+
+              @Override
+              public void call(String s) {
+                Log.e("result",s);
+              }
+            });
+
+  }
   private void configViews() {
 
     // 设置显示Toolbar
@@ -238,5 +280,12 @@ public class MyActivity extends AppCompatActivity
         SnackbarUtil.show(v, getString(R.string.plusthree), 0);
         break;
     }
+  }
+
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    OkGo.getInstance().cancelTag(this);
+    OkGo.getInstance().cancelAll();
   }
 }

@@ -25,11 +25,18 @@ package com.sunjiajia.androidnewwidgetsdemo;
 
 public class Urls {
 
-    public final static String SERVER = "http://122.5.13.154/ROP/api";
-    public final static String url = "http://122.5.13.154/ROP/";
-    public final static String QRURL = "http://122.5.13.154/ROP/customercreate";
-    public final static String COPYRIGHT = "http://122.5.13.154/ROP/banquanxinxi";
-    public final static String LICENSE = "http://122.5.13.154/ROP/ruanjianxieyi";
+//    public final static String SERVER = "http://122.5.13.154/ROP/api";
+//    public final static String url = "http://122.5.13.154/ROP/";
+//    public final static String QRURL = "http://122.5.13.154/ROP/customercreate";
+//    public final static String COPYRIGHT = "http://122.5.13.154/ROP/banquanxinxi";
+//    public final static String LICENSE = "http://122.5.13.154/ROP/ruanjianxieyi";
 
     public final static String zhifubaourl = "http://122.5.13.154/ROP/OnlineRemittance/zfbzhifu";
+
+
+    public final static String SERVER = "http://172.17.20.5:8080/ROP/api";
+    public final static String url = "http://172.17.20.5:8080/ROP/";
+    public final static String QRURL = "http://172.17.20.5:8080/ROP/customercreate";
+    public final static String COPYRIGHT = "http://172.17.20.5:8080/ROP/banquanxinxi";
+    public final static String LICENSE = "http://172.17.20.5:8080/ROP/ruanjianxieyi";
 }
