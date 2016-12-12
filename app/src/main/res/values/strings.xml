@@ -18,9 +18,9 @@
   -->
 
 <resources>
-    <string name="app_name">Android New Widgets Demo</string>
+    <string name="app_name">美丽金天</string>
 
-    <string name="toolbar_title">New Demo</string>
+    <string name="toolbar_title">主页</string>
     <string name="toolbar_title_movie">视频</string>
     <string name="action_settings">settings</string>
     <string name="open">打开</string>
