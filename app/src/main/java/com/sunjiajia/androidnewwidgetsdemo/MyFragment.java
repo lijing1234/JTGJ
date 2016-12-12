@@ -216,5 +216,6 @@ public class MyFragment extends Fragment
     public void onItemLongClick(View view, int position) {
         SnackbarUtil.show(mRecyclerView, getString(R.string.item_longclicked), 0);
         Intent intent = new Intent(getActivity(), MovieActivity.class);
+        startActivity(intent);
     }
 }
