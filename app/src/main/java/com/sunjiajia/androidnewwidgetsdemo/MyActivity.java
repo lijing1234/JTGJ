@@ -137,15 +137,18 @@ public class MyActivity extends AppCompatActivity
             .params(form)
             .getCall(StringConvert.create(), RxAdapter.<String>create())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(new Action1<String>() {
-
-
-
-              @Override
-              public void call(String s) {
-                Log.e("result",s);
-              }
+            .subscribe(s -> {
+              Log.e("result",s);
             });
+//            .subscribe(new Action1<String>() {
+//
+//
+//
+//              @Override
+//              public void call(String s) {
+//                Log.e("result",s);
+//              }
+//            });
 
   }
   private void configViews() {
