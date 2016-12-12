@@ -46,7 +46,6 @@ public class MovieActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
-        Log.e("aaaaaa",getIntent().getStringExtra("a"));
         Toolbar toolbar= (Toolbar) findViewById(R.id.id_toolbar);
         toolbar.setTitle("视频");
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
@@ -61,7 +60,7 @@ public class MovieActivity extends AppCompatActivity {
 
 
         mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
-        mJcVideoPlayerStandard.setUp("http://172.17.20.44:8080/script/01.mp4"
+        mJcVideoPlayerStandard.setUp("http://video.jiecao.fm/11/23/xin/%E5%81%87%E4%BA%BA.mp4"
                 , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "視頻");
 
         Glide.with(this)

@@ -25,6 +25,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+import com.sunjiajia.androidnewwidgetsdemo.HttpModel;
+import com.sunjiajia.androidnewwidgetsdemo.ProductInfo;
 import com.sunjiajia.androidnewwidgetsdemo.R;
 
 import java.util.ArrayList;
@@ -51,18 +54,20 @@ public class MyStaggeredViewAdapter extends RecyclerView.Adapter<MyRecyclerViewH
   public List<String> mDatas;
   public List<Integer> mHeights;
   public LayoutInflater mLayoutInflater;
+  List<ProductInfo> list;
 
-  public MyStaggeredViewAdapter(Context mContext) {
+  public MyStaggeredViewAdapter(List<ProductInfo> list,Context mContext) {
+    this.list=list;
     this.mContext = mContext;
     mLayoutInflater = LayoutInflater.from(mContext);
-    mDatas = new ArrayList<>();
-    mHeights = new ArrayList<>();
-    for (int i = 'A'; i <= 'z'; i++) {
-      mDatas.add((char) i + "");
-    }
-    for (int i = 0; i < mDatas.size(); i++) {
-      mHeights.add((int) (Math.random() * 300) + 200);
-    }
+//    mDatas = new ArrayList<>();
+//    mHeights = new ArrayList<>();
+//    for (int i = 'A'; i <= 'z'; i++) {
+//      mDatas.add((char) i + "");
+//    }
+//    for (int i = 0; i < mDatas.size(); i++) {
+//      mHeights.add((int) (Math.random() * 300) + 200);
+//    }
   }
 
   /**
@@ -92,6 +97,14 @@ public class MyStaggeredViewAdapter extends RecyclerView.Adapter<MyRecyclerViewH
         }
       });
     }
+    Glide.with(mContext)
+            .load(new HttpModel().IMGURL + list.get(position).getImage())
+            .placeholder(R.drawable.loading_4)
+            .centerCrop()
+            .into(holder.mimage);
+
+    holder.mtv.setText(list.get(position).getProductname());
+    holder.mtv1.setText(list.get(position).getProductcode());
 
 //    ViewGroup.LayoutParams mLayoutParams = holder.mTextView.getLayoutParams();
 //    mLayoutParams.height = mHeights.get(position);
@@ -99,7 +112,8 @@ public class MyStaggeredViewAdapter extends RecyclerView.Adapter<MyRecyclerViewH
 //    holder.mTextView.setText(mDatas.get(position));
   }
 
-  @Override public int getItemCount() {
-    return mDatas.size();
+  @Override
+  public int getItemCount() {
+    return list.size();
   }
 }
