@@ -19,46 +19,29 @@
 
 package com.sunjiajia.androidnewwidgetsdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.TabLayout.TabLayoutOnPageChangeListener;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.RotateAnimation;
-import android.widget.Toast;
 
-import com.google.common.collect.Maps;
 import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.StringCallback;
-import com.lzy.okgo.convert.StringConvert;
-import com.lzy.okgo.request.BaseRequest;
-import com.lzy.okrx.RxAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyViewPagerAdapter;
-import com.sunjiajia.androidnewwidgetsdemo.utils.RopUtils;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import okhttp3.Call;
-import okhttp3.OkHttpClient;
-import okhttp3.Response;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 
 import static android.support.design.widget.TabLayout.*;
 
@@ -183,6 +166,7 @@ public class MyActivity extends AppCompatActivity
             break;
           case R.id.nav_menu_setting:
             msgString = (String) menuItem.getTitle();
+
             break;
         }
 
@@ -211,22 +195,28 @@ public class MyActivity extends AppCompatActivity
     mNavigationView = (NavigationView) findViewById(R.id.id_navigationview);
   }
 
-  @Override public boolean onCreateOptionsMenu(Menu menu) {
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
     getMenuInflater().inflate(R.menu.menu_my, menu);
     return true;
   }
 
-  @Override public boolean onOptionsItemSelected(MenuItem item) {
+  @Override
+
+  public boolean onOptionsItemSelected(MenuItem item) {
     int id = item.getItemId();
 
     if (id == R.id.action_settings) {
+      Intent intent=new Intent(MyActivity.this,SettingActivity.class);
+      startActivity(intent);
       return true;
     }
 
     return super.onOptionsItemSelected(item);
   }
 
-  @Override public void onPageSelected(int position) {
+  @Override
+  public void onPageSelected(int position) {
     mToolbar.setTitle(mTitles[position]);
   }
 
@@ -259,6 +249,5 @@ public class MyActivity extends AppCompatActivity
   protected void onDestroy() {
     super.onDestroy();
     OkGo.getInstance().cancelTag(this);
-    OkGo.getInstance().cancelAll();
   }
 }

@@ -184,7 +184,8 @@ public class MyFragment extends Fragment
         mSwipeRefreshLayout.setRefreshing(false);
         int temp = (int) (Math.random() * 10);
         if (flag != STAGGERED_GRID) {
-          mRecyclerViewAdapter.mDatas.add(0, "new" + temp);
+          attemptLeaveMsg();
+//          mRecyclerViewAdapter.mDatas.add(0, "new" + temp);
           mRecyclerViewAdapter.notifyDataSetChanged();
         } else {
           mStaggeredAdapter.mDatas.add(0, "new" + temp);
@@ -199,7 +200,7 @@ public class MyFragment extends Fragment
   public void onItemClick(View view, int position) {
 //    SnackbarUtil.show(mRecyclerView, getString(R.string.item_clicked), 0);
     if (flag != STAGGERED_GRID) {
-      Intent intent=new Intent(getActivity(),MovieActivity.class);
+      Intent intent=new Intent(getActivity(),PdfActivity.class);
       intent.putExtra("a", mRecyclerViewAdapter.mDatas.get(position));
 
 

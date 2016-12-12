@@ -61,7 +61,7 @@ public class MovieActivity extends AppCompatActivity {
 
 
         mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
-        mJcVideoPlayerStandard.setUp("http://video.jiecao.fm/11/23/xin/%E5%81%87%E4%BA%BA.mp4"
+        mJcVideoPlayerStandard.setUp("http://172.17.20.44:8080/script/01.mp4"
                 , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "視頻");
 
         Glide.with(this)

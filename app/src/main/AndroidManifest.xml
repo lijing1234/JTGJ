@@ -43,7 +43,8 @@
         <activity
             android:name=".MovieActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
-        <activity android:name=".PdfActivity"></activity>
+        <activity android:name=".PdfActivity" />
+        <activity android:name=".SettingActivity"></activity>
     </application>
 
 </manifest>

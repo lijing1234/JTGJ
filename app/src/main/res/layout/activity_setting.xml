@@ -18,20 +18,11 @@
   ~  */
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_pdf"
+    android:id="@+id/activity_new"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context="com.sunjiajia.androidnewwidgetsdemo.PdfActivity"
-    android:orientation="vertical">
+    tools:context="com.sunjiajia.androidnewwidgetsdemo.SettingActivity">
     <include layout="@layout/toolbar" />
-    <es.voghdev.pdfviewpager.library.RemotePDFViewPager
-
-        android:id="@+id/pdfViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:assetFileName="sample.pdf"/>
-</LinearLayout>
+</RelativeLayout>
