@@ -93,10 +93,10 @@ public class MyStaggeredViewAdapter extends RecyclerView.Adapter<MyRecyclerViewH
       });
     }
 
-    ViewGroup.LayoutParams mLayoutParams = holder.mTextView.getLayoutParams();
-    mLayoutParams.height = mHeights.get(position);
-    holder.mTextView.setLayoutParams(mLayoutParams);
-    holder.mTextView.setText(mDatas.get(position));
+//    ViewGroup.LayoutParams mLayoutParams = holder.mTextView.getLayoutParams();
+//    mLayoutParams.height = mHeights.get(position);
+//    holder.mTextView.setLayoutParams(mLayoutParams);
+//    holder.mTextView.setText(mDatas.get(position));
   }
 
   @Override public int getItemCount() {

@@ -62,4 +62,5 @@ dependencies {
   //版本号使用 + 可以自动引用最新版
   compile 'com.google.guava:guava:20.0'
   compile files('libs/rop-1.0.7-SNAPSHOT.jar')
+  compile 'com.alibaba:fastjson:1.2.21'
 }

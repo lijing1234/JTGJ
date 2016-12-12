@@ -21,6 +21,7 @@ package com.sunjiajia.androidnewwidgetsdemo.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sunjiajia.androidnewwidgetsdemo.R;
@@ -30,10 +31,14 @@ import com.sunjiajia.androidnewwidgetsdemo.R;
  */
 public class MyRecyclerViewHolder extends RecyclerView.ViewHolder {
 
-  public TextView mTextView;
+  public ImageView mimage;
+  public TextView mtv;
+  public TextView mtv1;
 
   public MyRecyclerViewHolder(View itemView) {
     super(itemView);
-    mTextView = (TextView) itemView.findViewById(R.id.id_textview);
+    mimage = (ImageView) itemView.findViewById(R.id.id_image);
+    mtv= (TextView) itemView.findViewById(R.id.id_tv);
+    mtv1= (TextView) itemView.findViewById(R.id.id_tv1);
   }
 }

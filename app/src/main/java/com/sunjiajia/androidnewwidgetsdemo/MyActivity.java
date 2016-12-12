@@ -87,7 +87,7 @@ public class MyActivity extends AppCompatActivity
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_my);
-    attemptLeaveMsg();
+
 
 
 
@@ -120,37 +120,7 @@ public class MyActivity extends AppCompatActivity
 
 
   }
-  private void attemptLeaveMsg() {
 
-    Map<String, String> form = Maps.newHashMap();
-    form.put("method", "rop.productclass.get");
-    form.put("appKey", "00001");
-    form.put("v", "1.0");
-    form.put("format", "json");
-    String sing = RopUtils.signString(form, "qwertyuiop");
-    form.put("sign", sing);
-
-
-
-
-    OkGo.post(new Urls().SERVER)
-            .params(form)
-            .getCall(StringConvert.create(), RxAdapter.<String>create())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(s -> {
-              Log.e("result",s);
-            });
-//            .subscribe(new Action1<String>() {
-//
-//
-//
-//              @Override
-//              public void call(String s) {
-//                Log.e("result",s);
-//              }
-//            });
-
-  }
   private void configViews() {
 
     // 设置显示Toolbar

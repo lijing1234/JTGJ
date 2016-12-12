@@ -29,13 +29,25 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Maps;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.convert.StringConvert;
+import com.lzy.okrx.RxAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyRecyclerViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
+import com.sunjiajia.androidnewwidgetsdemo.utils.RopUtils;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
+
+import java.util.List;
+import java.util.Map;
+
+import rx.android.schedulers.AndroidSchedulers;
 
 /**
  * Created by Monkey on 2015/6/29.
@@ -59,14 +71,18 @@ public class MyFragment extends Fragment
 
   private static final int SPAN_COUNT = 2;
   private int flag = 0;
+  List<String> ss;
+  private List<ProductAllInfo> productinfo;
 
-  @Nullable @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
+  @Nullable @Override
+  public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     mView = inflater.inflate(R.layout.frag_main, container, false);
     return mView;
   }
 
-  @Override public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+  @Override
+  public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
 
     mSwipeRefreshLayout = (SwipeRefreshLayout) mView.findViewById(R.id.id_swiperefreshlayout);
@@ -74,6 +90,7 @@ public class MyFragment extends Fragment
 
     flag = (int) getArguments().get("flag");
     configRecyclerView();
+    attemptLeaveMsg();
 
     // 刷新时，指示器旋转后变化的颜色
     mSwipeRefreshLayout.setColorSchemeResources(R.color.main_blue_light, R.color.main_blue_dark);
@@ -105,19 +122,60 @@ public class MyFragment extends Fragment
         break;
     }
 
-    if (flag != STAGGERED_GRID) {
-      mRecyclerViewAdapter = new MyRecyclerViewAdapter(getActivity());
-      mRecyclerViewAdapter.setOnItemClickListener(this);
-      mRecyclerView.setAdapter(mRecyclerViewAdapter);
-    } else {
-      mStaggeredAdapter = new MyStaggeredViewAdapter(getActivity());
-      mStaggeredAdapter.setOnItemClickListener(this);
-      mRecyclerView.setAdapter(mStaggeredAdapter);
-    }
+//    if (flag != STAGGERED_GRID) {
+//      mRecyclerViewAdapter = new MyRecyclerViewAdapter(productinfo,getActivity());
+//      mRecyclerViewAdapter.setOnItemClickListener(this);
+//      mRecyclerView.setAdapter(mRecyclerViewAdapter);
+//    } else {
+//      mStaggeredAdapter = new MyStaggeredViewAdapter(getActivity());
+//      mStaggeredAdapter.setOnItemClickListener(this);
+//      mRecyclerView.setAdapter(mStaggeredAdapter);
+//    }
 
-    mRecyclerView.setLayoutManager(mLayoutManager);
+
   }
+  private void attemptLeaveMsg() {
+    Map<String, String> form = Maps.newHashMap();
+    form.put("method", "rop.product.get");
+    form.put("appKey", "00001");
+    form.put("v", "1.0");
+    form.put("format", "json");
+    String sing = RopUtils.signString(form, "qwertyuiop");
+    form.put("sign", sing);
 
+
+
+
+    OkGo.post(new Urls().SERVER)
+            .params(form)
+            .getCall(StringConvert.create(), RxAdapter.<String>create())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(s -> {
+              productinfo = JSON.parseArray(s, ProductAllInfo.class);
+              Log.e("result",s);
+
+              if (productinfo != null) {
+                if (productinfo.get(0).getResult().size() > 0) {
+                  mRecyclerViewAdapter = new MyRecyclerViewAdapter(productinfo.get(0).getResult(), getActivity());
+                  mRecyclerViewAdapter.setOnItemClickListener(this);
+                  mRecyclerView.setAdapter(mRecyclerViewAdapter);
+                  mRecyclerViewAdapter.notifyDataSetChanged();
+                  mRecyclerView.setLayoutManager(mLayoutManager);
+                }
+              }
+
+            });
+//            .subscribe(new Action1<String>() {
+//
+//
+//
+//              @Override
+//              public void call(String s) {
+//                Log.e("result",s);
+//              }
+//            });
+
+  }
   @Override public void onRefresh() {
 
     // 刷新时模拟数据的变化
