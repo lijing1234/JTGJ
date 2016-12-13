@@ -31,7 +31,7 @@ import com.lzy.okgo.model.HttpParams;
 import java.util.logging.Level;
 
 /**
- * Created by lijing on 2016/12/8.
+ * Created by lijing on 2016/img12/8.
  */
 
 public class MyAplication extends Application{

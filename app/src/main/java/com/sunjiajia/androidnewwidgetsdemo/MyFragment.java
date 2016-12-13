@@ -44,6 +44,7 @@ import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.utils.RopUtils;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -124,52 +125,99 @@ public class MyFragment extends Fragment
         }
 
 
-
     }
 
     private void attemptLeaveMsg() {
-        Map<String, String> form = Maps.newHashMap();
-        form.put("method", "rop.product.get");
-        form.put("appKey", "00001");
-        form.put("v", "1.0");
-        form.put("format", "json");
-        String sing = RopUtils.signString(form, "qwertyuiop");
-        form.put("sign", sing);
+//        Imageinfo imageinfo=new Imageinfo();
+//        imageinfo.setImagename("");
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(0,R.drawable.img01);
+        list.add(1,R.drawable.img02);
+        list.add(2,R.drawable.img03);
+        list.add(3,R.drawable.img04);
+        list.add(4,R.drawable.img05);
+        list.add(5,R.drawable.img06);
+        list.add(6,R.drawable.img07);
+        list.add(7,R.drawable.img08);
+        list.add(8,R.drawable.img09);
+        list.add(9,R.drawable.img10);
+        list.add(10,R.drawable.img11);
+        list.add(11,R.drawable.img12);
+        list.add(12,R.drawable.img13);
+
+        mRecyclerViewAdapter = new MyRecyclerViewAdapter(list, getActivity());
+        mRecyclerViewAdapter.setOnItemClickListener(this);
+        mRecyclerView.setAdapter(mRecyclerViewAdapter);
+        mRecyclerViewAdapter.notifyDataSetChanged();
+        mRecyclerView.setLayoutManager(mLayoutManager);
+//         List<Map<String, Object>> list;
+//         Integer[] imgs = { R.drawable.img01, R.drawable.image02, R.drawable.image03,
+//                R.drawable.image04, R.drawable.image05};
 
 
-        OkGo.post(new Urls().SERVER)
-                .params(form)
-                .getCall(StringConvert.create(), RxAdapter.<String>create())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(s -> {
-                    productinfo = JSON.parseArray(s, ProductAllInfo.class);
-                    Log.e("result", s);
+//        Map<String, String> form = Maps.newHashMap();
+//        form.put("method", "rop.product.get");
+//        form.put("appKey", "00001");
+//        form.put("v", "1.0");
+//        form.put("format", "json");
+//        String sing = RopUtils.signString(form, "qwertyuiop");
+//        form.put("sign", sing);
+//
+//
+//        OkGo.post(new Urls().SERVER)
+//                .params(form)
+//                .getCall(StringConvert.create(), RxAdapter.<String>create())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(s -> {
+//                    productinfo = JSON.parseArray(s, ProductAllInfo.class);
+//                    Log.e("result", s);
+//
+//                    if (productinfo != null) {
+//                        if (productinfo.get(0).getResult().size() > 0) {
+//                            if (flag == VERTICAL_LIST) {
+//                                Log.e("视频", "VERTICAL_LIST");
+//                                updateadapter();
+//                            } else if (flag == HORIZONTAL_LIST) {
+//                                Log.e("pdf", "HORIZONTAL_LIST");
+//                                updateadapter();
+//                            } else if (flag == VERTICAL_GRID) {
+//                                Log.e("图片", "VERTICAL_GRID");
+//                                updateadapter();
+//
+//                            } else if (flag == HORIZONTAL_GRID) {
+//                                Log.e("倒数第二", "HORIZONTAL_GRID");
+//                                updateadapter();
+//                            } else if (flag == STAGGERED_GRID) {
+//                                Log.e("最后", "STAGGERED_GRID");
+//                                updateadapter1();
+//
+//
+//                            }
+//
+//                        }
+//                    }
+//
+//                });
 
-                    if (productinfo != null) {
-                        if (productinfo.get(0).getResult().size() > 0) {
-                            mRecyclerViewAdapter = new MyRecyclerViewAdapter(productinfo.get(0).getResult(), getActivity());
-                            mRecyclerViewAdapter.setOnItemClickListener(this);
-                            mRecyclerView.setAdapter(mRecyclerViewAdapter);
-                            mRecyclerViewAdapter.notifyDataSetChanged();
-                            mRecyclerView.setLayoutManager(mLayoutManager);
-                            if (flag != STAGGERED_GRID) {
-                                mRecyclerViewAdapter = new MyRecyclerViewAdapter(productinfo.get(0).getResult(), getActivity());
-                                mRecyclerViewAdapter.setOnItemClickListener(this);
-                                mRecyclerView.setAdapter(mRecyclerViewAdapter);
-                                mRecyclerViewAdapter.notifyDataSetChanged();
-                                mRecyclerView.setLayoutManager(mLayoutManager);
-                            } else {
-                                mStaggeredAdapter = new MyStaggeredViewAdapter(productinfo.get(0).getResult(),getActivity());
-                                mStaggeredAdapter.setOnItemClickListener(this);
-                                mRecyclerView.setAdapter(mStaggeredAdapter);
-                                mStaggeredAdapter.notifyDataSetChanged();
-                                mRecyclerView.setLayoutManager(mLayoutManager);
-                            }
-                        }
-                    }
+    }
 
-                });
+    public void updateadapter() {
 
+
+
+//        mRecyclerViewAdapter = new MyRecyclerViewAdapter(productinfo.get(0).getResult(), getActivity());
+//        mRecyclerViewAdapter.setOnItemClickListener(this);
+//        mRecyclerView.setAdapter(mRecyclerViewAdapter);
+//        mRecyclerViewAdapter.notifyDataSetChanged();
+//        mRecyclerView.setLayoutManager(mLayoutManager);
+    }
+
+    public void updateadapter1() {
+        mStaggeredAdapter = new MyStaggeredViewAdapter(productinfo.get(0).getResult(), getActivity());
+        mStaggeredAdapter.setOnItemClickListener(this);
+        mRecyclerView.setAdapter(mStaggeredAdapter);
+        mStaggeredAdapter.notifyDataSetChanged();
+        mRecyclerView.setLayoutManager(mLayoutManager);
     }
 
     @Override
@@ -181,14 +229,29 @@ public class MyFragment extends Fragment
             public void run() {
                 mSwipeRefreshLayout.setRefreshing(false);
                 int temp = (int) (Math.random() * 10);
-                if (flag != STAGGERED_GRID) {
+                if (flag == VERTICAL_LIST) {
                     attemptLeaveMsg();
-//          mRecyclerViewAdapter.mDatas.add(0, "new" + temp);
+                    Log.e("视频", "视频");
                     mRecyclerViewAdapter.notifyDataSetChanged();
-                } else {
-                    mStaggeredAdapter.mDatas.add(0, "new" + temp);
-                    mStaggeredAdapter.mHeights.add(0, (int) (Math.random() * 300) + 200);
+                } else if (flag == HORIZONTAL_LIST) {
+                    attemptLeaveMsg();
+                    Log.e("pdf", "pdf");
+                    mRecyclerViewAdapter.notifyDataSetChanged();
+                } else if (flag == VERTICAL_GRID) {
+                    attemptLeaveMsg();
+                    Log.e("图片", "图片");
+                    mRecyclerViewAdapter.notifyDataSetChanged();
+
+                } else if (flag == HORIZONTAL_GRID) {
+
+                    attemptLeaveMsg();
+                    Log.e("倒数第二", "倒数第二");
+                    mRecyclerViewAdapter.notifyDataSetChanged();
+                } else if (flag == STAGGERED_GRID) {
+                    attemptLeaveMsg();
+                    Log.e("最后", "最后");
                     mStaggeredAdapter.notifyDataSetChanged();
+
                 }
             }
         }, 1000);
@@ -196,13 +259,20 @@ public class MyFragment extends Fragment
 
     @Override
     public void onItemClick(View view, int position) {
-        if (flag== VERTICAL_LIST) {
+        if (flag == VERTICAL_LIST) {
             Intent intent = new Intent(getActivity(), MovieActivity.class);
-//            intent.putExtra("a", mRecyclerViewAdapter.mDatas.get(position));
+
+            intent.putExtra("a", String.valueOf(position));
 
 
             startActivity(intent);
-        } else if(flag== HORIZONTAL_LIST){
+        } else if (flag == HORIZONTAL_LIST) {
+            Intent intent = new Intent(getActivity(), PdfActivity.class);
+//            intent.putExtra("a", mStaggeredAdapter.mDatas.get(position));
+
+
+            startActivity(intent);
+        } else if (flag == STAGGERED_GRID) {
             Intent intent = new Intent(getActivity(), PdfActivity.class);
 //            intent.putExtra("a", mStaggeredAdapter.mDatas.get(position));
 

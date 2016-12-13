@@ -20,7 +20,7 @@
 package com.sunjiajia.androidnewwidgetsdemo;
 
 /**
- * Created by lijing on 2016/12/7.
+ * Created by lijing on 2016/img12/7.
  */
 
 public class DataModel {

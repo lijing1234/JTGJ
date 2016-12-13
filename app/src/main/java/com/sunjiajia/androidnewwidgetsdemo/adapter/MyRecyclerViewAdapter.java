@@ -66,10 +66,11 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
 
     public Context mContext;
     public List<String> mDatas;
-    List<ProductInfo> list;
+//    List<ProductInfo> list;
+    List<Integer> list;
     public LayoutInflater mLayoutInflater;
 
-    public MyRecyclerViewAdapter(List<ProductInfo> list, Context mContext) {
+    public MyRecyclerViewAdapter(List<Integer> list, Context mContext) {
         this.mContext = mContext;
         this.list = list;
         mLayoutInflater = LayoutInflater.from(mContext);
@@ -115,13 +116,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
         //将数据保存在itemView的Tag中，以便点击时进行获取
 
         Glide.with(mContext)
-                .load(new HttpModel().IMGURL + list.get(position).getImage())
+                .load(list.get(position))
                 .placeholder(R.drawable.loading_4)
-                .centerCrop()
+                .fitCenter()
                 .into(holder.mimage);
-
-        holder.mtv.setText(list.get(position).getProductname());
-        holder.mtv1.setText(list.get(position).getProductcode());
+//        holder.mimage.setId(list.get(position));
+//        holder.mtv.setText(list.get(position).getProductname());
+//        holder.mtv1.setText(list.get(position).getProductcode());
     }
 
     //获取数据的数量

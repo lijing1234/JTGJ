@@ -22,7 +22,7 @@ package com.sunjiajia.androidnewwidgetsdemo;
 import java.io.Serializable;
 
 /**
- * Created by dawd on 2016/3/10.
+ * Created by dawd on 2016/3/img10.
  */
 public class ProductInfo implements Serializable {
 

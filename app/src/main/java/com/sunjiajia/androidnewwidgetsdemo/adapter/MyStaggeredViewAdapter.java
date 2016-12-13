@@ -103,8 +103,8 @@ public class MyStaggeredViewAdapter extends RecyclerView.Adapter<MyRecyclerViewH
             .centerCrop()
             .into(holder.mimage);
 
-    holder.mtv.setText(list.get(position).getProductname());
-    holder.mtv1.setText(list.get(position).getProductcode());
+//    holder.mtv.setText(list.get(position).getProductname());
+//    holder.mtv1.setText(list.get(position).getProductcode());
 
 //    ViewGroup.LayoutParams mLayoutParams = holder.mTextView.getLayoutParams();
 //    mLayoutParams.height = mHeights.get(position);

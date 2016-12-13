@@ -20,7 +20,7 @@
 package com.sunjiajia.androidnewwidgetsdemo;
 
 /**
- * Created by lijing on 2016/12/8.
+ * Created by lijing on 2016/img12/8.
  */
 
 public class Urls {
@@ -31,7 +31,7 @@ public class Urls {
 //    public final static String COPYRIGHT = "http://122.5.13.154/ROP/banquanxinxi";
 //    public final static String LICENSE = "http://122.5.13.154/ROP/ruanjianxieyi";
 
-    public final static String zhifubaourl = "http://122.5.13.154/ROP/OnlineRemittance/zfbzhifu";
+    public final static String zhifubaourl = "http://122.5.img13.154/ROP/OnlineRemittance/zfbzhifu";
 
 
     public final static String SERVER = "http://172.17.20.5:8080/ROP/api";

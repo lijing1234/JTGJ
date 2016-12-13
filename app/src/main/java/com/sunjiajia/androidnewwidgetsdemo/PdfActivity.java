@@ -52,7 +52,7 @@ public class PdfActivity extends AppCompatActivity implements DownloadFile.Liste
         });
 //
         remotePDFViewPager =
-                new RemotePDFViewPager(this, "http://172.17.20.44:8080/script/02.pdf", this);
+                new RemotePDFViewPager(this, "http://172.17.20.44:8080/script/img02.pdf", this);
         remotePDFViewPager = (RemotePDFViewPager) findViewById(R.id.pdfViewPager);
 
 

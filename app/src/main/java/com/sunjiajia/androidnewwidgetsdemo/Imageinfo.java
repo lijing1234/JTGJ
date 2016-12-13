@@ -19,29 +19,30 @@
 
 package com.sunjiajia.androidnewwidgetsdemo;
 
-import java.util.List;
-
 /**
- * Created by dawd on 2016/5/img12.
+ * Created by lijing on 2016/img12/img13.
  */
-public class ProductAllInfo {
-    private String ordername;
-    private List<ProductInfo> result;
 
+public class Imageinfo {
 
-    public String getOrdername() {
-        return ordername;
+    private String imagename;
+
+    public String getImagename() {
+        return imagename;
     }
 
-    public void setOrdername(String ordername) {
-        this.ordername = ordername;
+    public void setImagename(String imagename) {
+        this.imagename = imagename;
     }
 
-    public List<ProductInfo> getResult() {
-        return result;
+    public int getImage() {
+        return image;
     }
 
-    public void setResult(List<ProductInfo> result) {
-        this.result = result;
+    public void setImage(int image) {
+        this.image = image;
     }
+
+    private int image;
+
 }
