@@ -32,8 +32,9 @@ import es.voghdev.pdfviewpager.library.remote.DownloadFile;
 import es.voghdev.pdfviewpager.library.util.FileUtil;
 
 public class PdfActivity extends AppCompatActivity implements DownloadFile.Listener {
-    PDFPagerAdapter adapter;
+    PDFPagerAdapter adapter=null;
     RemotePDFViewPager remotePDFViewPager;
+    RemotePDFViewPager remotePDFViewPager1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +50,28 @@ public class PdfActivity extends AppCompatActivity implements DownloadFile.Liste
                 finish();
             }
         });
+//
         remotePDFViewPager =
                 new RemotePDFViewPager(this, "http://172.17.20.44:8080/script/02.pdf", this);
         remotePDFViewPager = (RemotePDFViewPager) findViewById(R.id.pdfViewPager);
+
 
     }
 
     @Override
     public void onSuccess(String url, String destinationPath) {
-        adapter = new PDFPagerAdapter(this, FileUtil.extractFileNameFromURL(url));
-        remotePDFViewPager.setAdapter(adapter);
+        Log.e("url",url);
+        Log.e("destinationPath",destinationPath);
+//        FileUtil.extractFileNameFromURL("http://172.17.20.44:8080/script/02.pdf")
+        if(adapter==null){
+
+                adapter = new PDFPagerAdapter(this, destinationPath);
+                remotePDFViewPager.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+
+
+        }
+
     }
 
     @Override

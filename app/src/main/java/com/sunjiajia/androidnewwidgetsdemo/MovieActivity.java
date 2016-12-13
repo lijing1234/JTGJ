@@ -19,14 +19,11 @@
 
 package com.sunjiajia.androidnewwidgetsdemo;
 
-import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.bumptech.glide.Glide;
@@ -58,7 +55,7 @@ public class MovieActivity extends AppCompatActivity {
         });
 
 
-
+//
         mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
         mJcVideoPlayerStandard.setUp("http://video.jiecao.fm/11/23/xin/%E5%81%87%E4%BA%BA.mp4"
                 , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "視頻");
