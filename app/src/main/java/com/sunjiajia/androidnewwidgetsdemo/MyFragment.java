@@ -41,6 +41,7 @@ import com.lzy.okgo.convert.StringConvert;
 import com.lzy.okrx.RxAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyRecyclerViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
+import com.sunjiajia.androidnewwidgetsdemo.adapter.MypdfRecyclerViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.utils.RopUtils;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 
@@ -54,7 +55,7 @@ import rx.android.schedulers.AndroidSchedulers;
  * Created by Monkey on 2015/6/29.
  */
 public class MyFragment extends Fragment
-        implements SwipeRefreshLayout.OnRefreshListener, MyRecyclerViewAdapter.OnItemClickListener,
+        implements SwipeRefreshLayout.OnRefreshListener, MyRecyclerViewAdapter.OnItemClickListener, MypdfRecyclerViewAdapter.OnItemClickListener,
         MyStaggeredViewAdapter.OnItemClickListener {
 
     private View mView;
@@ -64,6 +65,8 @@ public class MyFragment extends Fragment
     private MyRecyclerViewAdapter mRecyclerViewAdapter;
     private MyStaggeredViewAdapter mStaggeredAdapter;
 
+    MypdfRecyclerViewAdapter mypdfRecyclerViewAdapter;
+
     private static final int VERTICAL_LIST = 0;
     private static final int HORIZONTAL_LIST = 1;
     private static final int VERTICAL_GRID = 2;
@@ -72,9 +75,10 @@ public class MyFragment extends Fragment
 
     private static final int SPAN_COUNT = 2;
     private int flag = 0;
-    List<String> ss;
+    List<Imageinfo> list1;
     private List<ProductAllInfo> productinfo;
     List<Integer> list;
+
 
     @Nullable
     @Override
@@ -151,13 +155,21 @@ public class MyFragment extends Fragment
             mRecyclerViewAdapter.notifyDataSetChanged();
             mRecyclerView.setLayoutManager(mLayoutManager);
         } else if (flag == HORIZONTAL_LIST) {
-            list = new ArrayList<Integer>();
-            list.add(0, R.drawable.kp01);
-            list.add(1, R.drawable.kp02);
-            mRecyclerViewAdapter = new MyRecyclerViewAdapter(list, getActivity());
-            mRecyclerViewAdapter.setOnItemClickListener(this);
-            mRecyclerView.setAdapter(mRecyclerViewAdapter);
-            mRecyclerViewAdapter.notifyDataSetChanged();
+            Imageinfo info1 = new Imageinfo();
+            info1.imagename="01-5个痛经认知误区，让女人越来越痛！";
+            info1.image=R.drawable.img01;
+            Imageinfo info2 = new Imageinfo();
+            info2.imagename="01-5个痛经认知误区，让女人越来越痛！";
+            info2.image=R.drawable.img01;
+
+
+            list1 = new ArrayList<Imageinfo>();
+            list1.add(0, info1);
+            list1.add(1, info2);
+            mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
+            mypdfRecyclerViewAdapter.setOnItemClickListener(this);
+            mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
+            mypdfRecyclerViewAdapter.notifyDataSetChanged();
             mRecyclerView.setLayoutManager(mLayoutManager);
 
         } else if (flag == VERTICAL_GRID) {
@@ -170,7 +182,6 @@ public class MyFragment extends Fragment
 
 
         }
-
 
 
     }

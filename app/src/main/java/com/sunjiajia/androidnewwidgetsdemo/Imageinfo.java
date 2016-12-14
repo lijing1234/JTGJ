@@ -25,24 +25,9 @@ package com.sunjiajia.androidnewwidgetsdemo;
 
 public class Imageinfo {
 
-    private String imagename;
+    public String imagename;
 
-    public String getImagename() {
-        return imagename;
-    }
 
-    public void setImagename(String imagename) {
-        this.imagename = imagename;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    private int image;
+    public int image;
 
 }
