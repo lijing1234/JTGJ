@@ -31,7 +31,7 @@
       android:layout_width="110dp"
       android:layout_height="110dp"
       android:scaleType="fitXY"
-      android:src="@drawable/author"
+      android:src="@drawable/ic_launcher"
       />
 
   <TextView
