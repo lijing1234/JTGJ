@@ -32,7 +32,7 @@ import es.voghdev.pdfviewpager.library.adapter.PDFPagerAdapter;
 import es.voghdev.pdfviewpager.library.remote.DownloadFile;
 import es.voghdev.pdfviewpager.library.util.FileUtil;
 
-public class PdfActivity extends AppCompatActivity  {
+public class PdfActivity extends AppCompatActivity {
     PDFPagerAdapter adapter = null;
     PDFViewPager pdfViewPager;
 
@@ -40,6 +40,9 @@ public class PdfActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf);
+
+        String position = getIntent().getStringExtra("a");
+        Log.e("position", position);
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
         toolbar.setTitle("pdf");
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
@@ -50,7 +53,15 @@ public class PdfActivity extends AppCompatActivity  {
                 finish();
             }
         });
-//
+        if (position.equals("0")) {
+
+            FILE_NAME = "/pdf/01-5个痛经认知误区，让女人越来越痛！.pdf";
+        } else if (position.equals("1")) {
+            FILE_NAME = "/pdf/02-7种异常白带表现到底代表啥？女人一定要提高警惕！.pdf";
+
+        }
+
+
         pdfViewPager = new PDFViewPager(this, geStorageDirectory());
         pdfViewPager = (PDFViewPager) findViewById(R.id.pdfViewPager);
         adapter = new PDFPagerAdapter(this, geStorageDirectory());
@@ -69,7 +80,6 @@ public class PdfActivity extends AppCompatActivity  {
     private String sdPath = Environment.getExternalStorageDirectory().getPath();
     private String FILE_NAME = "/Movies/02.pdf";
     private String dataPath = null;
-
 
 
     @Override

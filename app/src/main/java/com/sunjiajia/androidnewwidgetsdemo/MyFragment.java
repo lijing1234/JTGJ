@@ -225,6 +225,7 @@ public class MyFragment extends Fragment
         } else if (flag == HORIZONTAL_LIST) {
             Intent intent = new Intent(getActivity(), PdfActivity.class);
 //            intent.putExtra("a", mStaggeredAdapter.mDatas.get(position));
+            intent.putExtra("a", String.valueOf(position));
 
 
             startActivity(intent);
