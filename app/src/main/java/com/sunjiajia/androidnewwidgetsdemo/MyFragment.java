@@ -152,19 +152,8 @@ public class MyFragment extends Fragment
             mRecyclerView.setLayoutManager(mLayoutManager);
         } else if (flag == HORIZONTAL_LIST) {
             list = new ArrayList<Integer>();
-            list.add(0, R.drawable.img01);
-            list.add(1, R.drawable.img02);
-            list.add(2, R.drawable.img03);
-            list.add(3, R.drawable.img04);
-            list.add(4, R.drawable.img05);
-            list.add(5, R.drawable.img06);
-            list.add(6, R.drawable.img07);
-            list.add(7, R.drawable.img08);
-            list.add(8, R.drawable.img09);
-            list.add(9, R.drawable.img10);
-            list.add(10, R.drawable.img11);
-            list.add(11, R.drawable.img12);
-            list.add(12, R.drawable.img13);
+            list.add(0, R.drawable.kp01);
+            list.add(1, R.drawable.kp02);
             mRecyclerViewAdapter = new MyRecyclerViewAdapter(list, getActivity());
             mRecyclerViewAdapter.setOnItemClickListener(this);
             mRecyclerView.setAdapter(mRecyclerViewAdapter);

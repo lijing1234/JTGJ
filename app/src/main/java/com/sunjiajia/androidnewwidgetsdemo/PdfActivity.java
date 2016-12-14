@@ -19,6 +19,7 @@
 
 package com.sunjiajia.androidnewwidgetsdemo;
 
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -31,10 +32,9 @@ import es.voghdev.pdfviewpager.library.adapter.PDFPagerAdapter;
 import es.voghdev.pdfviewpager.library.remote.DownloadFile;
 import es.voghdev.pdfviewpager.library.util.FileUtil;
 
-public class PdfActivity extends AppCompatActivity implements DownloadFile.Listener {
-    PDFPagerAdapter adapter=null;
-    RemotePDFViewPager remotePDFViewPager;
-    RemotePDFViewPager remotePDFViewPager1;
+public class PdfActivity extends AppCompatActivity  {
+    PDFPagerAdapter adapter = null;
+    PDFViewPager pdfViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,46 +51,37 @@ public class PdfActivity extends AppCompatActivity implements DownloadFile.Liste
             }
         });
 //
-        remotePDFViewPager =
-                new RemotePDFViewPager(this, "http://172.17.20.44:8080/script/img02.pdf", this);
-        remotePDFViewPager = (RemotePDFViewPager) findViewById(R.id.pdfViewPager);
+        pdfViewPager = new PDFViewPager(this, geStorageDirectory());
+        pdfViewPager = (PDFViewPager) findViewById(R.id.pdfViewPager);
+        adapter = new PDFPagerAdapter(this, geStorageDirectory());
+        pdfViewPager.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
 
     }
 
-    @Override
-    public void onSuccess(String url, String destinationPath) {
-        Log.e("url",url);
-        Log.e("destinationPath",destinationPath);
-//        FileUtil.extractFileNameFromURL("http://172.17.20.44:8080/script/02.pdf")
-        if(adapter==null){
+    private String geStorageDirectory() {
+        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) ? sdPath + FILE_NAME : dataPath + FILE_NAME;
 
-                adapter = new PDFPagerAdapter(this, destinationPath);
-                remotePDFViewPager.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
-
-
-        }
 
     }
 
-    @Override
-    public void onFailure(Exception e) {
+    private String sdPath = Environment.getExternalStorageDirectory().getPath();
+    private String FILE_NAME = "/Movies/02.pdf";
+    private String dataPath = null;
 
-    }
+
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         if (adapter != null) {
             Log.e("onDestroy", "onDestroy");
-            adapter.close();
+//            adapter.close();
+//            ((PDFPagerAdapter) pdfViewPager.getAdapter()).close();
         }
 
     }
 
-    @Override
-    public void onProgressUpdate(int progress, int total) {
 
-    }
 }

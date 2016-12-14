@@ -28,8 +28,13 @@
     tools:context="com.sunjiajia.androidnewwidgetsdemo.PdfActivity"
     android:orientation="vertical">
     <include layout="@layout/toolbar" />
-    <es.voghdev.pdfviewpager.library.RemotePDFViewPager
+    <!--<es.voghdev.pdfviewpager.library.RemotePDFViewPager-->
 
+        <!--android:id="@+id/pdfViewPager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:assetFileName="sample.pdf"/>-->
+    <es.voghdev.pdfviewpager.library.PDFViewPager
         android:id="@+id/pdfViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
