@@ -260,7 +260,7 @@ public class MyFragment extends Fragment
     @Override
     public void onItemClick(View view, int position) {
         if (flag == VERTICAL_LIST) {
-            Intent intent = new Intent(getActivity(), VideoActivity.class);
+            Intent intent = new Intent(getActivity(), MovieActivity.class);
 
             intent.putExtra("a", String.valueOf(position));
 
