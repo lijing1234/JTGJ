@@ -67,11 +67,12 @@ public class MovieActivity extends AppCompatActivity {
 //        /storage/emulated/0/Movies/Starry_Night.mp4
 //        /storage/emulated/0/Movies/Starry_Night.mp4
 //        /storage/emulated/0/video/01.mp4
+//        file.exists() ? file.getPath() : ""
         Log.e("path",path);
         final File file = new File(path);
-//
+
         mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
-        mJcVideoPlayerStandard.setUp(file.exists() ? file.getPath() : ""
+        mJcVideoPlayerStandard.setUp("http://video.jiecao.fm/11/23/xin/%E5%81%87%E4%BA%BA.mp4"
                 , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "視頻");
 
         Glide.with(this)
