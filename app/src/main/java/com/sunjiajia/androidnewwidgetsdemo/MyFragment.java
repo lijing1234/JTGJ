@@ -74,6 +74,7 @@ public class MyFragment extends Fragment
     private int flag = 0;
     List<String> ss;
     private List<ProductAllInfo> productinfo;
+    List<Integer> list;
 
     @Nullable
     @Override
@@ -108,7 +109,7 @@ public class MyFragment extends Fragment
                 break;
             case HORIZONTAL_LIST:
                 mLayoutManager =
-                        new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+                        new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 break;
             case VERTICAL_GRID:
                 mLayoutManager =
@@ -128,97 +129,63 @@ public class MyFragment extends Fragment
     }
 
     private void attemptLeaveMsg() {
-//        Imageinfo imageinfo=new Imageinfo();
-//        imageinfo.setImagename("");
-        List<Integer> list = new ArrayList<Integer>();
-        list.add(0,R.drawable.img01);
-        list.add(1,R.drawable.img02);
-        list.add(2,R.drawable.img03);
-        list.add(3,R.drawable.img04);
-        list.add(4,R.drawable.img05);
-        list.add(5,R.drawable.img06);
-        list.add(6,R.drawable.img07);
-        list.add(7,R.drawable.img08);
-        list.add(8,R.drawable.img09);
-        list.add(9,R.drawable.img10);
-        list.add(10,R.drawable.img11);
-        list.add(11,R.drawable.img12);
-        list.add(12,R.drawable.img13);
 
-        mRecyclerViewAdapter = new MyRecyclerViewAdapter(list, getActivity());
-        mRecyclerViewAdapter.setOnItemClickListener(this);
-        mRecyclerView.setAdapter(mRecyclerViewAdapter);
-        mRecyclerViewAdapter.notifyDataSetChanged();
-        mRecyclerView.setLayoutManager(mLayoutManager);
-//         List<Map<String, Object>> list;
-//         Integer[] imgs = { R.drawable.img01, R.drawable.image02, R.drawable.image03,
-//                R.drawable.image04, R.drawable.image05};
+        if (flag == VERTICAL_LIST) {
+            list = new ArrayList<Integer>();
+            list.add(0, R.drawable.img01);
+            list.add(1, R.drawable.img02);
+            list.add(2, R.drawable.img03);
+            list.add(3, R.drawable.img04);
+            list.add(4, R.drawable.img05);
+            list.add(5, R.drawable.img06);
+            list.add(6, R.drawable.img07);
+            list.add(7, R.drawable.img08);
+            list.add(8, R.drawable.img09);
+            list.add(9, R.drawable.img10);
+            list.add(10, R.drawable.img11);
+            list.add(11, R.drawable.img12);
+            list.add(12, R.drawable.img13);
+            mRecyclerViewAdapter = new MyRecyclerViewAdapter(list, getActivity());
+            mRecyclerViewAdapter.setOnItemClickListener(this);
+            mRecyclerView.setAdapter(mRecyclerViewAdapter);
+            mRecyclerViewAdapter.notifyDataSetChanged();
+            mRecyclerView.setLayoutManager(mLayoutManager);
+        } else if (flag == HORIZONTAL_LIST) {
+            list = new ArrayList<Integer>();
+            list.add(0, R.drawable.img01);
+            list.add(1, R.drawable.img02);
+            list.add(2, R.drawable.img03);
+            list.add(3, R.drawable.img04);
+            list.add(4, R.drawable.img05);
+            list.add(5, R.drawable.img06);
+            list.add(6, R.drawable.img07);
+            list.add(7, R.drawable.img08);
+            list.add(8, R.drawable.img09);
+            list.add(9, R.drawable.img10);
+            list.add(10, R.drawable.img11);
+            list.add(11, R.drawable.img12);
+            list.add(12, R.drawable.img13);
+            mRecyclerViewAdapter = new MyRecyclerViewAdapter(list, getActivity());
+            mRecyclerViewAdapter.setOnItemClickListener(this);
+            mRecyclerView.setAdapter(mRecyclerViewAdapter);
+            mRecyclerViewAdapter.notifyDataSetChanged();
+            mRecyclerView.setLayoutManager(mLayoutManager);
+
+        } else if (flag == VERTICAL_GRID) {
 
 
-//        Map<String, String> form = Maps.newHashMap();
-//        form.put("method", "rop.product.get");
-//        form.put("appKey", "00001");
-//        form.put("v", "1.0");
-//        form.put("format", "json");
-//        String sing = RopUtils.signString(form, "qwertyuiop");
-//        form.put("sign", sing);
-//
-//
-//        OkGo.post(new Urls().SERVER)
-//                .params(form)
-//                .getCall(StringConvert.create(), RxAdapter.<String>create())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(s -> {
-//                    productinfo = JSON.parseArray(s, ProductAllInfo.class);
-//                    Log.e("result", s);
-//
-//                    if (productinfo != null) {
-//                        if (productinfo.get(0).getResult().size() > 0) {
-//                            if (flag == VERTICAL_LIST) {
-//                                Log.e("视频", "VERTICAL_LIST");
-//                                updateadapter();
-//                            } else if (flag == HORIZONTAL_LIST) {
-//                                Log.e("pdf", "HORIZONTAL_LIST");
-//                                updateadapter();
-//                            } else if (flag == VERTICAL_GRID) {
-//                                Log.e("图片", "VERTICAL_GRID");
-//                                updateadapter();
-//
-//                            } else if (flag == HORIZONTAL_GRID) {
-//                                Log.e("倒数第二", "HORIZONTAL_GRID");
-//                                updateadapter();
-//                            } else if (flag == STAGGERED_GRID) {
-//                                Log.e("最后", "STAGGERED_GRID");
-//                                updateadapter1();
-//
-//
-//                            }
-//
-//                        }
-//                    }
-//
-//                });
+        } else if (flag == HORIZONTAL_GRID) {
+
+
+        } else if (flag == STAGGERED_GRID) {
+
+
+        }
+
+
 
     }
 
-    public void updateadapter() {
-
-
-
-//        mRecyclerViewAdapter = new MyRecyclerViewAdapter(productinfo.get(0).getResult(), getActivity());
-//        mRecyclerViewAdapter.setOnItemClickListener(this);
-//        mRecyclerView.setAdapter(mRecyclerViewAdapter);
-//        mRecyclerViewAdapter.notifyDataSetChanged();
-//        mRecyclerView.setLayoutManager(mLayoutManager);
-    }
-
-    public void updateadapter1() {
-        mStaggeredAdapter = new MyStaggeredViewAdapter(productinfo.get(0).getResult(), getActivity());
-        mStaggeredAdapter.setOnItemClickListener(this);
-        mRecyclerView.setAdapter(mStaggeredAdapter);
-        mStaggeredAdapter.notifyDataSetChanged();
-        mRecyclerView.setLayoutManager(mLayoutManager);
-    }
 
     @Override
     public void onRefresh() {
