@@ -60,9 +60,9 @@ public class GalleryActivity extends AppCompatActivity {
         g.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(GalleryActivity.this,
-                        "序列：" + (position + 1) + "\n路径：" + it.get(position),
-                        Toast.LENGTH_LONG).show();
+//                Toast.makeText(GalleryActivity.this,
+//                        "序列：" + (position + 1) + "\n路径：" + it.get(position),
+//                        Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(GalleryActivity.this, GalleryDetailActivity.class);
                 intent.putExtra("a", it.get(position));
                 intent.putExtra("c",position);

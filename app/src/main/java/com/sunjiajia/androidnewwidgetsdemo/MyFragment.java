@@ -197,21 +197,23 @@ public class MyFragment extends Fragment
 
         }else if (flag == PICTURE_LIST){
 
-            Imageinfo info1 = new Imageinfo();
-            info1.imagename="01-5个痛经认知误区，让女人越来越痛！";
-            info1.image=R.drawable.kp01;
-            Imageinfo info2 = new Imageinfo();
-            info2.imagename="01-5个痛经认知误区，让女人越来越痛！";
-            info2.image=R.drawable.kp02;
+            listppt = new ArrayList<Integer>();
+            listppt.add(0, R.drawable.ppt01);
+            listppt.add(1, R.drawable.ppt02);
+            listppt.add(2, R.drawable.ppt03);
+            listppt.add(3, R.drawable.ppt04);
+            listppt.add(4, R.drawable.ppt05);
+            listppt.add(5, R.drawable.ppt06);
+            listppt.add(6, R.drawable.ppt07);
+            listppt.add(7, R.drawable.ppt08);
+            listppt.add(8, R.drawable.ppt09);
+            listppt.add(9, R.drawable.ppt10);
+            listppt.add(10, R.drawable.ppt11);
 
-
-            list1 = new ArrayList<Imageinfo>();
-            list1.add(0, info1);
-            list1.add(1, info2);
-            mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
-            mypdfRecyclerViewAdapter.setOnItemClickListener(this);
-            mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
-            mypdfRecyclerViewAdapter.notifyDataSetChanged();
+            mRecyclerViewAdapter = new MyRecyclerViewAdapter(listppt, getActivity());
+            mRecyclerViewAdapter.setOnItemClickListener(this);
+            mRecyclerView.setAdapter(mRecyclerViewAdapter);
+            mRecyclerViewAdapter.notifyDataSetChanged();
             mRecyclerView.setLayoutManager(mLayoutManager);
         }
 
