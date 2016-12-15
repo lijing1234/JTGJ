@@ -27,6 +27,7 @@ import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -45,6 +46,7 @@ public class GalleryActivity extends AppCompatActivity {
     ArrayList<String> it = new ArrayList<String>();
     ;// 遍历符合条件的列表
     public String actionUrl = null;
+    private String FILE_NAME = "Pictures/图片素材/01办公环境";
 
     private final String SD_PATH = android.os.Environment
 
@@ -54,6 +56,8 @@ public class GalleryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
+        String  position = getIntent().getStringExtra("a");
+        Log.e("position",position);
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
         toolbar.setTitle("图片");
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
@@ -64,6 +68,32 @@ public class GalleryActivity extends AppCompatActivity {
                 finish();
             }
         });
+        if(position.equals("0")){
+            FILE_NAME = "Pictures/图片素材/01办公环境";
+
+
+        }else if (position.equals("1")){
+            FILE_NAME = "Pictures/图片素材/02生产基地";
+
+        }else if (position.equals("2")){
+            FILE_NAME = "Pictures/图片素材/03星湖半岛";
+
+        }else if (position.equals("3")){
+            FILE_NAME = "Pictures/图片素材/04培训基地";
+
+        }else if (position.equals("4")){
+            FILE_NAME = "Pictures/图片素材/05金天国际直销启动暨“和谐与活力”公益盛典";
+
+        }else if (position.equals("5")){
+            FILE_NAME = "Pictures/图片素材/06金天国际2015年度优秀领导人表彰暨获牌盛典";
+
+        }else if (position.equals("6")){
+            FILE_NAME = "Pictures/图片素材/07金天国际宿迁智能化产业园落成典礼";
+
+        }else if (position.equals("7")){
+            FILE_NAME = "Pictures/图片素材/08金天国际25周年梦想盛典暨公益筑梦远航";
+
+        }
         g = (Gallery) findViewById(R.id.mygallery);
         //添加一个ImageAdapter并设置给Gallery对象
         g.setAdapter(new ImageAdapter(this, getSD()));
@@ -86,7 +116,7 @@ public class GalleryActivity extends AppCompatActivity {
     //遍历SD卡中某一路径下指定类型的图片
     private List<String> getSD() {
 
-        File f = new File(SD_PATH + "//" + "Pictures/图片素材/01办公环境");
+        File f = new File(SD_PATH + "//" + FILE_NAME);
         File[] files = f.listFiles();
 
         for (int i = 0; i < files.length; i++) {

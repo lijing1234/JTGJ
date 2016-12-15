@@ -21,12 +21,13 @@
 <resources>
 
   <string-array name="tab_titles">
-    <item>视频</item>
+    <item>影视资料</item>
     <item>科普养生</item>
     <item>行业动态</item>
     <item>企业资讯</item>
     <item>ppt</item>
     <item>图库</item>
-    <item>瀑布Staggered</item>
+    <item>荣誉资讯</item>
+    <item>会议物料</item>
   </string-array>
 </resources>

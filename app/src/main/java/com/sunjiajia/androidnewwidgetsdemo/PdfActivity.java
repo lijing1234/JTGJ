@@ -57,7 +57,7 @@ public class PdfActivity extends AppCompatActivity {
 
             FILE_NAME = "/pdf/科普养生/01-5个痛经认知误区，让女人越来越痛！.pdf";
         } else if (position.equals("1")) {
-            FILE_NAME = "/pdf/02-7种异常白带表现到底代表啥？女人一定要提高警惕！.pdf";
+            FILE_NAME = "/pdf/科普养生/02-7种异常白带表现到底代表啥？女人一定要提高警惕！.pdf";
 
         }
 
