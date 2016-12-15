@@ -17,16 +17,17 @@
   ~  */
   -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_gallery"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.sunjiajia.androidnewwidgetsdemo.GalleryActivity">
-
+    tools:context="com.sunjiajia.androidnewwidgetsdemo.GalleryActivity"
+    android:orientation="vertical">
+    <include layout="@layout/toolbar" />
     <Gallery
         android:id="@+id/mygallery"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></Gallery>
-</RelativeLayout>
+</LinearLayout>

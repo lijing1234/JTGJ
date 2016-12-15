@@ -26,6 +26,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -53,6 +54,16 @@ public class GalleryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
+        toolbar.setTitle("图片");
+        setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         g = (Gallery) findViewById(R.id.mygallery);
         //添加一个ImageAdapter并设置给Gallery对象
         g.setAdapter(new ImageAdapter(this, getSD()));
