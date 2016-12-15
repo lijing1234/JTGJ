@@ -27,6 +27,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,7 +49,16 @@ public class GalleryDetailActivity extends AppCompatActivity implements ViewPage
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery_detail);
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
+        toolbar.setTitle("图片");
+        setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         String path = getIntent().getStringExtra("a");
         infoList = getIntent().getStringArrayListExtra("b");
         int postion = getIntent().getIntExtra("c", 1);
