@@ -63,12 +63,12 @@ public class MovieActivity extends AppCompatActivity {
             }
         });
 //        http://video.jiecao.fm/11/23/xin/%E5%81%87%E4%BA%BA.mp4
-        String path = geStorageDirectory();
+
 //        /storage/emulated/0/Movies/Starry_Night.mp4
 //        /storage/emulated/0/Movies/Starry_Night.mp4
 //        /storage/emulated/0/video/01.mp4
 //        file.exists() ? file.getPath() : ""
-        Log.e("path",path);
+
 
 
         if(position.equals("0")){
@@ -112,6 +112,8 @@ public class MovieActivity extends AppCompatActivity {
             FILE_NAME = "/video/13金天国际雪莲生态保&养时尚版全新上线.mp4";
 
         }
+
+        String path = geStorageDirectory();
         final File file = new File(path);
 
         mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);

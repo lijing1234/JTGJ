@@ -34,22 +34,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Maps;
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.convert.StringConvert;
-import com.lzy.okrx.RxAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyRecyclerViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MypdfRecyclerViewAdapter;
-import com.sunjiajia.androidnewwidgetsdemo.utils.RopUtils;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import rx.android.schedulers.AndroidSchedulers;
 
 /**
  * Created by Monkey on 2015/6/29.
@@ -77,7 +68,8 @@ public class MyFragment extends Fragment
     private int flag = 0;
     List<Imageinfo> list1;
     private List<ProductAllInfo> productinfo;
-    List<Integer> list;
+    List<Integer> listmovie;
+    List<Integer> listppt;
 
 
     @Nullable
@@ -117,7 +109,7 @@ public class MyFragment extends Fragment
                 break;
             case VERTICAL_GRID:
                 mLayoutManager =
-                        new GridLayoutManager(getActivity(), SPAN_COUNT, GridLayoutManager.VERTICAL, false);
+                        new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 break;
             case HORIZONTAL_GRID:
                 mLayoutManager =
@@ -135,21 +127,21 @@ public class MyFragment extends Fragment
     private void attemptLeaveMsg() {
 
         if (flag == VERTICAL_LIST) {
-            list = new ArrayList<Integer>();
-            list.add(0, R.drawable.img01);
-            list.add(1, R.drawable.img02);
-            list.add(2, R.drawable.img03);
-            list.add(3, R.drawable.img04);
-            list.add(4, R.drawable.img05);
-            list.add(5, R.drawable.img06);
-            list.add(6, R.drawable.img07);
-            list.add(7, R.drawable.img08);
-            list.add(8, R.drawable.img09);
-            list.add(9, R.drawable.img10);
-            list.add(10, R.drawable.img11);
-            list.add(11, R.drawable.img12);
-            list.add(12, R.drawable.img13);
-            mRecyclerViewAdapter = new MyRecyclerViewAdapter(list, getActivity());
+            listmovie = new ArrayList<Integer>();
+            listmovie.add(0, R.drawable.img01);
+            listmovie.add(1, R.drawable.img02);
+            listmovie.add(2, R.drawable.img03);
+            listmovie.add(3, R.drawable.img04);
+            listmovie.add(4, R.drawable.img05);
+            listmovie.add(5, R.drawable.img06);
+            listmovie.add(6, R.drawable.img07);
+            listmovie.add(7, R.drawable.img08);
+            listmovie.add(8, R.drawable.img09);
+            listmovie.add(9, R.drawable.img10);
+            listmovie.add(10, R.drawable.img11);
+            listmovie.add(11, R.drawable.img12);
+            listmovie.add(12, R.drawable.img13);
+            mRecyclerViewAdapter = new MyRecyclerViewAdapter(listmovie, getActivity());
             mRecyclerViewAdapter.setOnItemClickListener(this);
             mRecyclerView.setAdapter(mRecyclerViewAdapter);
             mRecyclerViewAdapter.notifyDataSetChanged();
@@ -173,7 +165,24 @@ public class MyFragment extends Fragment
             mRecyclerView.setLayoutManager(mLayoutManager);
 
         } else if (flag == VERTICAL_GRID) {
+            listppt = new ArrayList<Integer>();
+            listppt.add(0, R.drawable.ppt01);
+            listppt.add(1, R.drawable.ppt02);
+            listppt.add(2, R.drawable.ppt03);
+            listppt.add(3, R.drawable.ppt04);
+            listppt.add(4, R.drawable.ppt05);
+            listppt.add(5, R.drawable.ppt06);
+            listppt.add(6, R.drawable.ppt07);
+            listppt.add(7, R.drawable.ppt08);
+            listppt.add(8, R.drawable.ppt09);
+            listppt.add(9, R.drawable.ppt10);
+            listppt.add(10, R.drawable.ppt11);
 
+            mRecyclerViewAdapter = new MyRecyclerViewAdapter(listppt, getActivity());
+            mRecyclerViewAdapter.setOnItemClickListener(this);
+            mRecyclerView.setAdapter(mRecyclerViewAdapter);
+            mRecyclerViewAdapter.notifyDataSetChanged();
+            mRecyclerView.setLayoutManager(mLayoutManager);
 
         } else if (flag == HORIZONTAL_GRID) {
 
@@ -240,10 +249,10 @@ public class MyFragment extends Fragment
 
 
             startActivity(intent);
-        } else if (flag == STAGGERED_GRID) {
-            Intent intent = new Intent(getActivity(), PdfActivity.class);
+        } else if (flag == VERTICAL_GRID) {
+            Intent intent = new Intent(getActivity(), PptActivity.class);
 //            intent.putExtra("a", mStaggeredAdapter.mDatas.get(position));
-
+            intent.putExtra("a", String.valueOf(position));
 
             startActivity(intent);
         }

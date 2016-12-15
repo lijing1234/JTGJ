@@ -156,6 +156,7 @@
     <orderEntry type="library" exported="" name="okserver-1.1.3" level="project" />
     <orderEntry type="library" exported="" name="okhttp-3.5.0" level="project" />
     <orderEntry type="library" exported="" name="rop-1.0.7-SNAPSHOT" level="project" />
+    <orderEntry type="library" exported="" name="itsrts-pptviewer" level="project" />
     <orderEntry type="library" exported="" name="ijkplayer-armv7a-0.6.0" level="project" />
   </component>
 </module>

@@ -45,8 +45,10 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".PdfActivity" />
         <activity android:name=".SettingActivity" />
-        <activity android:name=".VideoActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <activity
+            android:name=".VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".PptActivity"></activity>
     </application>
 
 </manifest>
