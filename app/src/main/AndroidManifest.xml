@@ -48,7 +48,10 @@
         <activity
             android:name=".VideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
-        <activity android:name=".PptActivity"></activity>
+        <activity android:name=".PptActivity" />
+        <activity android:name=".PictureActivity" />
+        <activity android:name=".GalleryActivity" />
+        <activity android:name=".GalleryDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -94,10 +94,10 @@ public class MovieActivity extends AppCompatActivity {
             FILE_NAME = "/video/07-金天国际直销启动暨“和谐与活力”公益盛典完整视频.mp4";
 
         }else if (position.equals("7")){
-            FILE_NAME = "/video/08金天国际25周年梦想盛典暨公益筑梦远航宣导片.mpg";
+            FILE_NAME = "/video/08金天国际25周年梦想盛典暨公益筑梦远航宣导片.mp4";
 
         }else if (position.equals("8")){
-            FILE_NAME = "/video/09金天国际25周年梦想盛典暨公益筑梦远航家人祝福.mov";
+            FILE_NAME = "/video/09金天国际25周年梦想盛典暨公益筑梦远航家人祝福.mp4";
 
         }else if (position.equals("9")){
             FILE_NAME = "/video/10央视七套《聚焦三农》：金天国际圆贫困残障儿童学习梦.mp4";

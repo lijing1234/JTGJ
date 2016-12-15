@@ -58,11 +58,12 @@ public class MyFragment extends Fragment
 
     MypdfRecyclerViewAdapter mypdfRecyclerViewAdapter;
 
-    private static final int VERTICAL_LIST = 0;
-    private static final int HORIZONTAL_LIST = 1;
-    private static final int VERTICAL_GRID = 2;
-    private static final int HORIZONTAL_GRID = 3;
-    private static final int STAGGERED_GRID = 4;
+    private static final int MOVIE_LIST = 0;
+    private static final int KEPUYANGSHENG_LIST = 1;
+    private static final int HANGYEDONGTAI_LIST = 2;
+    private static final int QIYEZIXUN_LIST = 3;
+    private static final int PPT_LIST = 4;
+    private static final int PICTURE_LIST = 5;
 
     private static final int SPAN_COUNT = 2;
     private int flag = 0;
@@ -99,25 +100,29 @@ public class MyFragment extends Fragment
     private void configRecyclerView() {
 
         switch (flag) {
-            case VERTICAL_LIST:
+            case MOVIE_LIST:
                 mLayoutManager =
                         new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 break;
-            case HORIZONTAL_LIST:
+            case KEPUYANGSHENG_LIST:
                 mLayoutManager =
                         new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 break;
-            case VERTICAL_GRID:
+            case HANGYEDONGTAI_LIST:
                 mLayoutManager =
                         new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 break;
-            case HORIZONTAL_GRID:
+            case QIYEZIXUN_LIST:
                 mLayoutManager =
                         new GridLayoutManager(getActivity(), SPAN_COUNT, GridLayoutManager.HORIZONTAL, false);
                 break;
-            case STAGGERED_GRID:
+            case PPT_LIST:
                 mLayoutManager =
                         new StaggeredGridLayoutManager(SPAN_COUNT, StaggeredGridLayoutManager.VERTICAL);
+                break;
+            case PICTURE_LIST:
+                mLayoutManager =
+                        new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 break;
         }
 
@@ -126,7 +131,7 @@ public class MyFragment extends Fragment
 
     private void attemptLeaveMsg() {
 
-        if (flag == VERTICAL_LIST) {
+        if (flag == MOVIE_LIST) {
             listmovie = new ArrayList<Integer>();
             listmovie.add(0, R.drawable.img01);
             listmovie.add(1, R.drawable.img02);
@@ -146,13 +151,13 @@ public class MyFragment extends Fragment
             mRecyclerView.setAdapter(mRecyclerViewAdapter);
             mRecyclerViewAdapter.notifyDataSetChanged();
             mRecyclerView.setLayoutManager(mLayoutManager);
-        } else if (flag == HORIZONTAL_LIST) {
+        } else if (flag == KEPUYANGSHENG_LIST) {
             Imageinfo info1 = new Imageinfo();
             info1.imagename="01-5个痛经认知误区，让女人越来越痛！";
-            info1.image=R.drawable.img01;
+            info1.image=R.drawable.kp01;
             Imageinfo info2 = new Imageinfo();
             info2.imagename="01-5个痛经认知误区，让女人越来越痛！";
-            info2.image=R.drawable.img01;
+            info2.image=R.drawable.kp02;
 
 
             list1 = new ArrayList<Imageinfo>();
@@ -164,7 +169,7 @@ public class MyFragment extends Fragment
             mypdfRecyclerViewAdapter.notifyDataSetChanged();
             mRecyclerView.setLayoutManager(mLayoutManager);
 
-        } else if (flag == VERTICAL_GRID) {
+        } else if (flag == PPT_LIST) {
             listppt = new ArrayList<Integer>();
             listppt.add(0, R.drawable.ppt01);
             listppt.add(1, R.drawable.ppt02);
@@ -184,12 +189,30 @@ public class MyFragment extends Fragment
             mRecyclerViewAdapter.notifyDataSetChanged();
             mRecyclerView.setLayoutManager(mLayoutManager);
 
-        } else if (flag == HORIZONTAL_GRID) {
+        } else if (flag == HANGYEDONGTAI_LIST) {
 
 
-        } else if (flag == STAGGERED_GRID) {
+        } else if (flag == QIYEZIXUN_LIST) {
 
 
+        }else if (flag == PICTURE_LIST){
+
+            Imageinfo info1 = new Imageinfo();
+            info1.imagename="01-5个痛经认知误区，让女人越来越痛！";
+            info1.image=R.drawable.kp01;
+            Imageinfo info2 = new Imageinfo();
+            info2.imagename="01-5个痛经认知误区，让女人越来越痛！";
+            info2.image=R.drawable.kp02;
+
+
+            list1 = new ArrayList<Imageinfo>();
+            list1.add(0, info1);
+            list1.add(1, info2);
+            mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
+            mypdfRecyclerViewAdapter.setOnItemClickListener(this);
+            mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
+            mypdfRecyclerViewAdapter.notifyDataSetChanged();
+            mRecyclerView.setLayoutManager(mLayoutManager);
         }
 
 
@@ -205,25 +228,25 @@ public class MyFragment extends Fragment
             public void run() {
                 mSwipeRefreshLayout.setRefreshing(false);
                 int temp = (int) (Math.random() * 10);
-                if (flag == VERTICAL_LIST) {
+                if (flag == MOVIE_LIST) {
                     attemptLeaveMsg();
                     Log.e("视频", "视频");
                     mRecyclerViewAdapter.notifyDataSetChanged();
-                } else if (flag == HORIZONTAL_LIST) {
+                } else if (flag == KEPUYANGSHENG_LIST) {
                     attemptLeaveMsg();
                     Log.e("pdf", "pdf");
                     mRecyclerViewAdapter.notifyDataSetChanged();
-                } else if (flag == VERTICAL_GRID) {
+                } else if (flag == PPT_LIST) {
                     attemptLeaveMsg();
                     Log.e("图片", "图片");
                     mRecyclerViewAdapter.notifyDataSetChanged();
 
-                } else if (flag == HORIZONTAL_GRID) {
+                } else if (flag == HANGYEDONGTAI_LIST) {
 
                     attemptLeaveMsg();
                     Log.e("倒数第二", "倒数第二");
                     mRecyclerViewAdapter.notifyDataSetChanged();
-                } else if (flag == STAGGERED_GRID) {
+                } else if (flag == QIYEZIXUN_LIST) {
                     attemptLeaveMsg();
                     Log.e("最后", "最后");
                     mStaggeredAdapter.notifyDataSetChanged();
@@ -235,26 +258,34 @@ public class MyFragment extends Fragment
 
     @Override
     public void onItemClick(View view, int position) {
-        if (flag == VERTICAL_LIST) {
+        if (flag == MOVIE_LIST) {
             Intent intent = new Intent(getActivity(), MovieActivity.class);
 
             intent.putExtra("a", String.valueOf(position));
 
 
             startActivity(intent);
-        } else if (flag == HORIZONTAL_LIST) {
+        } else if (flag == KEPUYANGSHENG_LIST) {
             Intent intent = new Intent(getActivity(), PdfActivity.class);
 //            intent.putExtra("a", mStaggeredAdapter.mDatas.get(position));
             intent.putExtra("a", String.valueOf(position));
 
 
             startActivity(intent);
-        } else if (flag == VERTICAL_GRID) {
+        } else if (flag == PPT_LIST) {
             Intent intent = new Intent(getActivity(), PptActivity.class);
 //            intent.putExtra("a", mStaggeredAdapter.mDatas.get(position));
             intent.putExtra("a", String.valueOf(position));
 
             startActivity(intent);
+        }else if (flag == PICTURE_LIST){
+
+            Intent intent = new Intent(getActivity(), GalleryActivity.class);
+//            intent.putExtra("a", mStaggeredAdapter.mDatas.get(position));
+            intent.putExtra("a", String.valueOf(position));
+
+            startActivity(intent);
+
         }
 
     }

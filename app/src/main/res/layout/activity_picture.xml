@@ -18,15 +18,15 @@
   ~  */
   -->
 
-<resources>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_picture"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
 
-  <string-array name="tab_titles">
-    <item>视频</item>
-    <item>科普养生</item>
-    <item>行业动态</item>
-    <item>企业资讯</item>
-    <item>ppt</item>
-    <item>图库</item>
-    <item>瀑布Staggered</item>
-  </string-array>
-</resources>
+    tools:context="com.sunjiajia.androidnewwidgetsdemo.PictureActivity">
+<ViewFlipper
+    android:id="@+id/viewflipper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"></ViewFlipper>
+</RelativeLayout>

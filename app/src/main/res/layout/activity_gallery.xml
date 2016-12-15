@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~  *
+  ~  *  *
+  ~  *  *  * ===================================
+  ~  *  *  * Copyright (c) 2016.
+  ~  *  *  * 作者：安卓猴
+  ~  *  *  * 微博：@安卓猴
+  ~  *  *  * 博客：http://sunjiajia.com
+  ~  *  *  * Github：https://github.com/opengit
+  ~  *  *  *
+  ~  *  *  * 注意**：如果您使用或者修改该代码，请务必保留此版权信息。
+  ~  *  *  * ===================================
+  ~  *  *
+  ~  *  *
+  ~  *
+  ~  */
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_gallery"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.sunjiajia.androidnewwidgetsdemo.GalleryActivity">
+
+    <Gallery
+        android:id="@+id/mygallery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></Gallery>
+</RelativeLayout>
