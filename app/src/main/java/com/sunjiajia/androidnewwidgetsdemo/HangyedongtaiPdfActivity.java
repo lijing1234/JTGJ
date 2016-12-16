@@ -201,7 +201,7 @@ public class HangyedongtaiPdfActivity extends AppCompatActivity {
         if (adapter != null) {
             Log.e("onDestroy", "onDestroy");
 //            adapter.close();
-//            ((PDFPagerAdapter) pdfViewPager.getAdapter()).close();
+            ((PDFPagerAdapter) pdfViewPager.getAdapter()).close();
         }
 
     }

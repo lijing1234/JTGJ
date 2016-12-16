@@ -56,7 +56,10 @@
         <activity android:name=".GalleryDetailActivity" />
         <activity android:name=".RongYUZiZhiDetailPictureActivity" />
         <activity android:name=".RongYuZiZhiDetailPdfActivity" />
-        <activity android:name=".RongYuZiZhiDetailPdfShowActivity"></activity>
+        <activity android:name=".RongYuZiZhiDetailPdfShowActivity" />
+        <activity android:name=".HuiYiWuLiaoActivity" />
+        <activity android:name=".HuiYiWuLiaoDetailActivity"/>
+        <activity android:name=".HuiYiWuLiaoDetail2Activity"/>
     </application>
 
 </manifest>

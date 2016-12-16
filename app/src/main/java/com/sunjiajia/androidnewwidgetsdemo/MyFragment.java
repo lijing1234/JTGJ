@@ -839,15 +839,21 @@ public class MyFragment extends Fragment
                 mRecyclerView.setLayoutManager(mLayoutManager);
                 break;
             case HUIYIWULIAO_LIST:
-                listppt = new ArrayList<Integer>();
-                listppt.add(0, R.drawable.ppt01);
-                listppt.add(1, R.drawable.ppt02);
+                Imageinfo huiyiwuliao1 = new Imageinfo();
+                huiyiwuliao1.imagename = "店主培训会";
+                huiyiwuliao1.image = R.drawable.wa1;
+                Imageinfo huiyiwuliao2 = new Imageinfo();
+                huiyiwuliao2.imagename = "公益讲座";
+                huiyiwuliao2.image = R.drawable.wa2;
 
+                list1 = new ArrayList<Imageinfo>();
+                list1.add(0, huiyiwuliao1);
+                list1.add(1, huiyiwuliao2);
 
-                mRecyclerViewAdapter = new MyRecyclerViewAdapter(listppt, getActivity());
-                mRecyclerViewAdapter.setOnItemClickListener(this);
-                mRecyclerView.setAdapter(mRecyclerViewAdapter);
-                mRecyclerViewAdapter.notifyDataSetChanged();
+                mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
+                mypdfRecyclerViewAdapter.setOnItemClickListener(this);
+                mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
+                mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
                 break;
             default:
@@ -949,8 +955,8 @@ public class MyFragment extends Fragment
 
                 break;
             case HUIYIWULIAO_LIST:
-                Intent intent6 = new Intent(getActivity(), GalleryActivity.class);
-                intent6.putExtra("a", String.valueOf(position));
+                Intent intent6 = new Intent(getActivity(), HuiYiWuLiaoActivity.class);
+                intent6.putExtra("a", position);
 
                 startActivity(intent6);
                 break;
