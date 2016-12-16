@@ -25,11 +25,9 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -804,18 +802,40 @@ public class MyFragment extends Fragment
 
                 break;
             case RONYUZIXUN_LIST:
-                listppt = new ArrayList<Integer>();
-                listppt.add(0, R.drawable.ppt01);
-                listppt.add(1, R.drawable.ppt02);
-                listppt.add(2, R.drawable.ppt03);
-                listppt.add(3, R.drawable.ppt04);
-                listppt.add(4, R.drawable.ppt05);
+                Imageinfo rngyuzixun1 = new Imageinfo();
+                rngyuzixun1.imagename = "01企业商标专利";
+                rngyuzixun1.image = R.drawable.kp01;
+                Imageinfo rngyuzixun2 = new Imageinfo();
+                rngyuzixun2.imagename = "02企业经营资质";
+                rngyuzixun2.image = R.drawable.kp02;
+                Imageinfo rngyuzixun3 = new Imageinfo();
+                rngyuzixun3.imagename = "03企业荣誉";
+                rngyuzixun3.image = R.drawable.kp01;
+                Imageinfo rngyuzixun4 = new Imageinfo();
+                rngyuzixun4.imagename = "04产品荣誉";
+                rngyuzixun4.image = R.drawable.kp02;
+                Imageinfo rngyuzixun5 = new Imageinfo();
+                rngyuzixun5.imagename = "05权威检测报告";
+                rngyuzixun5.image = R.drawable.kp01;
 
 
-                mRecyclerViewAdapter = new MyRecyclerViewAdapter(listppt, getActivity());
-                mRecyclerViewAdapter.setOnItemClickListener(this);
-                mRecyclerView.setAdapter(mRecyclerViewAdapter);
-                mRecyclerViewAdapter.notifyDataSetChanged();
+
+
+
+                list1 = new ArrayList<Imageinfo>();
+                list1.add(0, rngyuzixun1);
+                list1.add(1, rngyuzixun2);
+                list1.add(2, rngyuzixun3);
+                list1.add(3, rngyuzixun4);
+                list1.add(4, rngyuzixun5);
+
+
+
+
+                mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
+                mypdfRecyclerViewAdapter.setOnItemClickListener(this);
+                mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
+                mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
                 break;
             case HUIYIWULIAO_LIST:
@@ -915,10 +935,18 @@ public class MyFragment extends Fragment
                 startActivity(intent4);
                 break;
             case RONYUZIXUN_LIST:
-                Intent intent5 = new Intent(getActivity(), GalleryActivity.class);
-                intent5.putExtra("a", String.valueOf(position));
+                if (position==4){
 
-                startActivity(intent5);
+                    Intent intent8 = new Intent(getActivity(), RongYuZiZhiDetailPdfActivity.class);
+
+                    startActivity(intent8);
+                }else {
+                    Intent intent5 = new Intent(getActivity(), RongYUZiZhiDetailPictureActivity.class);
+                    intent5.putExtra("a", position);
+
+                    startActivity(intent5);
+                }
+
                 break;
             case HUIYIWULIAO_LIST:
                 Intent intent6 = new Intent(getActivity(), GalleryActivity.class);

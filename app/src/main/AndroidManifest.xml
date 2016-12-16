@@ -53,7 +53,10 @@
         <activity android:name=".PptActivity" />
         <activity android:name=".PictureActivity" />
         <activity android:name=".GalleryActivity" />
-        <activity android:name=".GalleryDetailActivity"></activity>
+        <activity android:name=".GalleryDetailActivity" />
+        <activity android:name=".RongYUZiZhiDetailPictureActivity" />
+        <activity android:name=".RongYuZiZhiDetailPdfActivity" />
+        <activity android:name=".RongYuZiZhiDetailPdfShowActivity"></activity>
     </application>
 
 </manifest>
