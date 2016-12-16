@@ -56,38 +56,38 @@ public class PptActivity extends AppCompatActivity {
                 .setZoomout_img(R.drawable.zoomout);
 
         if(position.equals("0")){
-            FILE_NAME = "/ppt/01企业篇.ppt";
+            FILE_NAME = "/JT/ppt/01企业篇.ppt";
 
 
         }else if (position.equals("1")){
-            FILE_NAME = "/ppt/02产品篇.ppt";
+            FILE_NAME = "/JT/ppt/02产品篇.ppt";
 
         }else if (position.equals("2")){
-            FILE_NAME = "/ppt/03模式篇.pptx";
+            FILE_NAME = "/JT/ppt/03模式篇.pptx";
 
         }else if (position.equals("3")){
-            FILE_NAME = "/ppt/04十大举措.ppt";
+            FILE_NAME = "/JT/ppt/04十大举措.ppt";
 
         }else if (position.equals("4")){
-            FILE_NAME = "/ppt/05十大亮点.ppt";
+            FILE_NAME = "/JT/ppt/05十大亮点.ppt";
 
         }else if (position.equals("5")){
-            FILE_NAME = "/ppt/06讲师训班前训.ppt";
+            FILE_NAME = "/JT/ppt/06讲师训班前训.ppt";
 
         }else if (position.equals("6")){
-            FILE_NAME = "/ppt/07讲师基本素质.ppt.ppt";
+            FILE_NAME = "/JT/ppt/07讲师基本素质.ppt.ppt";
 
         }else if (position.equals("7")){
-            FILE_NAME = "/ppt/08专业咨询需掌握的基础知识.ppt";
+            FILE_NAME = "/JT/ppt/08专业咨询需掌握的基础知识.ppt";
 
         }else if (position.equals("8")){
-            FILE_NAME = "/ppt/09生态保养咨询过程中需掌握的技巧和方法.ppt";
+            FILE_NAME = "/JT/ppt/09生态保养咨询过程中需掌握的技巧和方法.ppt";
 
         }else if (position.equals("9")){
-            FILE_NAME = "/ppt/10金天国际 基础训.ppt";
+            FILE_NAME = "/JT/ppt/10金天国际 基础训.ppt";
 
         }else if (position.equals("10")) {
-            FILE_NAME = "/ppt/11-635营销宝典.ppt";
+            FILE_NAME = "/JT/ppt/11-635营销宝典.ppt";
 
         }
         pptViewer.loadPPT(this, geStorageDirectory());

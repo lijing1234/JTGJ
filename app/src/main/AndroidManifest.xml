@@ -44,6 +44,8 @@
             android:name=".MovieActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".PdfActivity" />
+        <activity android:name=".HangyedongtaiPdfActivity" />
+        <activity android:name=".QiyezixunPdfActivity" />
         <activity android:name=".SettingActivity" />
         <activity
             android:name=".VideoActivity"
