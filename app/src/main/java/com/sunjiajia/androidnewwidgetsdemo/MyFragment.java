@@ -49,6 +49,7 @@ import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 import com.sunjiajia.androidnewwidgetsdemo.video.MovieActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -78,6 +79,7 @@ public class MyFragment extends Fragment
     private static final int SPAN_COUNT = 2;
     private int flag = 0;
     List<Imageinfo> list1;
+    List<Imageinfo> movielist;
     private List<ProductAllInfo> productinfo;
     List<Integer> listmovie;
     List<Integer> listppt;
@@ -150,24 +152,68 @@ public class MyFragment extends Fragment
     private void attemptLeaveMsg() {
         switch (flag) {
             case MOVIE_LIST:
-                listmovie = new ArrayList<Integer>();
-                listmovie.add(0, R.drawable.img01);
-                listmovie.add(1, R.drawable.img02);
-                listmovie.add(2, R.drawable.img03);
-                listmovie.add(3, R.drawable.img04);
-                listmovie.add(4, R.drawable.img05);
-                listmovie.add(5, R.drawable.img06);
-                listmovie.add(6, R.drawable.img07);
-                listmovie.add(7, R.drawable.img08);
-                listmovie.add(8, R.drawable.img09);
-                listmovie.add(9, R.drawable.img10);
-                listmovie.add(10, R.drawable.img11);
-                listmovie.add(11, R.drawable.img12);
-                listmovie.add(12, R.drawable.img13);
-                mRecyclerViewAdapter = new MyRecyclerViewAdapter(listmovie, getActivity());
-                mRecyclerViewAdapter.setOnItemClickListener(this);
-                mRecyclerView.setAdapter(mRecyclerViewAdapter);
-                mRecyclerViewAdapter.notifyDataSetChanged();
+                Imageinfo movie1 = new Imageinfo();
+                movie1.imagename = "01金天国际2016企业宣传片";
+                movie1.image = R.drawable.img01;
+                Imageinfo movie2 = new Imageinfo();
+                movie2.imagename = "02直销启动暨“和谐与活力”公益盛典宣导片";
+                movie2.image = R.drawable.img02;
+                Imageinfo movie3 = new Imageinfo();
+                movie3.imagename = "03直销启动暨“和谐与活力”公益盛典精彩回顾";
+                movie3.image = R.drawable.img03;
+                Imageinfo movie4 = new Imageinfo();
+                movie4.imagename = "04宿迁智能化产业园落成典礼宣导片";
+                movie4.image = R.drawable.img04;
+                Imageinfo movie5 = new Imageinfo();
+                movie5.imagename = "05宿迁智能化产业园落成典礼精彩回顾";
+                movie5.image = R.drawable.img05;
+                Imageinfo movie6 = new Imageinfo();
+                movie6.imagename = "06金天国际璀璨之星讲师大赛宣导预告片";
+                movie6.image = R.drawable.img06;
+                Imageinfo movie7 = new Imageinfo();
+                movie7.imagename = "07金天国际直销启动暨“和谐与活力”公益盛典完整视频";
+                movie7.image = R.drawable.img07;
+                Imageinfo movie8 = new Imageinfo();
+                movie8.imagename = "08金天国际25周年梦想盛典暨公益筑梦远航宣导片";
+                movie8.image = R.drawable.img08;
+                Imageinfo movie9 = new Imageinfo();
+                movie9.imagename = "09金天国际25周年梦想盛典暨公益筑梦远航家人祝福";
+                movie9.image = R.drawable.img09;
+                Imageinfo movie10 = new Imageinfo();
+                movie10.imagename = "10央视七套《聚焦三农》：金天国际圆贫困残障儿童学习梦";
+                movie10.image = R.drawable.img10;
+                Imageinfo movie11 = new Imageinfo();
+                movie11.imagename = "11活力金天，助力中国——金天国际25周年梦想盛典暨公益筑梦远航精彩回顾";
+                movie11.image = R.drawable.img11;
+                Imageinfo movie12 = new Imageinfo();
+                movie12.imagename = "12《聚焦apec》金天国际董事长祖名军接受采访";
+                movie12.image = R.drawable.img12;
+                Imageinfo movie13 = new Imageinfo();
+                movie13.imagename = "13金天国际雪莲生态保&养时尚版全新上线";
+                movie13.image = R.drawable.img13;
+
+
+
+                movielist = new ArrayList<Imageinfo>();
+                movielist.add(0, movie1);
+                movielist.add(1, movie2);
+                movielist.add(2, movie3);
+                movielist.add(3, movie4);
+                movielist.add(4, movie5);
+                movielist.add(5, movie6);
+                movielist.add(6, movie7);
+                movielist.add(7, movie8);
+                movielist.add(8, movie9);
+                movielist.add(9, movie10);
+                movielist.add(10, movie11);
+                movielist.add(11, movie12);
+                movielist.add(12, movie13);
+                Collections.reverse(movielist);
+
+                mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(movielist, getActivity());
+                mypdfRecyclerViewAdapter.setOnItemClickListener(this);
+                mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
+                mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
 
                 break;
@@ -423,6 +469,7 @@ public class MyFragment extends Fragment
                 list1.add(59, info60);
                 list1.add(60, info61);
                 list1.add(61, info62);
+                Collections.reverse(list1);
                 mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
                 mypdfRecyclerViewAdapter.setOnItemClickListener(this);
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
@@ -546,7 +593,7 @@ public class MyFragment extends Fragment
                 list1.add(25, hangyedongt26);
                 list1.add(26, hangyedongt27);
                 list1.add(27, hangyedongt28);
-
+                Collections.reverse(list1);
                 mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
                 mypdfRecyclerViewAdapter.setOnItemClickListener(this);
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
@@ -736,7 +783,7 @@ public class MyFragment extends Fragment
                 list1.add(42, qiyezixun43);
                 list1.add(43, qiyezixun44);
                 list1.add(44, qiyezixun45);
-
+                Collections.reverse(list1);
                 mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
                 mypdfRecyclerViewAdapter.setOnItemClickListener(this);
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
@@ -757,7 +804,7 @@ public class MyFragment extends Fragment
                 listppt.add(8, R.drawable.ppt09);
                 listppt.add(9, R.drawable.ppt10);
                 listppt.add(10, R.drawable.ppt11);
-
+                Collections.reverse(listppt);
                 mRecyclerViewAdapter = new MyRecyclerViewAdapter(listppt, getActivity());
                 mRecyclerViewAdapter.setOnItemClickListener(this);
                 mRecyclerView.setAdapter(mRecyclerViewAdapter);
@@ -802,7 +849,7 @@ public class MyFragment extends Fragment
                 list1.add(5, picture6);
                 list1.add(6, picture7);
                 list1.add(7, picture8);
-
+                Collections.reverse(list1);
 
 
                 mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
@@ -813,6 +860,7 @@ public class MyFragment extends Fragment
 
                 break;
             case RONYUZIXUN_LIST:
+                //改完
                 Imageinfo rngyuzixun1 = new Imageinfo();
                 rngyuzixun1.imagename = "01企业商标专利";
                 rngyuzixun1.image = R.drawable.kp01;
@@ -839,6 +887,7 @@ public class MyFragment extends Fragment
                 list1.add(2, rngyuzixun3);
                 list1.add(3, rngyuzixun4);
                 list1.add(4, rngyuzixun5);
+                Collections.reverse(list1);
 
 
 
@@ -850,6 +899,7 @@ public class MyFragment extends Fragment
                 mRecyclerView.setLayoutManager(mLayoutManager);
                 break;
             case HUIYIWULIAO_LIST:
+                //改完
                 Imageinfo huiyiwuliao1 = new Imageinfo();
                 huiyiwuliao1.imagename = "店主培训会";
                 huiyiwuliao1.image = R.drawable.wa1;
@@ -860,6 +910,7 @@ public class MyFragment extends Fragment
                 list1 = new ArrayList<Imageinfo>();
                 list1.add(0, huiyiwuliao1);
                 list1.add(1, huiyiwuliao2);
+                Collections.reverse(list1);
 
                 mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
                 mypdfRecyclerViewAdapter.setOnItemClickListener(this);
@@ -952,7 +1003,7 @@ public class MyFragment extends Fragment
                 startActivity(intent4);
                 break;
             case RONYUZIXUN_LIST:
-                if (position==4){
+                if (position==0){
 
                     Intent intent8 = new Intent(getActivity(), RongYuZiZhiDetailPdfActivity.class);
 

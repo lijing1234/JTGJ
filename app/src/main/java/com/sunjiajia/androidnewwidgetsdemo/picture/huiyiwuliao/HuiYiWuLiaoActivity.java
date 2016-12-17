@@ -34,12 +34,13 @@ import com.sunjiajia.androidnewwidgetsdemo.adapter.MypdfRecyclerViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HuiYiWuLiaoActivity extends AppCompatActivity implements  MypdfRecyclerViewAdapter.OnItemClickListener{
+public class HuiYiWuLiaoActivity extends AppCompatActivity implements MypdfRecyclerViewAdapter.OnItemClickListener {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     List<Imageinfo> list1;
     int posi;
     MypdfRecyclerViewAdapter mypdfRecyclerViewAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,14 +51,58 @@ public class HuiYiWuLiaoActivity extends AppCompatActivity implements  MypdfRecy
 
 
 //        Log.e("position", position);
-         posi = getIntent().getIntExtra("a", 1);
+        posi = getIntent().getIntExtra("a", 1);
 //        Log.e("position", position);
-        mRecyclerView = (RecyclerView)findViewById(R.id.id_Huiyirecyclerview);
+        mRecyclerView = (RecyclerView) findViewById(R.id.id_Huiyirecyclerview);
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
 
 
         switch (posi) {
             case 0:
+                toolbar.setTitle("公益讲座");
+                setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
+                Imageinfo gongyijiangzuo1 = new Imageinfo();
+                gongyijiangzuo1.imagename = "X展架";
+                gongyijiangzuo1.image = R.drawable.kp01;
+                Imageinfo gongyijiangzuo2 = new Imageinfo();
+                gongyijiangzuo2.imagename = "参会证";
+                gongyijiangzuo2.image = R.drawable.kp02;
+                Imageinfo gongyijiangzuo3 = new Imageinfo();
+                gongyijiangzuo3.imagename = "公益讲座背景墙";
+                gongyijiangzuo3.image = R.drawable.kp01;
+                Imageinfo gongyijiangzuo4 = new Imageinfo();
+                gongyijiangzuo4.imagename = "幻灯片背景";
+                gongyijiangzuo4.image = R.drawable.kp02;
+                Imageinfo gongyijiangzuo5 = new Imageinfo();
+                gongyijiangzuo5.imagename = "科普讲座门票";
+                gongyijiangzuo5.image = R.drawable.kp01;
+                Imageinfo gongyijiangzuo6 = new Imageinfo();
+                gongyijiangzuo6.imagename = "条幅";
+                gongyijiangzuo6.image = R.drawable.kp01;
+                list1 = new ArrayList<Imageinfo>();
+                list1.add(0, gongyijiangzuo1);
+                list1.add(1, gongyijiangzuo2);
+                list1.add(2, gongyijiangzuo3);
+                list1.add(3, gongyijiangzuo4);
+                list1.add(4, gongyijiangzuo5);
+                list1.add(5, gongyijiangzuo6);
+                mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, HuiYiWuLiaoActivity.this);
+                mypdfRecyclerViewAdapter.setOnItemClickListener(this);
+                mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
+                mypdfRecyclerViewAdapter.notifyDataSetChanged();
+                mRecyclerView.setLayoutManager(mLayoutManager);
+                break;
+
+            case 1:
+
+
                 toolbar.setTitle("店主培训会");
                 setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -109,66 +154,22 @@ public class HuiYiWuLiaoActivity extends AppCompatActivity implements  MypdfRecy
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
                 break;
-            case 1:
-                toolbar.setTitle("公益讲座");
-                setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
-                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        finish();
-                    }
-                });
-                Imageinfo gongyijiangzuo1 = new Imageinfo();
-                gongyijiangzuo1.imagename = "X展架";
-                gongyijiangzuo1.image = R.drawable.kp01;
-                Imageinfo gongyijiangzuo2 = new Imageinfo();
-                gongyijiangzuo2.imagename = "参会证";
-                gongyijiangzuo2.image = R.drawable.kp02;
-                Imageinfo gongyijiangzuo3 = new Imageinfo();
-                gongyijiangzuo3.imagename = "公益讲座背景墙";
-                gongyijiangzuo3.image = R.drawable.kp01;
-                Imageinfo gongyijiangzuo4 = new Imageinfo();
-                gongyijiangzuo4.imagename = "幻灯片背景";
-                gongyijiangzuo4.image = R.drawable.kp02;
-                Imageinfo gongyijiangzuo5 = new Imageinfo();
-                gongyijiangzuo5.imagename = "科普讲座门票";
-                gongyijiangzuo5.image = R.drawable.kp01;
-                Imageinfo gongyijiangzuo6 = new Imageinfo();
-                gongyijiangzuo6.imagename = "条幅";
-                gongyijiangzuo6.image = R.drawable.kp01;
-                list1 = new ArrayList<Imageinfo>();
-                list1.add(0, gongyijiangzuo1);
-                list1.add(1, gongyijiangzuo2);
-                list1.add(2, gongyijiangzuo3);
-                list1.add(3, gongyijiangzuo4);
-                list1.add(4, gongyijiangzuo5);
-                list1.add(5, gongyijiangzuo6);
-                mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, HuiYiWuLiaoActivity.this);
-                mypdfRecyclerViewAdapter.setOnItemClickListener(this);
-                mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
-                mypdfRecyclerViewAdapter.notifyDataSetChanged();
-                mRecyclerView.setLayoutManager(mLayoutManager);
-                break;
         }
-
-
-
 
 
     }
 
     @Override
     public void onItemClick(View view, int position) {
-        if(posi==0){
-            Intent intent=new Intent(this,HuiYiWuLiaoDetailActivity.class);
-            intent.putExtra("a",position);
+        if (posi == 0) {
+            Intent intent = new Intent(this, HuiYiWuLiaoDetailActivity.class);
+            intent.putExtra("a", position);
 
             startActivity(intent);
 
-        }else {
-            Intent intent=new Intent(this,HuiYiWuLiaoDetail2Activity.class);
-            intent.putExtra("a",position);
+        } else {
+            Intent intent = new Intent(this, HuiYiWuLiaoDetail2Activity.class);
+            intent.putExtra("a", position);
 
             startActivity(intent);
 

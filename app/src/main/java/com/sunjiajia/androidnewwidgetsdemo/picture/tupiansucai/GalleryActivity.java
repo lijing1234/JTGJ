@@ -69,29 +69,29 @@ public class GalleryActivity extends AppCompatActivity {
             }
         });
         if(position.equals("0")){
-            FILE_NAME = "JT/Pictures/图片素材/01办公环境";
 
+            FILE_NAME = "JT/Pictures/图片素材/08金天国际25周年梦想盛典暨公益筑梦远航";
 
         }else if (position.equals("1")){
-            FILE_NAME = "JT/Pictures/图片素材/02生产基地";
 
+            FILE_NAME = "JT/Pictures/图片素材/07金天国际宿迁智能化产业园落成典礼";
         }else if (position.equals("2")){
-            FILE_NAME = "JT/Pictures/图片素材/03星湖半岛";
 
+            FILE_NAME = "JT/Pictures/图片素材/06金天国际2015年度优秀领导人表彰暨获牌盛典";
         }else if (position.equals("3")){
-            FILE_NAME = "JT/Pictures/图片素材/04培训基地";
-
-        }else if (position.equals("4")){
             FILE_NAME = "JT/Pictures/图片素材/05金天国际直销启动暨“和谐与活力”公益盛典";
 
+        }else if (position.equals("4")){
+            FILE_NAME = "JT/Pictures/图片素材/04培训基地";
+
         }else if (position.equals("5")){
-            FILE_NAME = "JT/Pictures/图片素材/06金天国际2015年度优秀领导人表彰暨获牌盛典";
+            FILE_NAME = "JT/Pictures/图片素材/03星湖半岛";
 
         }else if (position.equals("6")){
-            FILE_NAME = "JT/Pictures/图片素材/07金天国际宿迁智能化产业园落成典礼";
 
+            FILE_NAME = "JT/Pictures/图片素材/02生产基地";
         }else if (position.equals("7")){
-            FILE_NAME = "JT/Pictures/图片素材/08金天国际25周年梦想盛典暨公益筑梦远航";
+            FILE_NAME = "JT/Pictures/图片素材/01办公环境";
 
         }
         g = (Gallery) findViewById(R.id.mygallery);
