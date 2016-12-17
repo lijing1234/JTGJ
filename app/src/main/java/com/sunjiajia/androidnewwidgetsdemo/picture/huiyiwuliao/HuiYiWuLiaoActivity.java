@@ -162,13 +162,13 @@ public class HuiYiWuLiaoActivity extends AppCompatActivity implements MypdfRecyc
     @Override
     public void onItemClick(View view, int position) {
         if (posi == 0) {
-            Intent intent = new Intent(this, HuiYiWuLiaoDetailActivity.class);
+            Intent intent = new Intent(this, HuiYiWuLiaoDetail2Activity.class);
             intent.putExtra("a", position);
 
             startActivity(intent);
 
         } else {
-            Intent intent = new Intent(this, HuiYiWuLiaoDetail2Activity.class);
+            Intent intent = new Intent(this, HuiYiWuLiaoDetailActivity.class);
             intent.putExtra("a", position);
 
             startActivity(intent);
