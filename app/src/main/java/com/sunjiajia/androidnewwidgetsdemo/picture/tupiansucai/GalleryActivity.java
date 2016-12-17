@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai;
 
 import android.content.Context;
 import android.content.Intent;
@@ -34,10 +34,10 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
-import android.widget.Toast;
+
+import com.sunjiajia.androidnewwidgetsdemo.R;
 
 import java.io.File;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 

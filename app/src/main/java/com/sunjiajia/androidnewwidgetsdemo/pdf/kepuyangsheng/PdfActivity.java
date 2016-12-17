@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.pdf.kepuyangsheng;
 
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +25,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+
+import com.sunjiajia.androidnewwidgetsdemo.R;
 
 import es.voghdev.pdfviewpager.library.PDFViewPager;
 import es.voghdev.pdfviewpager.library.RemotePDFViewPager;
@@ -46,7 +48,7 @@ public class PdfActivity extends AppCompatActivity {
         int posi = getIntent().getIntExtra("a", 1);
 //        Log.e("position", position);
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
-        toolbar.setTitle("pdf");
+        toolbar.setTitle("科普养生");
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -316,12 +318,16 @@ public class PdfActivity extends AppCompatActivity {
 
         }
 
+        try {
+            pdfViewPager = new PDFViewPager(this, geStorageDirectory());
+            pdfViewPager = (PDFViewPager) findViewById(R.id.pdfViewPager);
+            adapter = new PDFPagerAdapter(this, geStorageDirectory());
+            pdfViewPager.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+        } catch (Exception e) {
 
-        pdfViewPager = new PDFViewPager(this, geStorageDirectory());
-        pdfViewPager = (PDFViewPager) findViewById(R.id.pdfViewPager);
-        adapter = new PDFPagerAdapter(this, geStorageDirectory());
-        pdfViewPager.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+
+        }
 
 
     }

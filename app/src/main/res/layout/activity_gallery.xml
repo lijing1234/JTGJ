@@ -23,7 +23,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.sunjiajia.androidnewwidgetsdemo.GalleryActivity"
+    tools:context="com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryActivity"
     android:orientation="vertical">
     <include layout="@layout/toolbar" />
     <Gallery

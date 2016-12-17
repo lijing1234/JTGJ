@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.bean;
 
 /**
  * Created by dawd on 2016/3/17.

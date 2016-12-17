@@ -34,32 +34,44 @@
         <activity
             android:name=".MyActivity"
             android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".WelcomeActivity"
+            android:screenOrientation="portrait"
+           >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="my.com"
+                    android:scheme="jtshopping" />
+            </intent-filter>
         </activity>
         <activity
-            android:name=".MovieActivity"
+            android:name=".video.MovieActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
-        <activity android:name=".PdfActivity" />
-        <activity android:name=".HangyedongtaiPdfActivity" />
-        <activity android:name=".QiyezixunPdfActivity" />
+        <activity android:name=".pdf.kepuyangsheng.PdfActivity" />
+        <activity android:name=".pdf.hangyedongtai.HangyedongtaiPdfActivity" />
+        <activity android:name=".pdf.qiyezizhi.QiyezixunPdfActivity" />
         <activity android:name=".SettingActivity" />
-        <activity
-            android:name=".VideoActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize" />
-        <activity android:name=".PptActivity" />
-        <activity android:name=".PictureActivity" />
-        <activity android:name=".GalleryActivity" />
-        <activity android:name=".GalleryDetailActivity" />
-        <activity android:name=".RongYUZiZhiDetailPictureActivity" />
-        <activity android:name=".RongYuZiZhiDetailPdfActivity" />
-        <activity android:name=".RongYuZiZhiDetailPdfShowActivity" />
-        <activity android:name=".HuiYiWuLiaoActivity" />
-        <activity android:name=".HuiYiWuLiaoDetailActivity"/>
-        <activity android:name=".HuiYiWuLiaoDetail2Activity"/>
+        <activity android:name=".ppt.PptActivity" />
+        <activity android:name=".picture.tupiansucai.GalleryActivity" />
+        <activity android:name=".picture.tupiansucai.GalleryDetailActivity" />
+        <activity android:name=".picture.rongyuzixun.RongYUZiZhiDetailPictureActivity" />
+        <activity android:name=".picture.rongyuzixun.RongYuZiZhiDetailPdfActivity" />
+        <activity android:name=".picture.rongyuzixun.RongYuZiZhiDetailPdfShowActivity" />
+        <activity android:name=".picture.huiyiwuliao.HuiYiWuLiaoActivity" />
+        <activity android:name=".picture.huiyiwuliao.HuiYiWuLiaoDetailActivity"/>
+        <activity android:name=".picture.huiyiwuliao.HuiYiWuLiaoDetail2Activity"/>
     </application>
 
 </manifest>

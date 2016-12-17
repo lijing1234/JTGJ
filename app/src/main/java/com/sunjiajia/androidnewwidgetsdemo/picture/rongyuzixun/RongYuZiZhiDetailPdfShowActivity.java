@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun;
 
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -26,12 +26,15 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
+import com.sunjiajia.androidnewwidgetsdemo.R;
+
 import es.voghdev.pdfviewpager.library.PDFViewPager;
 import es.voghdev.pdfviewpager.library.adapter.PDFPagerAdapter;
 
 public class RongYuZiZhiDetailPdfShowActivity extends AppCompatActivity {
 
     PDFPagerAdapter adapter = null;
+    PDFViewPager pdfViewPager1;
     PDFViewPager pdfViewPager;
     Toolbar toolbar;
     @Override
@@ -118,9 +121,10 @@ public class RongYuZiZhiDetailPdfShowActivity extends AppCompatActivity {
 
         }
 
-
-        pdfViewPager = new PDFViewPager(this, geStorageDirectory());
+//        pdfViewPager1 = new PDFViewPager(this, geStorageDirectory());
         pdfViewPager = (PDFViewPager) findViewById(R.id.pdfViewPager);
+//        pdfViewPager.setId(R.id.pdfViewPager);
+
         adapter = new PDFPagerAdapter(this, geStorageDirectory());
         pdfViewPager.setAdapter(adapter);
         adapter.notifyDataSetChanged();

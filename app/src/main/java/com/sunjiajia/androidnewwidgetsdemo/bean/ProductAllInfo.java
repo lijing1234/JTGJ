@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.bean;
 
 import java.util.List;
 

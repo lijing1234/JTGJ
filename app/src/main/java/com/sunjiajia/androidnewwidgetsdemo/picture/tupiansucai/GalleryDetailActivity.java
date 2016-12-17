@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -36,6 +36,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.sunjiajia.androidnewwidgetsdemo.R;
 
 import java.util.ArrayList;
 import java.util.List;

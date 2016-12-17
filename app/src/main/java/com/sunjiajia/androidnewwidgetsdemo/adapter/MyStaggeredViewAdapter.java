@@ -26,11 +26,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
-import com.sunjiajia.androidnewwidgetsdemo.HttpModel;
-import com.sunjiajia.androidnewwidgetsdemo.ProductInfo;
+import com.sunjiajia.androidnewwidgetsdemo.model.HttpModel;
+import com.sunjiajia.androidnewwidgetsdemo.bean.ProductInfo;
 import com.sunjiajia.androidnewwidgetsdemo.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

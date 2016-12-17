@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.pdf.qiyezizhi;
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -25,6 +25,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+
+import com.sunjiajia.androidnewwidgetsdemo.R;
 
 import es.voghdev.pdfviewpager.library.PDFViewPager;
 import es.voghdev.pdfviewpager.library.adapter.PDFPagerAdapter;
@@ -43,7 +45,7 @@ public class QiyezixunPdfActivity extends AppCompatActivity {
         int posi = getIntent().getIntExtra("a", 1);
 //        Log.e("position", position);
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
-        toolbar.setTitle("pdf");
+        toolbar.setTitle("企业资质");
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

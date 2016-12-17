@@ -17,15 +17,15 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.picture.huiyiwuliao;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,11 +34,14 @@ import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
 
+import com.sunjiajia.androidnewwidgetsdemo.R;
+import com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryDetailActivity;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
+public class HuiYiWuLiaoDetailActivity extends AppCompatActivity {
     Gallery g = null;
     ArrayList<String> it = new ArrayList<String>();
     ;// 遍历符合条件的列表
@@ -67,7 +70,7 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/会议物料/公益讲座/01X展架";
+                FILE_NAME = "JT/Pictures/会议物料/店主培训会/07X展架";
 
                 break;
             case 1:
@@ -80,11 +83,11 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/会议物料/公益讲座/02参会证";
+                FILE_NAME = "JT/Pictures/会议物料/店主培训会/08参会证";
 
                 break;
             case 2:
-                toolbar.setTitle("公益讲座背景墙");
+                toolbar.setTitle("店长培训背景墙");
                 setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -93,7 +96,7 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/会议物料/公益讲座/03公益讲座背景墙";
+                FILE_NAME = "JT/Pictures/会议物料/店主培训会/09店长培训背景墙";
 
                 break;
             case 3:
@@ -106,11 +109,11 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/会议物料/公益讲座/04幻灯片背景";
+                FILE_NAME = "JT/Pictures/会议物料/店主培训会/10幻灯片背景";
 
                 break;
             case 4:
-                toolbar.setTitle("科普讲座门票");
+                toolbar.setTitle("结业证书");
                 setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -119,9 +122,33 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/会议物料/公益讲座/05科普讲座门票";
+                FILE_NAME = "JT/Pictures/会议物料/店主培训会/11结业证书";
                 break;
             case 5:
+                toolbar.setTitle("酒店温馨提示");
+                setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
+                FILE_NAME = "JT/Pictures/会议物料/店主培训会/12酒店温馨提示";
+                break;
+            case 6:
+                toolbar.setTitle("考核荣誉证书");
+                setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
+                FILE_NAME = "JT/Pictures/会议物料/店主培训会/13考核荣誉证书";
+                break;
+            case 7:
                 toolbar.setTitle("条幅");
                 setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -131,12 +158,12 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/会议物料/公益讲座/06条幅";
+                FILE_NAME = "JT/Pictures/会议物料/店主培训会/14条幅";
                 break;
         }
         g = (Gallery) findViewById(R.id.mygallery);
         //添加一个ImageAdapter并设置给Gallery对象
-        g.setAdapter(new HuiYiWuLiaoDetail2Activity.ImageAdapter(this, getSD()));
+        g.setAdapter(new HuiYiWuLiaoDetailActivity.ImageAdapter(this, getSD()));
         //设置一个itemclickListener并Toast被单击图片的位置
         g.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
@@ -144,7 +171,7 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
 //                Toast.makeText(GalleryActivity.this,
 //                        "序列：" + (position + 1) + "\n路径：" + it.get(position),
 //                        Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(HuiYiWuLiaoDetail2Activity.this, GalleryDetailActivity.class);
+                Intent intent = new Intent(HuiYiWuLiaoDetailActivity.this, GalleryDetailActivity.class);
                 intent.putExtra("a", it.get(position));
                 intent.putExtra("c",position);
                 intent.putStringArrayListExtra("b",  it);

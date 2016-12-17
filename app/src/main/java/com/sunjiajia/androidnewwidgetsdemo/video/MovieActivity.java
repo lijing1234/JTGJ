@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.video;
 
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -29,6 +29,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.bumptech.glide.Glide;
+import com.sunjiajia.androidnewwidgetsdemo.R;
 
 import java.io.File;
 

@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun;
 
 import android.content.Context;
 import android.content.Intent;
@@ -33,6 +33,9 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
+
+import com.sunjiajia.androidnewwidgetsdemo.R;
+import com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryDetailActivity;
 
 import java.io.File;
 import java.util.ArrayList;

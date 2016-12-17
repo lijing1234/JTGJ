@@ -17,11 +17,17 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.bean;
 
 /**
- * Created by lijing on 2016/img12/7.
+ * Created by lijing on 2016/img12/img13.
  */
 
-public class DataModel {
+public class Imageinfo {
+
+    public String imagename;
+
+
+    public int image;
+
 }

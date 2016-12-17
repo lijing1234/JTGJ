@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.ppt;
 
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +27,7 @@ import android.view.View;
 import android.webkit.WebView;
 
 import com.itsrts.pptviewer.PPTViewer;
+import com.sunjiajia.androidnewwidgetsdemo.R;
 
 
 public class PptActivity extends AppCompatActivity {
@@ -75,13 +76,13 @@ public class PptActivity extends AppCompatActivity {
             FILE_NAME = "/JT/ppt/06讲师训班前训.ppt";
 
         }else if (position.equals("6")){
-            FILE_NAME = "/JT/ppt/07讲师基本素质.ppt.ppt";
+            FILE_NAME = "/JT/ppt/07讲师基本素质.ppt";
 
         }else if (position.equals("7")){
             FILE_NAME = "/JT/ppt/08专业咨询需掌握的基础知识.ppt";
 
         }else if (position.equals("8")){
-            FILE_NAME = "/JT/ppt/09生态保养咨询过程中需掌握的技巧和方法.ppt";
+            FILE_NAME = "/JT/ppt/09生态保养咨询过程中需掌握的技巧.ppt";
 
         }else if (position.equals("9")){
             FILE_NAME = "/JT/ppt/10金天国际 基础训.ppt";

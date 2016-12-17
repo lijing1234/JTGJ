@@ -35,7 +35,18 @@ import android.view.ViewGroup;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyRecyclerViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MypdfRecyclerViewAdapter;
+import com.sunjiajia.androidnewwidgetsdemo.bean.Imageinfo;
+import com.sunjiajia.androidnewwidgetsdemo.bean.ProductAllInfo;
+import com.sunjiajia.androidnewwidgetsdemo.pdf.hangyedongtai.HangyedongtaiPdfActivity;
+import com.sunjiajia.androidnewwidgetsdemo.pdf.kepuyangsheng.PdfActivity;
+import com.sunjiajia.androidnewwidgetsdemo.pdf.qiyezizhi.QiyezixunPdfActivity;
+import com.sunjiajia.androidnewwidgetsdemo.picture.huiyiwuliao.HuiYiWuLiaoActivity;
+import com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun.RongYUZiZhiDetailPictureActivity;
+import com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun.RongYuZiZhiDetailPdfActivity;
+import com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryActivity;
+import com.sunjiajia.androidnewwidgetsdemo.ppt.PptActivity;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
+import com.sunjiajia.androidnewwidgetsdemo.video.MovieActivity;
 
 import java.util.ArrayList;
 import java.util.List;

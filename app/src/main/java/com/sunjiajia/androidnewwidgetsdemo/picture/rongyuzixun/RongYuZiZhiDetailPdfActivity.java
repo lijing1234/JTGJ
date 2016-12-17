@@ -17,19 +17,19 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun;
 
 import android.content.Intent;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 
 
+import com.sunjiajia.androidnewwidgetsdemo.bean.Imageinfo;
+import com.sunjiajia.androidnewwidgetsdemo.R;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MypdfRecyclerViewAdapter;
 
 import java.util.ArrayList;
