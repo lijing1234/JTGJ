@@ -46,7 +46,7 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
     ArrayList<String> it = new ArrayList<String>();
     ;// 遍历符合条件的列表
     public String actionUrl = null;
-    private String FILE_NAME = "Pictures/图片素材/01办公环境";
+    private String FILE_NAME = "Pictures/图片素材/pc01";
 
     private final String SD_PATH = android.os.Environment
 

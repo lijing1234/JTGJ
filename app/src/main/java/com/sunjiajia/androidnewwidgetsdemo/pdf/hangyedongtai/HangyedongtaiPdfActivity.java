@@ -61,111 +61,111 @@ public class HangyedongtaiPdfActivity extends AppCompatActivity {
 
                 break;
             case 1:
-                FILE_NAME = "/JT/pdf/行业动态/27“治未病”是趋势，将影响13亿国人生活！.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd27.pdf";
 
                 break;
             case 2:
 
-                FILE_NAME = "/JT/pdf/行业动态/26女性生殖健康问题有多严重？生殖健康产业市场空间有多大？.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd26.pdf";
                 break;
             case 3:
 
-                FILE_NAME = "/JT/pdf/行业动态/25一等人在保养、二等人健身锻炼、三等人进医院！.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd25.pdf";
                 break;
             case 4:
-                FILE_NAME = "/JT/pdf/行业动态/24十八个著名的心理学效应，生活中你一定用的到！.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd24.pdf";
 
                 break;
             case 5:
-                FILE_NAME = "/JT/pdf/行业动态/23注意：大健康已上升为国家战略！.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd23.pdf";
 
                 break;
             case 6:
-                FILE_NAME = "/JT/pdf/行业动态/22为什么女性生殖健康产业是未来十年最有前景的项目？.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd22.pdf";
 
                 break;
             case 7:
-                FILE_NAME = "/JT/pdf/行业动态/21马云进军大健康产业，你看到机会了吗.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd21.pdf";
 
                 break;
             case 8:
-                FILE_NAME = "/JT/pdf/行业动态/20治未病提上国家议程，大健康产业将迎来资本盛宴！.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd20.pdf";
 
                 break;
             case 9:
-                FILE_NAME = "/JT/pdf/行业动态/19大健康产业为什么将成热门投资领域？.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd19.pdf";
 
                 break;
             case 10:
-                FILE_NAME = "/JT/pdf/行业动态/18成为风潮的大健康产业，好在哪里？.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd18.pdf";
 
                 break;
             case 11:
-                FILE_NAME = "/JT/pdf/行业动态/17凭什么说中国大健康产业正在经历黄金时期？.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd17.pdf";
 
                 break;
             case 12:
-                FILE_NAME = "/JT/pdf/行业动态/16健康需求消费或将爆发，新兴健康产业成消费爆发点！.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd16.pdf";
 
                 break;
             case 13:
-                FILE_NAME = "/JT/pdf/行业动态/15习大大、李总理等这样评价健康产业！.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd15.pdf";
 
                 break;
             case 14:
 
-                FILE_NAME = "/JT/pdf/行业动态/14政治局审议通过”健康中国2030”纲要.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd14.pdf";
                 break;
             case 15:
 
-                FILE_NAME = "/JT/pdf/行业动态/13这样的团队，将无所不能！.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd13.pdf";
                 break;
             case 16:
 
-                FILE_NAME = "/JT/pdf/行业动态/12赢在金天——责任篇.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd12.pdf";
                 break;
             case 17:
 
-                FILE_NAME = "/JT/pdf/行业动态/11赢在金天——保障篇.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd11.pdf";
                 break;
             case 18:
-                FILE_NAME = "/JT/pdf/行业动态/10赢在金天——实力篇（二）.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd10.pdf";
 
                 break;
             case 19:
 
-                FILE_NAME = "/JT/pdf/行业动态/09赢在金天——实力篇（一）.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd09.pdf";
                 break;
             case 20:
 
-                FILE_NAME = "/JT/pdf/行业动态/08赢在金天——创新篇.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd08.pdf";
                 break;
             case 21:
-                FILE_NAME = "/JT/pdf/行业动态/07赢在金天——趋势篇.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd07.pdf";
 
                 break;
             case 22:
-                FILE_NAME = "/JT/pdf/行业动态/06未来五年，团队+系统+趋势=成功.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd06.pdf";
 
                 break;
             case 23:
 
-                FILE_NAME = "/JT/pdf/行业动态/05全民健康升至国家战略！拒绝直销大健康产业，就是拒绝财富和健康！.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd05.pdf";
                 break;
             case 24:
 
-                FILE_NAME = "/JT/pdf/行业动态/04老百姓关心的健康问题，总书记这样说 ——专家解读习总书记在全国卫生与健康大会上讲话精神.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd04.pdf";
                 break;
             case 25:
 
-                FILE_NAME = "/JT/pdf/行业动态/03从习大大和李总理在“全国卫生与健康大会”上的讲话剖析健康产业发展新趋势.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd03.pdf";
                 break;
             case 26:
-                FILE_NAME = "/JT/pdf/行业动态/02成功的直销人必须具备的六种能力.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd02.pdf";
 
                 break;
             case 27:
-                FILE_NAME = "/JT/pdf/行业动态/01“大健康产业”蛋糕有多大？一组数据告诉你！.pdf";
+                FILE_NAME = "/JT/pdf/行业动态/hd01.pdf";
 
                 break;
 

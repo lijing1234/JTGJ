@@ -47,7 +47,7 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity {
     ArrayList<String> it = new ArrayList<String>();
     ;// 遍历符合条件的列表
     public String actionUrl = null;
-    private String FILE_NAME = "Pictures/图片素材/01办公环境";
+    private String FILE_NAME = "Pictures/图片素材/pc01";
 
     private final String SD_PATH = android.os.Environment
 
@@ -99,7 +99,7 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity {
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/荣誉资质/03企业荣誉";
+                FILE_NAME = "JT/Pictures/荣誉资质/rz03";
 
                 break;
             case 3:
@@ -112,7 +112,7 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity {
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/荣誉资质/02企业经营资质";
+                FILE_NAME = "JT/Pictures/荣誉资质/rz02";
 
                 break;
             case 4:
@@ -125,7 +125,7 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity {
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/荣誉资质/01企业商标专利";
+                FILE_NAME = "JT/Pictures/荣誉资质/rz01";
                 break;
         }
         g = (Gallery) findViewById(R.id.mygallery);
