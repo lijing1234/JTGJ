@@ -26,8 +26,14 @@
     tools:context="com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryActivity"
     android:orientation="vertical">
     <include layout="@layout/toolbar" />
-    <Gallery
-        android:id="@+id/mygallery"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/id_galleryrecyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></Gallery>
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        />
+    <!--<Gallery-->
+        <!--android:id="@+id/mygallery"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"></Gallery>-->
 </LinearLayout>

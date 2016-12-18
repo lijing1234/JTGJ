@@ -26,6 +26,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,13 +37,15 @@ import android.widget.Gallery;
 import android.widget.ImageView;
 
 import com.sunjiajia.androidnewwidgetsdemo.R;
+import com.sunjiajia.androidnewwidgetsdemo.adapter.MyGalleryRecyclerViewAdapter;
+import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryDetailActivity;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
+public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity implements MyGalleryRecyclerViewAdapter.OnItemClickListener{
     Gallery g = null;
     ArrayList<String> it = new ArrayList<String>();
     ;// 遍历符合条件的列表
@@ -52,12 +56,18 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
 
             .getExternalStorageDirectory().getAbsolutePath();
     Toolbar toolbar;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private MyGalleryRecyclerViewAdapter mRecyclerViewAdapter;
+    private MyStaggeredViewAdapter mStaggeredAdapter;
+    private static final int SPAN_COUNT = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
         int posi = getIntent().getIntExtra("a", 1);
         toolbar = (Toolbar) findViewById(R.id.id_toolbar);
+        mRecyclerView = (RecyclerView) findViewById(R.id.id_galleryrecyclerview);
 
         switch (posi) {
             case 0:
@@ -137,23 +147,15 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
                 FILE_NAME = "JT/Pictures/会议物料/公益讲座/06条幅";
                 break;
         }
-        g = (Gallery) findViewById(R.id.mygallery);
-        //添加一个ImageAdapter并设置给Gallery对象
-        g.setAdapter(new HuiYiWuLiaoDetail2Activity.ImageAdapter(this, getSD()));
-        //设置一个itemclickListener并Toast被单击图片的位置
-        g.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-//                Toast.makeText(GalleryActivity.this,
-//                        "序列：" + (position + 1) + "\n路径：" + it.get(position),
-//                        Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(HuiYiWuLiaoDetail2Activity.this, GalleryDetailActivity.class);
-                intent.putExtra("a", it.get(position));
-                intent.putExtra("c",position);
-                intent.putStringArrayListExtra("b",  it);
-                startActivity(intent);
-            }
-        });
+        mLayoutManager =
+                new StaggeredGridLayoutManager(SPAN_COUNT, StaggeredGridLayoutManager.VERTICAL);
+
+        mRecyclerViewAdapter = new MyGalleryRecyclerViewAdapter(getSD(), this);
+        mRecyclerViewAdapter.setOnItemClickListener(this);
+        mRecyclerView.setAdapter(mRecyclerViewAdapter);
+        mRecyclerViewAdapter.notifyDataSetChanged();
+        mRecyclerView.setLayoutManager(mLayoutManager);
+//
     }
     //遍历SD卡中某一路径下指定类型的图片
     private List<String> getSD() {
@@ -184,52 +186,19 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity {
         return re;
     }
 
-    //改写BaseAdapter自定义一ImageAdapter class
-    public class ImageAdapter extends BaseAdapter {
-        int mGalleryItemBackground;
-        private Context mContext;
-        private List<String> lis;
-
-        public ImageAdapter(Context c, List<String> li) {
-            mContext = c;
-            lis = li;
-            //使用在res/values/aatrs.xml中的<declare-styleable>定义
-            TypedArray a = obtainStyledAttributes(R.styleable.Gallery);
-            //取得Gallery属性
-            mGalleryItemBackground = a.getResourceId(
-                    R.styleable.Gallery_android_galleryItemBackground, 0);
-            //让对象的styleable属性能够反复使用
-            a.recycle();
-        }
-
-        //重写的方法，返回图片数目
-        public int getCount() {
-            return lis.size();
-        }
-
-        //重写的方法，返回图片的数组id
-        public Object getItem(int position) {
-            return position;
-        }
-
-        public long getItemId(int position) {
-            return position;
-        }
-
-        //重写的方法，返回一View对象
-        public View getView(int position, View convertView, ViewGroup parent) {
-            //产生ImageView对象
-            ImageView i = new ImageView(mContext);
-            //设置图片给ImageView对象
-            Bitmap bm = BitmapFactory.decodeFile(lis.get(position).toString());
-            i.setImageBitmap(bm);
-            //重新设置图片的宽度
-            i.setScaleType(ImageView.ScaleType.FIT_XY);
-            //重新设置Layout的宽度
-            i.setLayoutParams(new Gallery.LayoutParams(1000, 800));
-            //设置Callery背景图
-            i.setBackgroundResource(mGalleryItemBackground);
-            return i;
-        }
+    @Override
+    public void onItemClick(View view, int position) {
+        Intent intent = new Intent(HuiYiWuLiaoDetail2Activity.this, GalleryDetailActivity.class);
+        intent.putExtra("a", it.get(position));
+        intent.putExtra("c",position);
+        intent.putStringArrayListExtra("b",  it);
+        startActivity(intent);
     }
+
+    @Override
+    public void onItemLongClick(View view, int position) {
+
+    }
+
+
 }

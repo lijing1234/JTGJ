@@ -65,7 +65,7 @@ public class PptActivity extends AppCompatActivity {
             FILE_NAME = "/JT/ppt/10金天国际 基础训.ppt";
         }else if (position.equals("2")){
 
-            FILE_NAME = "/JT/ppt/09生态保养咨询过程中需掌握的技巧.ppt";
+            FILE_NAME = "/JT/ppt/09生态保养咨询过程中需掌握的技巧和方法.ppt";
         }else if (position.equals("3")){
             FILE_NAME = "/JT/ppt/08专业咨询需掌握的基础知识.ppt";
 
@@ -82,7 +82,7 @@ public class PptActivity extends AppCompatActivity {
             FILE_NAME = "/JT/ppt/04十大举措.ppt";
 
         }else if (position.equals("8")){
-            FILE_NAME = "/JT/ppt/03模式篇.pptx";
+            FILE_NAME = "/JT/ppt/03模式篇.ppt";
 
         }else if (position.equals("9")){
             FILE_NAME = "/JT/ppt/02产品篇.ppt";
