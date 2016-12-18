@@ -46,7 +46,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HuiYiWuLiaoDetailActivity extends AppCompatActivity implements MyGalleryRecyclerViewAdapter.OnItemClickListener{
+public class HuiYiWuLiaoDetailActivity extends AppCompatActivity implements MyGalleryRecyclerViewAdapter.OnItemClickListener {
     Gallery g = null;
     ArrayList<String> it = new ArrayList<String>();
     ;// 遍历符合条件的列表
@@ -63,6 +63,7 @@ public class HuiYiWuLiaoDetailActivity extends AppCompatActivity implements MyGa
     private MyGalleryRecyclerViewAdapter mRecyclerViewAdapter;
     private MyStaggeredViewAdapter mStaggeredAdapter;
     private static final int SPAN_COUNT = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -183,6 +184,7 @@ public class HuiYiWuLiaoDetailActivity extends AppCompatActivity implements MyGa
         mRecyclerView.setLayoutManager(mLayoutManager);
 
     }
+
     //遍历SD卡中某一路径下指定类型的图片
     private List<String> getSD() {
 
@@ -216,8 +218,8 @@ public class HuiYiWuLiaoDetailActivity extends AppCompatActivity implements MyGa
     public void onItemClick(View view, int position) {
         Intent intent = new Intent(HuiYiWuLiaoDetailActivity.this, GalleryDetailActivity.class);
         intent.putExtra("a", it.get(position));
-        intent.putExtra("c",position);
-        intent.putStringArrayListExtra("b",  it);
+        intent.putExtra("c", position);
+        intent.putStringArrayListExtra("b", it);
         startActivity(intent);
     }
 

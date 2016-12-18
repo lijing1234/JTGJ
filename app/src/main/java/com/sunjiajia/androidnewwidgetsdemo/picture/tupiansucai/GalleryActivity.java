@@ -43,7 +43,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyclerViewAdapter.OnItemClickListener{
+public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyclerViewAdapter.OnItemClickListener {
     Gallery g = null;
     ArrayList<String> it = new ArrayList<String>();
     ;// 遍历符合条件的列表
@@ -53,7 +53,6 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
     private final String SD_PATH = android.os.Environment
 
             .getExternalStorageDirectory().getAbsolutePath();
-
 
 
     private RecyclerView mRecyclerView;
@@ -66,8 +65,8 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
-        String  position = getIntent().getStringExtra("a");
-        Log.e("position",position);
+        String position = getIntent().getStringExtra("a");
+        Log.e("position", position);
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
         mRecyclerView = (RecyclerView) findViewById(R.id.id_galleryrecyclerview);
         toolbar.setTitle("图片");
@@ -79,33 +78,32 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
                 finish();
             }
         });
-        if(position.equals("0")){
+        if (position.equals("0")) {
 
             FILE_NAME = "JT/Pictures/图片素材/08金天国际25周年梦想盛典暨公益筑梦远航";
 
-        }else if (position.equals("1")){
+        } else if (position.equals("1")) {
 
             FILE_NAME = "JT/Pictures/图片素材/07金天国际宿迁智能化产业园落成典礼";
-        }else if (position.equals("2")){
+        } else if (position.equals("2")) {
 
             FILE_NAME = "JT/Pictures/图片素材/06金天国际2015年度优秀领导人表彰暨获牌盛典";
-        }else if (position.equals("3")){
+        } else if (position.equals("3")) {
             FILE_NAME = "JT/Pictures/图片素材/05金天国际直销启动暨“和谐与活力”公益盛典";
 
-        }else if (position.equals("4")){
+        } else if (position.equals("4")) {
             FILE_NAME = "JT/Pictures/图片素材/04培训基地";
 
-        }else if (position.equals("5")){
+        } else if (position.equals("5")) {
             FILE_NAME = "JT/Pictures/图片素材/03星湖半岛";
 
-        }else if (position.equals("6")){
+        } else if (position.equals("6")) {
 
             FILE_NAME = "JT/Pictures/图片素材/02生产基地";
-        }else if (position.equals("7")){
+        } else if (position.equals("7")) {
             FILE_NAME = "JT/Pictures/图片素材/01办公环境";
 
         }
-
 
 
         mLayoutManager =
@@ -151,17 +149,16 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
     @Override
     public void onItemClick(View view, int position) {
         Intent intent = new Intent(GalleryActivity.this, GalleryDetailActivity.class);
-                intent.putExtra("a", it.get(position));
-                intent.putExtra("c",position);
-                intent.putStringArrayListExtra("b",  it);
-                startActivity(intent);
+        intent.putExtra("a", it.get(position));
+        intent.putExtra("c", position);
+        intent.putStringArrayListExtra("b", it);
+        startActivity(intent);
     }
 
     @Override
     public void onItemLongClick(View view, int position) {
 
     }
-
 
 
 }

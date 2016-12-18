@@ -58,8 +58,8 @@ public class WelcomeActivity extends AppCompatActivity {
                 } else {
                     //第二次或以后,进入主页面
 
-                        Intent intent = new Intent(WelcomeActivity.this, MyActivity.class);
-                        startActivity(intent);
+                    Intent intent = new Intent(WelcomeActivity.this, MyActivity.class);
+                    startActivity(intent);
 
                 }
                 finish();
@@ -68,7 +68,6 @@ public class WelcomeActivity extends AppCompatActivity {
             ;
         }.sendEmptyMessageDelayed(0, 5000);
     }
-
 
 
     @Override

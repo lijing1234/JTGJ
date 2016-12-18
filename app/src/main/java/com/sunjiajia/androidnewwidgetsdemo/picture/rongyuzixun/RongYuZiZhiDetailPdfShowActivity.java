@@ -37,6 +37,7 @@ public class RongYuZiZhiDetailPdfShowActivity extends AppCompatActivity {
     PDFViewPager pdfViewPager1;
     PDFViewPager pdfViewPager;
     Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +47,7 @@ public class RongYuZiZhiDetailPdfShowActivity extends AppCompatActivity {
 
         int posi = getIntent().getIntExtra("a", 1);
 //        Log.e("position", position);
-         toolbar = (Toolbar) findViewById(R.id.id_toolbar);
+        toolbar = (Toolbar) findViewById(R.id.id_toolbar);
 
 
         switch (posi) {

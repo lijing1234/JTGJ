@@ -32,11 +32,12 @@ import es.voghdev.pdfviewpager.library.remote.DownloadFileUrlConnectionImpl;
 
 public class SettingActivity extends AppCompatActivity {
     DownloadFile downloadFile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-        Toolbar toolbar= (Toolbar) findViewById(R.id.id_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
         toolbar.setTitle("设置");
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

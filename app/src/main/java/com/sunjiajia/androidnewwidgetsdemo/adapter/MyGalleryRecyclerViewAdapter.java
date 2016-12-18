@@ -59,7 +59,7 @@ public class MyGalleryRecyclerViewAdapter extends RecyclerView.Adapter<MyRecycle
 
     public Context mContext;
     public List<String> mDatas;
-//    List<ProductInfo> list;
+    //    List<ProductInfo> list;
     List<Integer> list;
     public LayoutInflater mLayoutInflater;
 

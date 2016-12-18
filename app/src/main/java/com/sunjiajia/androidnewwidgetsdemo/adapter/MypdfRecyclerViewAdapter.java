@@ -59,12 +59,12 @@ public class MypdfRecyclerViewAdapter extends RecyclerView.Adapter<MypdfRecycler
     }
 
     public Context mContext;
-//    List<ProductInfo> list;
+    //    List<ProductInfo> list;
     List<Imageinfo> list;
     Map<String, Object> form;
     public LayoutInflater mLayoutInflater;
 
-    public MypdfRecyclerViewAdapter( List<Imageinfo> list, Context mContext) {
+    public MypdfRecyclerViewAdapter(List<Imageinfo> list, Context mContext) {
         this.mContext = mContext;
         this.list = list;
         mLayoutInflater = LayoutInflater.from(mContext);

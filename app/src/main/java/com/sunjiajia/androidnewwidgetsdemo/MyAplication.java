@@ -34,22 +34,22 @@ import java.util.logging.Level;
  * Created by lijing on 2016/img12/8.
  */
 
-public class MyAplication extends Application{
+public class MyAplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
 
-        HttpHeaders headers=new HttpHeaders();
-        headers.put("","");
-        headers.put("","");
-        HttpParams params=new HttpParams();
-        params.put("","");
+        HttpHeaders headers = new HttpHeaders();
+        headers.put("", "");
+        headers.put("", "");
+        HttpParams params = new HttpParams();
+        params.put("", "");
         OkGo.init(this);
 
 
         try {
             OkGo.getInstance()
-                    .debug("OKGo", Level.INFO,true)
+                    .debug("OKGo", Level.INFO, true)
                     .setConnectTimeout(OkGo.DEFAULT_MILLISECONDS)
                     .setReadTimeOut(OkGo.DEFAULT_MILLISECONDS)
                     .setWriteTimeOut(OkGo.DEFAULT_MILLISECONDS)
@@ -61,10 +61,9 @@ public class MyAplication extends Application{
                     .addCommonHeaders(headers)
                     .addCommonParams(params);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
 
 
     }

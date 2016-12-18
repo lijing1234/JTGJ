@@ -31,14 +31,14 @@ import com.sunjiajia.androidnewwidgetsdemo.R;
  */
 public class MypdfRecyclerViewHolder extends RecyclerView.ViewHolder {
 
-  public ImageView mimage;
-  public TextView mtv;
+    public ImageView mimage;
+    public TextView mtv;
 //  public TextView mtv1;
 
-  public MypdfRecyclerViewHolder(View itemView) {
-    super(itemView);
-    mimage = (ImageView) itemView.findViewById(R.id.id_image);
-    mtv= (TextView) itemView.findViewById(R.id.id_tv);
+    public MypdfRecyclerViewHolder(View itemView) {
+        super(itemView);
+        mimage = (ImageView) itemView.findViewById(R.id.id_image);
+        mtv = (TextView) itemView.findViewById(R.id.id_tv);
 //    mtv1= (TextView) itemView.findViewById(R.id.id_tv1);
-  }
+    }
 }

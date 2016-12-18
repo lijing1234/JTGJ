@@ -193,7 +193,6 @@ public class MyFragment extends Fragment
                 movie13.image = R.drawable.img13;
 
 
-
                 movielist = new ArrayList<Imageinfo>();
                 movielist.add(0, movie1);
                 movielist.add(1, movie2);
@@ -563,7 +562,6 @@ public class MyFragment extends Fragment
                 hangyedongt28.image = R.drawable.hd28;
 
 
-
                 list1 = new ArrayList<Imageinfo>();
                 list1.add(0, hangyedongtai1);
                 list1.add(1, hangyedongtai2);
@@ -838,8 +836,6 @@ public class MyFragment extends Fragment
                 picture8.image = R.drawable.pc08;
 
 
-
-
                 list1 = new ArrayList<Imageinfo>();
                 list1.add(0, picture1);
                 list1.add(1, picture2);
@@ -878,9 +874,6 @@ public class MyFragment extends Fragment
                 rngyuzixun5.image = R.drawable.rz05;
 
 
-
-
-
                 list1 = new ArrayList<Imageinfo>();
                 list1.add(0, rngyuzixun1);
                 list1.add(1, rngyuzixun2);
@@ -888,8 +881,6 @@ public class MyFragment extends Fragment
                 list1.add(3, rngyuzixun4);
                 list1.add(4, rngyuzixun5);
                 Collections.reverse(list1);
-
-
 
 
                 mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
@@ -1003,12 +994,12 @@ public class MyFragment extends Fragment
                 startActivity(intent4);
                 break;
             case RONYUZIXUN_LIST:
-                if (position==0){
+                if (position == 0) {
 
                     Intent intent8 = new Intent(getActivity(), RongYuZiZhiDetailPdfActivity.class);
 
                     startActivity(intent8);
-                }else {
+                } else {
                     Intent intent5 = new Intent(getActivity(), RongYUZiZhiDetailPictureActivity.class);
                     intent5.putExtra("a", position);
 

@@ -35,12 +35,13 @@ import com.sunjiajia.androidnewwidgetsdemo.adapter.MypdfRecyclerViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RongYuZiZhiDetailPdfActivity extends AppCompatActivity implements  MypdfRecyclerViewAdapter.OnItemClickListener{
+public class RongYuZiZhiDetailPdfActivity extends AppCompatActivity implements MypdfRecyclerViewAdapter.OnItemClickListener {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     List<Imageinfo> list1;
     MypdfRecyclerViewAdapter mypdfRecyclerViewAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,8 +62,7 @@ public class RongYuZiZhiDetailPdfActivity extends AppCompatActivity implements  
                 finish();
             }
         });
-        mRecyclerView = (RecyclerView)findViewById(R.id.id_rongyurecyclerview);
-
+        mRecyclerView = (RecyclerView) findViewById(R.id.id_rongyurecyclerview);
 
 
         Imageinfo hangyedongtai1 = new Imageinfo();
@@ -96,7 +96,6 @@ public class RongYuZiZhiDetailPdfActivity extends AppCompatActivity implements  
     }
 
 
-
     @Override
     public void onItemClick(View view, int position) {
 
@@ -107,9 +106,6 @@ public class RongYuZiZhiDetailPdfActivity extends AppCompatActivity implements  
 
 
         startActivity(intent);
-
-
-
 
 
     }

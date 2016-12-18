@@ -47,7 +47,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implements MyGalleryRecyclerViewAdapter.OnItemClickListener{
+public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implements MyGalleryRecyclerViewAdapter.OnItemClickListener {
     Gallery g = null;
     ArrayList<String> it = new ArrayList<String>();
     ;// 遍历符合条件的列表
@@ -64,14 +64,15 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implemen
     private MyGalleryRecyclerViewAdapter mRecyclerViewAdapter;
     private MyStaggeredViewAdapter mStaggeredAdapter;
     private static final int SPAN_COUNT = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
         int posi = getIntent().getIntExtra("a", 1);
 
-        Log.e("posi",String.valueOf(posi));
-         toolbar = (Toolbar) findViewById(R.id.id_toolbar);
+        Log.e("posi", String.valueOf(posi));
+        toolbar = (Toolbar) findViewById(R.id.id_toolbar);
         mRecyclerView = (RecyclerView) findViewById(R.id.id_galleryrecyclerview);
 
         switch (posi) {
@@ -185,8 +186,8 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implemen
     public void onItemClick(View view, int position) {
         Intent intent = new Intent(RongYUZiZhiDetailPictureActivity.this, GalleryDetailActivity.class);
         intent.putExtra("a", it.get(position));
-        intent.putExtra("c",position);
-        intent.putStringArrayListExtra("b",  it);
+        intent.putExtra("c", position);
+        intent.putStringArrayListExtra("b", it);
         startActivity(intent);
     }
 
@@ -194,7 +195,6 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implemen
     public void onItemLongClick(View view, int position) {
 
     }
-
 
 
 }
