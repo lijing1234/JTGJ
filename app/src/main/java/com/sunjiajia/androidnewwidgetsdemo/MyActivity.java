@@ -36,7 +36,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.lzy.okgo.OkGo;
+//import com.lzy.okgo.OkGo;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyViewPagerAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 
@@ -248,6 +248,6 @@ public class MyActivity extends AppCompatActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        OkGo.getInstance().cancelTag(this);
+//        OkGo.getInstance().cancelTag(this);
     }
 }

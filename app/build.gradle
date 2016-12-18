@@ -18,7 +18,7 @@
  */
 
 apply plugin: 'com.android.application'
-apply plugin: 'me.tatarka.retrolambda'
+//apply plugin: 'me.tatarka.retrolambda'
 
 android {
   compileSdkVersion 24
@@ -37,10 +37,10 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
+//  compileOptions {
+//    sourceCompatibility JavaVersion.VERSION_1_8
+//    targetCompatibility JavaVersion.VERSION_1_8
+//  }
 }
 
 dependencies {
@@ -52,16 +52,16 @@ dependencies {
   compile 'fm.jiecao:jiecaovideoplayer:4.8.2'
   compile 'com.github.bumptech.glide:glide:3.5.2'
   compile 'es.voghdev.pdfviewpager:library:1.0.1'
-  compile 'com.squareup.okhttp3:okhttp:3.5.0'
-  compile 'com.squareup.okio:okio:1.img11.0'
-  compile 'com.lzy.net:okgo:+'
+//  compile 'com.squareup.okhttp3:okhttp:3.5.0'
+//  compile 'com.squareup.okio:okio:1.img11.0'
+//  compile 'com.lzy.net:okgo:+'
+//  //版本号使用 + 可以自动引用最新版
+//  compile 'com.lzy.net:okrx:+'
+//  //版本号使用 + 可以自动引用最新版
+//  compile 'com.lzy.net:okserver:+'
   //版本号使用 + 可以自动引用最新版
-  compile 'com.lzy.net:okrx:+'
-  //版本号使用 + 可以自动引用最新版
-  compile 'com.lzy.net:okserver:+'
-  //版本号使用 + 可以自动引用最新版
-  compile 'com.google.guava:guava:20.0'
+//  compile 'com.google.guava:guava:20.0'
   compile files('libs/rop-1.0.7-SNAPSHOT.jar')
-  compile 'com.alibaba:fastjson:1.2.21'
+//  compile 'com.alibaba:fastjson:1.2.21'
   compile files('libs/itsrts-pptviewer.jar')
 }

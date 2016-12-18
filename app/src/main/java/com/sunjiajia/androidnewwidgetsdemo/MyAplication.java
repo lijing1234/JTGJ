@@ -21,12 +21,12 @@ package com.sunjiajia.androidnewwidgetsdemo;
 
 import android.app.Application;
 
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.cache.CacheEntity;
-import com.lzy.okgo.cache.CacheMode;
-import com.lzy.okgo.cookie.store.PersistentCookieStore;
-import com.lzy.okgo.model.HttpHeaders;
-import com.lzy.okgo.model.HttpParams;
+//import com.lzy.okgo.OkGo;
+//import com.lzy.okgo.cache.CacheEntity;
+//import com.lzy.okgo.cache.CacheMode;
+//import com.lzy.okgo.cookie.store.PersistentCookieStore;
+//import com.lzy.okgo.model.HttpHeaders;
+//import com.lzy.okgo.model.HttpParams;
 
 import java.util.logging.Level;
 
@@ -39,31 +39,31 @@ public class MyAplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.put("", "");
-        headers.put("", "");
-        HttpParams params = new HttpParams();
-        params.put("", "");
-        OkGo.init(this);
-
-
-        try {
-            OkGo.getInstance()
-                    .debug("OKGo", Level.INFO, true)
-                    .setConnectTimeout(OkGo.DEFAULT_MILLISECONDS)
-                    .setReadTimeOut(OkGo.DEFAULT_MILLISECONDS)
-                    .setWriteTimeOut(OkGo.DEFAULT_MILLISECONDS)
-                    .setCacheMode(CacheMode.NO_CACHE)
-                    .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE)
-                    .setRetryCount(3)
-                    .setCookieStore(new PersistentCookieStore())
-                    .setCertificates()
-                    .addCommonHeaders(headers)
-                    .addCommonParams(params);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.put("", "");
+//        headers.put("", "");
+//        HttpParams params = new HttpParams();
+//        params.put("", "");
+//        OkGo.init(this);
+//
+//
+//        try {
+//            OkGo.getInstance()
+//                    .debug("OKGo", Level.INFO, true)
+//                    .setConnectTimeout(OkGo.DEFAULT_MILLISECONDS)
+//                    .setReadTimeOut(OkGo.DEFAULT_MILLISECONDS)
+//                    .setWriteTimeOut(OkGo.DEFAULT_MILLISECONDS)
+//                    .setCacheMode(CacheMode.NO_CACHE)
+//                    .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE)
+//                    .setRetryCount(3)
+//                    .setCookieStore(new PersistentCookieStore())
+//                    .setCertificates()
+//                    .addCommonHeaders(headers)
+//                    .addCommonParams(params);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 
     }
