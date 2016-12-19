@@ -72,6 +72,7 @@
         <activity android:name=".picture.huiyiwuliao.HuiYiWuLiaoActivity" />
         <activity android:name=".picture.huiyiwuliao.HuiYiWuLiaoDetailActivity"/>
         <activity android:name=".picture.huiyiwuliao.HuiYiWuLiaoDetail2Activity"/>
+        <activity android:name=".picture.huiyiwuliao.HuiyiwuliaoDetailshowActivity"/>
     </application>
 
 </manifest>

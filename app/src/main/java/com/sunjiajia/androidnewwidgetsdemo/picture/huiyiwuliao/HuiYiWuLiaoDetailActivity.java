@@ -216,7 +216,7 @@ public class HuiYiWuLiaoDetailActivity extends AppCompatActivity implements MyGa
 
     @Override
     public void onItemClick(View view, int position) {
-        Intent intent = new Intent(HuiYiWuLiaoDetailActivity.this, GalleryDetailActivity.class);
+        Intent intent = new Intent(HuiYiWuLiaoDetailActivity.this, HuiyiwuliaoDetailshowActivity.class);
         intent.putExtra("a", it.get(position));
         intent.putExtra("c", position);
         intent.putStringArrayListExtra("b", it);

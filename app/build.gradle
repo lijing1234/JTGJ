@@ -52,6 +52,7 @@ dependencies {
   compile 'fm.jiecao:jiecaovideoplayer:4.8.2'
   compile 'com.github.bumptech.glide:glide:3.5.2'
   compile 'es.voghdev.pdfviewpager:library:1.0.1'
+  compile 'com.bm.photoview:library:1.4.1'
 //  compile 'com.squareup.okhttp3:okhttp:3.5.0'
 //  compile 'com.squareup.okio:okio:1.img11.0'
 //  compile 'com.lzy.net:okgo:+'
@@ -64,4 +65,5 @@ dependencies {
   compile files('libs/rop-1.0.7-SNAPSHOT.jar')
 //  compile 'com.alibaba:fastjson:1.2.21'
   compile files('libs/itsrts-pptviewer.jar')
+
 }

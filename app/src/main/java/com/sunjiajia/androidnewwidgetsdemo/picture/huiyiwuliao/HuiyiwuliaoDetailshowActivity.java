@@ -17,47 +17,47 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai;
+package com.sunjiajia.androidnewwidgetsdemo.picture.huiyiwuliao;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.bm.library.PhotoView;
 import com.bumptech.glide.Glide;
 import com.sunjiajia.androidnewwidgetsdemo.R;
+import com.sunjiajia.androidnewwidgetsdemo.adapter.MyRecyclerViewHolder;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class GalleryDetailActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
+public class HuiyiwuliaoDetailshowActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
     ImageView iv;
     ArrayList<String> infoList = new ArrayList<String>();
     ViewPager vp;
     int width;
+    public LayoutInflater mLayoutInflater;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gallery_detail);
+        setContentView(R.layout.activity_hui_yi_wu_liao_detail);
         WindowManager wm = (WindowManager) this
                 .getSystemService(Context.WINDOW_SERVICE);
         width = wm.getDefaultDisplay().getWidth();
         int height = wm.getDefaultDisplay().getHeight();
+        mLayoutInflater = LayoutInflater.from(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
         toolbar.setTitle("图片");
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
@@ -133,26 +133,30 @@ public class GalleryDetailActivity extends AppCompatActivity implements ViewPage
         // 当要显示的图片可以进行缓存的时候，会调用这个方法进行显示图片的初始化，我们将要显示的ImageView加入到ViewGroup中，然后作为返回值返回即可
         @Override
         public Object instantiateItem(ViewGroup view, int position) {
+
+
+
+
+
             PhotoView imageView = new PhotoView(mContext);
             imageView.enable();
             imageView.setImageResource(R.drawable.img01);
             imageView.setAdjustViewBounds(true);
-//            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            imageView.setMaxScale(5);
 
-            imageView.setLayoutParams(params);
-            imageView.setMaxWidth(width);
-            imageView.setMaxHeight(width * 10);
             //设置图片给ImageView对象
             Glide.with(mContext)
                     .load(lis.get(position).toString())
-                    .centerCrop()
-                    .placeholder(R.drawable.loading_4)
                     .fitCenter()
+                    .placeholder(R.drawable.loading_4)
                     .into(imageView);
 
             view.addView(imageView);
             return imageView;
         }
+
     }
+
+
 }

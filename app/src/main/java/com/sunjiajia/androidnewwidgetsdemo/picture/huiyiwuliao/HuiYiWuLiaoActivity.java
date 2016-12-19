@@ -34,7 +34,8 @@ import com.sunjiajia.androidnewwidgetsdemo.adapter.MypdfRecyclerViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HuiYiWuLiaoActivity extends AppCompatActivity implements MypdfRecyclerViewAdapter.OnItemClickListener {
+public class
+HuiYiWuLiaoActivity extends AppCompatActivity implements MypdfRecyclerViewAdapter.OnItemClickListener {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     List<Imageinfo> list1;
