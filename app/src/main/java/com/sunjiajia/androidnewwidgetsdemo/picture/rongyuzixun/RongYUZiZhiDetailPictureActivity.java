@@ -77,7 +77,7 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implemen
 
         switch (posi) {
             case 0:
-                toolbar.setTitle("权威检测报告");
+                toolbar.setTitle("企业商标专利");
                 setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -86,11 +86,11 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implemen
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/荣誉资质/05权威检测报告";
+                FILE_NAME = "JT/Pictures/荣誉资质/01企业商标专利";
 
                 break;
             case 1:
-                toolbar.setTitle("产品荣誉");
+                toolbar.setTitle("企业经营资质");
                 setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -99,7 +99,7 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implemen
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/荣誉资质/04产品荣誉";
+                FILE_NAME = "JT/Pictures/荣誉资质/02企业经营资质";
 
                 break;
             case 2:
@@ -116,7 +116,8 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implemen
 
                 break;
             case 3:
-                toolbar.setTitle("企业经营资质");
+
+                toolbar.setTitle("产品荣誉");
                 setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -125,11 +126,10 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implemen
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/荣誉资质/02企业经营资质";
-
+                FILE_NAME = "JT/Pictures/荣誉资质/04产品荣誉";
                 break;
             case 4:
-                toolbar.setTitle("企业商标专利");
+                toolbar.setTitle("权威检测报告");
                 setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -138,7 +138,7 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implemen
                         finish();
                     }
                 });
-                FILE_NAME = "JT/Pictures/荣誉资质/01企业商标专利";
+                FILE_NAME = "JT/Pictures/荣誉资质/05权威检测报告";
                 break;
         }
         mLayoutManager =

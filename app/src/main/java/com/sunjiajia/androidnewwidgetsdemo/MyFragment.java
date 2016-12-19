@@ -477,88 +477,88 @@ public class MyFragment extends Fragment
                 break;
             case HANGYEDONGTAI_LIST:
                 Imageinfo hangyedongtai1 = new Imageinfo();
-                hangyedongtai1.imagename = "“大健康产业”蛋糕有多大？一组数据告诉你！.pdf";
+                hangyedongtai1.imagename = "“大健康产业”蛋糕有多大？一组数据告诉你！";
                 hangyedongtai1.image = R.drawable.hd01;
                 Imageinfo hangyedongtai2 = new Imageinfo();
-                hangyedongtai2.imagename = "成功的直销人必须具备的六种能力.pdf";
+                hangyedongtai2.imagename = "成功的直销人必须具备的六种能力";
                 hangyedongtai2.image = R.drawable.hd02;
                 Imageinfo hangyedongtai3 = new Imageinfo();
-                hangyedongtai3.imagename = "从习大大和李总理在“全国卫生与健康大会”上的讲话剖析健康产业发展新趋势.pdf";
+                hangyedongtai3.imagename = "从习大大和李总理在“全国卫生与健康大会”上的讲话剖析健康产业发展新趋势";
                 hangyedongtai3.image = R.drawable.hd03;
                 Imageinfo hangyedongtai4 = new Imageinfo();
-                hangyedongtai4.imagename = "老百姓关心的健康问题，总书记这样说 ——专家解读习总书记在全国卫生与健康大会上讲话精神.pdf";
+                hangyedongtai4.imagename = "老百姓关心的健康问题，总书记这样说 ——专家解读习总书记在全国卫生与健康大会上讲话精神";
                 hangyedongtai4.image = R.drawable.hd04;
                 Imageinfo hangyedongtai5 = new Imageinfo();
-                hangyedongtai5.imagename = "全民健康升至国家战略！拒绝直销大健康产业，就是拒绝财富和健康！.pdf";
+                hangyedongtai5.imagename = "全民健康升至国家战略！拒绝直销大健康产业，就是拒绝财富和健康！";
                 hangyedongtai5.image = R.drawable.hd05;
                 Imageinfo hangyedongtai6 = new Imageinfo();
-                hangyedongtai6.imagename = "未来五年，团队+系统+趋势=成功.pdf";
+                hangyedongtai6.imagename = "未来五年，团队+系统+趋势=成功";
                 hangyedongtai6.image = R.drawable.hd06;
                 Imageinfo hangyedongtai7 = new Imageinfo();
-                hangyedongtai7.imagename = "赢在金天——趋势篇.pdf";
+                hangyedongtai7.imagename = "赢在金天——趋势篇";
                 hangyedongtai7.image = R.drawable.hd07;
                 Imageinfo hangyedongtai8 = new Imageinfo();
-                hangyedongtai8.imagename = "赢在金天——创新篇.pdf";
+                hangyedongtai8.imagename = "赢在金天——创新篇";
                 hangyedongtai8.image = R.drawable.hd08;
                 Imageinfo hangyedongtai9 = new Imageinfo();
-                hangyedongtai9.imagename = "赢在金天——实力篇（一）.pdf";
+                hangyedongtai9.imagename = "赢在金天——实力篇（一）";
                 hangyedongtai9.image = R.drawable.hd09;
                 Imageinfo hangyedongt10 = new Imageinfo();
-                hangyedongt10.imagename = "赢在金天——实力篇（二）.pdf";
+                hangyedongt10.imagename = "赢在金天——实力篇（二）";
                 hangyedongt10.image = R.drawable.hd10;
                 Imageinfo hangyedongt11 = new Imageinfo();
-                hangyedongt11.imagename = "赢在金天——保障篇.pdf";
+                hangyedongt11.imagename = "赢在金天——保障篇";
                 hangyedongt11.image = R.drawable.hd11;
                 Imageinfo hangyedongt12 = new Imageinfo();
-                hangyedongt12.imagename = "赢在金天——责任篇.pdf";
+                hangyedongt12.imagename = "赢在金天——责任篇";
                 hangyedongt12.image = R.drawable.hd12;
                 Imageinfo hangyedongt13 = new Imageinfo();
-                hangyedongt13.imagename = "这样的团队，将无所不能！.pdf";
+                hangyedongt13.imagename = "这样的团队，将无所不能！";
                 hangyedongt13.image = R.drawable.hd13;
                 Imageinfo hangyedongt14 = new Imageinfo();
-                hangyedongt14.imagename = "政治局审议通过”健康中国2030”纲要.pdf";
+                hangyedongt14.imagename = "政治局审议通过”健康中国2030”纲要";
                 hangyedongt14.image = R.drawable.hd14;
                 Imageinfo hangyedongt15 = new Imageinfo();
-                hangyedongt15.imagename = "习大大、李总理等这样评价健康产业！.pdf";
+                hangyedongt15.imagename = "习大大、李总理等这样评价健康产业！";
                 hangyedongt15.image = R.drawable.hd15;
                 Imageinfo hangyedongt16 = new Imageinfo();
-                hangyedongt16.imagename = "健康需求消费或将爆发，新兴健康产业成消费爆发点！.pdf";
+                hangyedongt16.imagename = "健康需求消费或将爆发，新兴健康产业成消费爆发点！";
                 hangyedongt16.image = R.drawable.hd16;
                 Imageinfo hangyedongt17 = new Imageinfo();
-                hangyedongt17.imagename = "凭什么说中国大健康产业正在经历黄金时期？.pdf";
+                hangyedongt17.imagename = "凭什么说中国大健康产业正在经历黄金时期？";
                 hangyedongt17.image = R.drawable.hd17;
                 Imageinfo hangyedongt18 = new Imageinfo();
-                hangyedongt18.imagename = "成为风潮的大健康产业，好在哪里？.pdf";
+                hangyedongt18.imagename = "成为风潮的大健康产业，好在哪里？";
                 hangyedongt18.image = R.drawable.hd18;
                 Imageinfo hangyedongt19 = new Imageinfo();
-                hangyedongt19.imagename = "大健康产业为什么将成热门投资领域？.pdf";
+                hangyedongt19.imagename = "大健康产业为什么将成热门投资领域？";
                 hangyedongt19.image = R.drawable.hd19;
                 Imageinfo hangyedongt20 = new Imageinfo();
-                hangyedongt20.imagename = "治未病提上国家议程，大健康产业将迎来资本盛宴！.pdf";
+                hangyedongt20.imagename = "治未病提上国家议程，大健康产业将迎来资本盛宴！";
                 hangyedongt20.image = R.drawable.hd20;
                 Imageinfo hangyedongt21 = new Imageinfo();
-                hangyedongt21.imagename = "马云进军大健康产业，你看到机会了吗.pdf";
+                hangyedongt21.imagename = "马云进军大健康产业，你看到机会了吗";
                 hangyedongt21.image = R.drawable.hd21;
                 Imageinfo hangyedongt22 = new Imageinfo();
-                hangyedongt22.imagename = "为什么女性生殖健康产业是未来十年最有前景的项目？.pdf";
+                hangyedongt22.imagename = "为什么女性生殖健康产业是未来十年最有前景的项目？";
                 hangyedongt22.image = R.drawable.hd22;
                 Imageinfo hangyedongt23 = new Imageinfo();
-                hangyedongt23.imagename = "注意：大健康已上升为国家战略！.pdf";
+                hangyedongt23.imagename = "注意：大健康已上升为国家战略！";
                 hangyedongt23.image = R.drawable.hd23;
                 Imageinfo hangyedongt24 = new Imageinfo();
-                hangyedongt24.imagename = "十八个著名的心理学效应，生活中你一定用的到！.pdf";
+                hangyedongt24.imagename = "十八个著名的心理学效应，生活中你一定用的到！";
                 hangyedongt24.image = R.drawable.hd24;
                 Imageinfo hangyedongt25 = new Imageinfo();
-                hangyedongt25.imagename = "一等人在保养、二等人健身锻炼、三等人进医院！.pdf";
+                hangyedongt25.imagename = "一等人在保养、二等人健身锻炼、三等人进医院！";
                 hangyedongt25.image = R.drawable.hd25;
                 Imageinfo hangyedongt26 = new Imageinfo();
-                hangyedongt26.imagename = "女性生殖健康问题有多严重？生殖健康产业市场空间有多大？.pdf";
+                hangyedongt26.imagename = "女性生殖健康问题有多严重？生殖健康产业市场空间有多大？";
                 hangyedongt26.image = R.drawable.hd26;
                 Imageinfo hangyedongt27 = new Imageinfo();
-                hangyedongt27.imagename = "“治未病”是趋势，将影响13亿国人生活！.pdf";
+                hangyedongt27.imagename = "“治未病”是趋势，将影响13亿国人生活！";
                 hangyedongt27.image = R.drawable.hd27;
                 Imageinfo hangyedongt28 = new Imageinfo();
-                hangyedongt28.imagename = "16万亿大健康产业，抓住财富的好时机!.pdf";
+                hangyedongt28.imagename = "16万亿大健康产业，抓住财富的好时机!";
                 hangyedongt28.image = R.drawable.hd28;
 
 
@@ -880,7 +880,7 @@ public class MyFragment extends Fragment
                 list1.add(2, rngyuzixun3);
                 list1.add(3, rngyuzixun4);
                 list1.add(4, rngyuzixun5);
-                Collections.reverse(list1);
+
 
 
                 mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
@@ -994,7 +994,7 @@ public class MyFragment extends Fragment
                 startActivity(intent4);
                 break;
             case RONYUZIXUN_LIST:
-                if (position == 0) {
+                if (position == 4) {
 
                     Intent intent8 = new Intent(getActivity(), RongYuZiZhiDetailPdfActivity.class);
 
