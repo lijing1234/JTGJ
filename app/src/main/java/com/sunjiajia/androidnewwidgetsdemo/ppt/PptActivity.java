@@ -39,16 +39,16 @@ public class PptActivity extends AppCompatActivity {
         setContentView(R.layout.activity_php);
 
         String  position = getIntent().getStringExtra("a");
-        Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
-        toolbar.setTitle("ppt");
-        setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
+//        toolbar.setTitle("ppt");
+//        setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
         pptViewer = (PPTViewer) findViewById(R.id.pptviewer);
         pptViewer.setNext_img(R.drawable.next)
                 .setSettings_img(R.drawable.settings)

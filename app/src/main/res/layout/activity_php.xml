@@ -24,17 +24,34 @@
     android:layout_height="match_parent"
 
 
-    tools:context="com.sunjiajia.androidnewwidgetsdemo.ppt.PptActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.sunjiajia.androidnewwidgetsdemo.ppt.PptActivity">
 
-    <include layout="@layout/toolbar" />
+    <!--<include layout="@layout/toolbar" />-->
 
-    <com.itsrts.pptviewer.PPTViewer
-        android:id="@+id/pptviewer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
 
-       />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.itsrts.pptviewer.PPTViewer
+                    android:id="@+id/pptviewer"
+                    android:layout_width="match_parent"
+                    android:layout_height="550dp"
+
+                    />
+            </LinearLayout>
+
+        </ScrollView>
+
+
+
     <!--<WebView-->
     <!--android:id="@+id/wv"-->
     <!--android:layout_width="match_parent"-->
