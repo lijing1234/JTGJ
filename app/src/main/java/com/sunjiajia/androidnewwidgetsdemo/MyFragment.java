@@ -130,7 +130,7 @@ public class MyFragment extends Fragment
                 break;
             case PPT_LIST:
                 mLayoutManager =
-                        new StaggeredGridLayoutManager(SPAN_COUNT, StaggeredGridLayoutManager.VERTICAL);
+                        new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 break;
             case PICTURE_LIST:
                 mLayoutManager =
@@ -790,23 +790,61 @@ public class MyFragment extends Fragment
 
                 break;
             case PPT_LIST:
-                listppt = new ArrayList<Integer>();
-                listppt.add(0, R.drawable.ppt01);
-                listppt.add(1, R.drawable.ppt02);
-                listppt.add(2, R.drawable.ppt03);
-                listppt.add(3, R.drawable.ppt04);
-                listppt.add(4, R.drawable.ppt05);
-                listppt.add(5, R.drawable.ppt06);
-                listppt.add(6, R.drawable.ppt07);
-                listppt.add(7, R.drawable.ppt08);
-                listppt.add(8, R.drawable.ppt09);
-                listppt.add(9, R.drawable.ppt10);
-                listppt.add(10, R.drawable.ppt11);
-                Collections.reverse(listppt);
-                mRecyclerViewAdapter = new MyRecyclerViewAdapter(listppt, getActivity());
-                mRecyclerViewAdapter.setOnItemClickListener(this);
-                mRecyclerView.setAdapter(mRecyclerViewAdapter);
-                mRecyclerViewAdapter.notifyDataSetChanged();
+
+
+
+                Imageinfo ppt1 = new Imageinfo();
+                ppt1.imagename = "企业篇";
+                ppt1.image = R.drawable.ppt01;
+                Imageinfo ppt2 = new Imageinfo();
+                ppt2.imagename = "产品篇";
+                ppt2.image = R.drawable.ppt02;
+                Imageinfo ppt3 = new Imageinfo();
+                ppt3.imagename = "模式篇";
+                ppt3.image = R.drawable.ppt03;
+                Imageinfo ppt4 = new Imageinfo();
+                ppt4.imagename = "十大举措";
+                ppt4.image = R.drawable.ppt04;
+                Imageinfo ppt5 = new Imageinfo();
+                ppt5.imagename = "十大亮点";
+                ppt5.image = R.drawable.ppt05;
+                Imageinfo ppt6 = new Imageinfo();
+                ppt6.imagename = "讲师训班前训";
+                ppt6.image = R.drawable.ppt06;
+                Imageinfo ppt7 = new Imageinfo();
+                ppt7.imagename = "讲师基本素质";
+                ppt7.image = R.drawable.ppt07;
+                Imageinfo ppt8 = new Imageinfo();
+                ppt8.imagename = "专业咨询需掌握的基础知识";
+                ppt8.image = R.drawable.ppt08;
+                Imageinfo ppt9 = new Imageinfo();
+                ppt9.imagename = "生态保养咨询过程中需掌握的技巧和方法";
+                ppt9.image = R.drawable.ppt09;
+                Imageinfo ppt10 = new Imageinfo();
+                ppt10.imagename = "金天国际 基础训";
+                ppt10.image = R.drawable.ppt10;
+                Imageinfo ppt11 = new Imageinfo();
+                ppt11.imagename = "635营销宝典";
+                ppt11.image = R.drawable.ppt11;
+
+                list1 = new ArrayList<Imageinfo>();
+                list1.add(0, ppt1);
+                list1.add(1, ppt2);
+                list1.add(2, ppt3);
+                list1.add(3, ppt4);
+                list1.add(4, ppt5);
+                list1.add(5, ppt6);
+                list1.add(6, ppt7);
+                list1.add(7, ppt8);
+                list1.add(8, ppt9);
+                list1.add(9, ppt10);
+                list1.add(10, ppt11);
+                Collections.reverse(list1);
+
+                mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
+                mypdfRecyclerViewAdapter.setOnItemClickListener(this);
+                mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
+                mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
                 break;
             case PICTURE_LIST:
