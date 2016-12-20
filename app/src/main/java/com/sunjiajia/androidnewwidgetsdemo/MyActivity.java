@@ -108,18 +108,20 @@ public class MyActivity extends AppCompatActivity
         setSupportActionBar(mToolbar);
 
         // 设置Drawerlayout开关指示器，即Toolbar最左边的那个icon
-        ActionBarDrawerToggle mActionBarDrawerToggle =
-                new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.open, R.string.close);
-        mActionBarDrawerToggle.syncState();
-        mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
+//        ActionBarDrawerToggle mActionBarDrawerToggle =
+//                new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.open, R.string.close);
+//        ActionBarDrawerToggle mActionBarDrawerToggle =
+//                new ActionBarDrawerToggle(this, null, mToolbar, R.string.open, R.string.close);
+//        mActionBarDrawerToggle.syncState();
+//        mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
 
         //给NavigationView填充顶部区域，也可在xml中使用app:headerLayout="@layout/header_nav"来设置
-        mNavigationView.inflateHeaderView(R.layout.header_nav);
-        //给NavigationView填充Menu菜单，也可在xml中使用app:menu="@menu/menu_nav"来设置
-        mNavigationView.inflateMenu(R.menu.menu_nav);
-
-        // 自己写的方法，设置NavigationView中menu的item被选中后要执行的操作
-        onNavgationViewMenuItemSelected(mNavigationView);
+//        mNavigationView.inflateHeaderView(R.layout.header_nav);
+//        //给NavigationView填充Menu菜单，也可在xml中使用app:menu="@menu/menu_nav"来设置
+//        mNavigationView.inflateMenu(R.menu.menu_nav);
+//
+//        // 自己写的方法，设置NavigationView中menu的item被选中后要执行的操作
+//        onNavgationViewMenuItemSelected(mNavigationView);
 
         // 初始化ViewPager的适配器，并设置给它
         mViewPagerAdapter = new MyViewPagerAdapter(getSupportFragmentManager(), mTitles, mFragments);
@@ -191,25 +193,25 @@ public class MyActivity extends AppCompatActivity
 //    mFloatingActionButton = (FloatingActionButton) findViewById(R.id.id_floatingactionbutton);
 //    mFloatingActionButton1 = (FloatingActionButton) findViewById(R.id.id_floatingactionbutton1);
 //    mFloatingActionButton2 = (FloatingActionButton) findViewById(R.id.id_floatingactionbutton2);
-        mNavigationView = (NavigationView) findViewById(R.id.id_navigationview);
+//        mNavigationView = (NavigationView) findViewById(R.id.id_navigationview);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_my, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_my, menu);
+//        return true;
+//    }
 
     @Override
 
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
-            Intent intent = new Intent(MyActivity.this, SettingActivity.class);
-            startActivity(intent);
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            Intent intent = new Intent(MyActivity.this, SettingActivity.class);
+//            startActivity(intent);
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
