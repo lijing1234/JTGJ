@@ -26,24 +26,39 @@
     SwipeRefreshLayout是伟大的Google在v4包中给出的下拉刷新组件。
 
     -->
-<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:id="@+id/id_swiperefreshlayout"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    >
+<!--<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--android:id="@+id/id_swiperefreshlayout"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+    <!--&gt;-->
 
 <!--
         使用RecyclerView需要在build.gradle中添加
        compile 'com.android.support:recyclerview-v7:23.3.0'
 -->
+
+
+
+
+<!--</android.support.v4.widget.SwipeRefreshLayout>-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/activity_gallery"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+
+tools:context="com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryActivity"
+android:orientation="vertical">
 <android.support.v7.widget.RecyclerView
     android:id="@+id/id_recyclerview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:foregroundGravity="center"
     />
-
-
-</android.support.v4.widget.SwipeRefreshLayout>
+<!--<Gallery-->
+<!--android:id="@+id/mygallery"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"></Gallery>-->
+</LinearLayout>

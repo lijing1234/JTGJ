@@ -97,16 +97,16 @@ public class MyFragment extends Fragment
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mSwipeRefreshLayout = (SwipeRefreshLayout) mView.findViewById(R.id.id_swiperefreshlayout);
+//        mSwipeRefreshLayout = (SwipeRefreshLayout) mView.findViewById(R.id.id_swiperefreshlayout);
         mRecyclerView = (RecyclerView) mView.findViewById(R.id.id_recyclerview);
 
         flag = (int) getArguments().get("flag");
         configRecyclerView();
         attemptLeaveMsg();
 
-        // 刷新时，指示器旋转后变化的颜色
-        mSwipeRefreshLayout.setColorSchemeResources(R.color.main_blue_light, R.color.main_red_dark);
-        mSwipeRefreshLayout.setOnRefreshListener(this);
+//        // 刷新时，指示器旋转后变化的颜色
+//        mSwipeRefreshLayout.setColorSchemeResources(R.color.main_blue_light, R.color.main_red_dark);
+//        mSwipeRefreshLayout.setOnRefreshListener(this);
     }
 
     private void configRecyclerView() {

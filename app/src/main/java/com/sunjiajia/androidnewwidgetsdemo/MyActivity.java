@@ -35,18 +35,25 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 //import com.lzy.okgo.OkGo;
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyViewPagerAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static android.support.design.widget.TabLayout.*;
 
 public class MyActivity extends AppCompatActivity
-        implements ViewPager.OnPageChangeListener, OnClickListener {
+        implements ViewPager.OnPageChangeListener, OnClickListener,BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
     //初始化各种控件，照着xml中的顺序写
     private DrawerLayout mDrawerLayout;
@@ -66,6 +73,8 @@ public class MyActivity extends AppCompatActivity
     private List<Fragment> mFragments;
     // ViewPager的数据适配器
     private MyViewPagerAdapter mViewPagerAdapter;
+
+    private SliderLayout mDemoSlider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -190,28 +199,57 @@ public class MyActivity extends AppCompatActivity
         mToolbar = (Toolbar) findViewById(R.id.id_toolbar);
         mTabLayout = (TabLayout) findViewById(R.id.id_tablayout);
         mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
-//    mFloatingActionButton = (FloatingActionButton) findViewById(R.id.id_floatingactionbutton);
-//    mFloatingActionButton1 = (FloatingActionButton) findViewById(R.id.id_floatingactionbutton1);
-//    mFloatingActionButton2 = (FloatingActionButton) findViewById(R.id.id_floatingactionbutton2);
-//        mNavigationView = (NavigationView) findViewById(R.id.id_navigationview);
+
+        mDemoSlider = (SliderLayout)findViewById(R.id.slider);
+
+        HashMap<String,String> url_maps = new HashMap<String, String>();
+        url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
+        url_maps.put("Big Bang Theory", "http://tvfiles.alphacoders.com/100/hdclearart-10.png");
+        url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
+        url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
+
+        HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
+        file_maps.put("Hannibal",R.drawable.hd01);
+        file_maps.put("Big Bang Theory",R.drawable.hd01);
+        file_maps.put("House of Cards",R.drawable.hd01);
+        file_maps.put("Game of Thrones", R.drawable.hd01);
+
+        for(String name : file_maps.keySet()){
+            TextSliderView textSliderView = new TextSliderView(this);
+            // initialize a SliderLayout
+            textSliderView
+                    .description(name)
+                    .image(file_maps.get(name))
+                    .setScaleType(BaseSliderView.ScaleType.Fit)
+                    .setOnSliderClickListener(this);
+
+            //add your extra information
+            textSliderView.bundle(new Bundle());
+            textSliderView.getBundle()
+                    .putString("extra",name);
+
+            mDemoSlider.addSlider(textSliderView);
+        }
+        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+        mDemoSlider.setCustomAnimation(new DescriptionAnimation());
+        mDemoSlider.setDuration(4000);
+        mDemoSlider.addOnPageChangeListener(this);
+
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_my, menu);
-//        return true;
-//    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mDemoSlider.startAutoCycle();
+    }
 
     @Override
 
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-//        if (id == R.id.action_settings) {
-//            Intent intent = new Intent(MyActivity.this, SettingActivity.class);
-//            startActivity(intent);
-//            return true;
-//        }
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -252,4 +290,22 @@ public class MyActivity extends AppCompatActivity
         super.onDestroy();
 //        OkGo.getInstance().cancelTag(this);
     }
+
+    @Override
+    public void onSliderClick(BaseSliderView slider) {
+
+    }
+
+
+    @Override
+    protected void onStop() {
+        // To prevent a memory leak on rotation, make sure to call stopAutoCycle() on the slider before activity or fragment is destroyed
+        mDemoSlider.stopAutoCycle();
+        super.onStop();
+    }
+
+
+//
+
+
 }
