@@ -26,8 +26,13 @@
     tools:context="com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryDetailActivity"
     android:orientation="vertical">
     <include layout="@layout/toolbar" />
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+<com.sunjiajia.androidnewwidgetsdemo.view.PhotoViewPager
+    android:id="@+id/vp"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"></com.sunjiajia.androidnewwidgetsdemo.view.PhotoViewPager>
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:id="@+id/vp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"></android.support.v4.view.ViewPager>-->
 </LinearLayout>

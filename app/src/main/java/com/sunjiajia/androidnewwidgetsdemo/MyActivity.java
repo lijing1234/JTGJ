@@ -256,7 +256,7 @@ public class MyActivity extends AppCompatActivity
 
     @Override
     public void onPageSelected(int position) {
-        mToolbar.setTitle(mTitles[position]);
+//        mToolbar.setTitle(mTitles[position]);
     }
 
     @Override
