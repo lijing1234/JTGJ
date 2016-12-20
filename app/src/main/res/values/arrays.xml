@@ -18,10 +18,13 @@
   ~  */
   -->
 
-<resources>
+<resources xmlns:android="http://schemas.android.com/tools">
 
-  <string-array name="tab_titles">
-    <item>影视资料</item>
+  <string-array name="tab_titles" >
+
+    <item android:color="@color/cardview_light_background">影视资料
+
+    </item>
     <item>科普养生</item>
     <item>行业动态</item>
     <item>企业资讯</item>
