@@ -47,12 +47,12 @@ import java.util.List;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
-public class GalleryDetailActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener,PhotoViewAttacher.OnViewTapListener {
+public class GalleryDetailActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener{
     ImageView iv;
     ArrayList<String> infoList = new ArrayList<String>();
     PhotoViewPager vp;
     int width;
-    PhotoViewAttacher mAttacher;
+    PhotoView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +63,10 @@ public class GalleryDetailActivity extends AppCompatActivity implements ViewPage
         width = wm.getDefaultDisplay().getWidth();
         int height = wm.getDefaultDisplay().getHeight();
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
+
+
+//        View view=   LayoutInflater.from(GalleryDetailActivity.this).inflate(R.layout.item_photo_view,null);
+//        imageView= (PhotoView) findViewById(R.id.photo);
         toolbar.setTitle("图片");
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -100,10 +104,7 @@ public class GalleryDetailActivity extends AppCompatActivity implements ViewPage
 
     }
 
-    @Override
-    public void onViewTap(View view, float x, float y) {
 
-    }
 
     //改写BaseAdapter自定义一ImageAdapter class
     public class ImageAdapter extends PagerAdapter {
@@ -143,30 +144,30 @@ public class GalleryDetailActivity extends AppCompatActivity implements ViewPage
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
 //            container.in
-         View view=   LayoutInflater.from(GalleryDetailActivity.this).inflate(R.layout.item_photo_view,container);
-          PhotoView view1= (PhotoView) view.findViewById(R.id.photo);
-//            PhotoView imageView = new PhotoView(mContext);
-//            imageView.enable();
-//            imageView.setImageResource(R.drawable.img01);
-//            imageView.setAdjustViewBounds(true);
-////            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-//            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-//
-//            imageView.setLayoutParams(params);
-//            imageView.setMaxWidth(width);
-//            imageView.setMaxHeight(width * 10);
-            //设置图片给ImageView对象
-//            mAttacher=new PhotoViewAttacher(view1);
+//         View view=   LayoutInflater.from(GalleryDetailActivity.this).inflate(R.layout.item_photo_view,container);
+//          PhotoView imageView= (PhotoView) view.findViewById(R.id.photo);
+            PhotoView imageView = new PhotoView(mContext);
+            imageView.enable();
+            imageView.setImageResource(R.drawable.img01);
+            imageView.setAdjustViewBounds(true);
+//            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+            imageView.setLayoutParams(params);
+            imageView.setMaxWidth(width);
+            imageView.setMaxHeight(width * 10);
+//            设置图片给ImageView对象
+//            mAttacher=new PhotoViewAttacher(imageView);
 //            mAttacher.setOnPhotoTapListener((PhotoViewAttacher.OnPhotoTapListener) GalleryDetailActivity.this);
             Glide.with(mContext)
                     .load(lis.get(position).toString())
                     .centerCrop()
                     .placeholder(R.drawable.loading_4)
                     .fitCenter()
-                    .into(view1);
+                    .into(imageView);
 
-            container.addView(view);
-            return view;
+            container.addView(imageView);
+            return imageView;
         }
     }
 }
