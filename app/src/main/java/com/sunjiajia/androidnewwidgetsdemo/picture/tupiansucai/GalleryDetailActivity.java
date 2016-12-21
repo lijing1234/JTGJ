@@ -40,8 +40,6 @@ import android.widget.LinearLayout;
 
 import com.bm.library.PhotoView;
 import com.bumptech.glide.Glide;
-import com.facebook.drawee.view.SimpleDraweeView;
-import com.squareup.picasso.Picasso;
 import com.sunjiajia.androidnewwidgetsdemo.R;
 import com.sunjiajia.androidnewwidgetsdemo.view.PhotoViewPager;
 

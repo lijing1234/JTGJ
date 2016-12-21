@@ -31,13 +31,10 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.bm.library.PhotoView;
 import com.bumptech.glide.Glide;
 import com.sunjiajia.androidnewwidgetsdemo.R;
-import com.sunjiajia.androidnewwidgetsdemo.adapter.MyRecyclerViewHolder;
-import com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryDetailActivity;
 
 import java.util.ArrayList;
 

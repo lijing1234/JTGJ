@@ -28,7 +28,6 @@ import android.app.Application;
 //import com.lzy.okgo.model.HttpHeaders;
 //import com.lzy.okgo.model.HttpParams;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.util.logging.Level;
 
@@ -40,7 +39,6 @@ public class MyAplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Fresco.initialize(this);
 
 
 
