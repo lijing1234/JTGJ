@@ -128,7 +128,8 @@ public class MovieActivity extends AppCompatActivity {
         JCVideoPlayer.setJcBuriedPoint(new MyJCBuriedPointStandard());
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mSensorEventListener = new JCVideoPlayer.JCAutoFullscreenListener();
-
+        mJcVideoPlayerStandard.startPlayLogic();
+        mJcVideoPlayerStandard.startWindowFullscreen();
 
     }
     //获取本地视频路径
