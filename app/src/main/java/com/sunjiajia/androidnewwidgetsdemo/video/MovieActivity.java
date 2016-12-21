@@ -33,6 +33,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.sunjiajia.androidnewwidgetsdemo.R;
+import com.sunjiajia.androidnewwidgetsdemo.view.CustomJcVideo;
 
 import java.io.File;
 
@@ -47,7 +48,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 public class MovieActivity extends AppCompatActivity implements View.OnClickListener {
     JCVideoPlayer.JCAutoFullscreenListener mSensorEventListener;
     SensorManager mSensorManager;
-    JCVideoPlayerStandard mJcVideoPlayerStandard;
+    CustomJcVideo mJcVideoPlayerStandard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "金天国际雪莲生态保&养时尚版全新上线");
 
@@ -93,7 +94,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "《聚焦apec》金天国际董事长祖名军接受采访");
             Glide.with(this)
@@ -104,7 +105,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "活力金天，助力中国——金天国际25周年梦想盛典暨公益筑梦远航精彩回顾");
             Glide.with(this)
@@ -115,7 +116,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "央视七套《聚焦三农》：金天国际圆贫困残障儿童学习梦");
             Glide.with(this)
@@ -126,7 +127,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "金天国际25周年梦想盛典暨公益筑梦远航家人祝福");
             Glide.with(this)
@@ -137,7 +138,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "金天国际25周年梦想盛典暨公益筑梦远航宣导片");
             Glide.with(this)
@@ -148,7 +149,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "金天国际直销启动暨“和谐与活力”公益盛典完整视频");
             Glide.with(this)
@@ -159,7 +160,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "金天国际璀璨之星讲师大赛宣导预告片");
             Glide.with(this)
@@ -170,7 +171,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
 
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "宿迁智能化产业园落成典礼精彩回顾");
@@ -182,7 +183,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "宿迁智能化产业园落成典礼宣导片");
             Glide.with(this)
@@ -193,7 +194,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "直销启动暨“和谐与活力”公益盛典精彩回顾");
             Glide.with(this)
@@ -204,7 +205,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "直销启动暨“和谐与活力”公益盛典宣导片");
             Glide.with(this)
@@ -215,7 +216,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             String path = geStorageDirectory();
             final File file = new File(path);
 
-            mJcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.jc_video);
+            mJcVideoPlayerStandard = (CustomJcVideo) findViewById(R.id.jc_video);
             mJcVideoPlayerStandard.setUp(geStorageDirectory()
                     , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "金天国际2016企业宣传片");
             Glide.with(this)

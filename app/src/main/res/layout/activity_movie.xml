@@ -41,13 +41,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+<com.sunjiajia.androidnewwidgetsdemo.view.CustomJcVideo
+    android:id="@+id/jc_video"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"></com.sunjiajia.androidnewwidgetsdemo.view.CustomJcVideo>
+            <!--<fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard-->
+                <!--android:id="@+id/jc_video"-->
 
-            <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
-                android:id="@+id/jc_video"
+                <!--android:layout_width="match_parent"-->
 
-                android:layout_width="match_parent"
-
-                android:layout_height="match_parent" />
+                <!--android:layout_height="match_parent" />-->
 
 
         </LinearLayout>
