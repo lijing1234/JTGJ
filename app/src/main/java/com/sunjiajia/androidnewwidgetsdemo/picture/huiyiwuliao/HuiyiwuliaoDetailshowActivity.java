@@ -37,6 +37,7 @@ import com.bm.library.PhotoView;
 import com.bumptech.glide.Glide;
 import com.sunjiajia.androidnewwidgetsdemo.R;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyRecyclerViewHolder;
+import com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryDetailActivity;
 
 import java.util.ArrayList;
 
@@ -142,14 +143,14 @@ public class HuiyiwuliaoDetailshowActivity extends AppCompatActivity implements 
             imageView.enable();
             imageView.setImageResource(R.drawable.img01);
             imageView.setAdjustViewBounds(true);
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-            imageView.setMaxScale(5);
+//            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
-            //设置图片给ImageView对象
-            Glide.with(mContext)
+            imageView.setLayoutParams(params);
+            imageView.setMaxWidth(width);
+            imageView.setMaxHeight(width * 30);
+            Glide.with(HuiyiwuliaoDetailshowActivity.this)
                     .load(lis.get(position).toString())
-                    .fitCenter()
-                    .placeholder(R.drawable.loading_4)
                     .into(imageView);
 
             view.addView(imageView);
