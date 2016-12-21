@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +40,8 @@ import android.widget.LinearLayout;
 
 import com.bm.library.PhotoView;
 import com.bumptech.glide.Glide;
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.squareup.picasso.Picasso;
 import com.sunjiajia.androidnewwidgetsdemo.R;
 import com.sunjiajia.androidnewwidgetsdemo.view.PhotoViewPager;
 
@@ -50,7 +53,7 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 public class GalleryDetailActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener{
     ImageView iv;
     ArrayList<String> infoList = new ArrayList<String>();
-    PhotoViewPager vp;
+    ViewPager vp;
     int width;
     PhotoView imageView;
 
@@ -65,8 +68,6 @@ public class GalleryDetailActivity extends AppCompatActivity implements ViewPage
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
 
 
-//        View view=   LayoutInflater.from(GalleryDetailActivity.this).inflate(R.layout.item_photo_view,null);
-//        imageView= (PhotoView) findViewById(R.id.photo);
         toolbar.setTitle("图片");
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -79,7 +80,7 @@ public class GalleryDetailActivity extends AppCompatActivity implements ViewPage
         String path = getIntent().getStringExtra("a");
         infoList = getIntent().getStringArrayListExtra("b");
         int postion = getIntent().getIntExtra("c", 1);
-        vp = (PhotoViewPager) findViewById(R.id.vp);
+        vp = (ViewPager) findViewById(R.id.vp);
         vp.setAdapter(new ImageAdapter(this, infoList));
         vp.setOnPageChangeListener(this);
         vp.setCurrentItem(postion);
@@ -143,9 +144,6 @@ public class GalleryDetailActivity extends AppCompatActivity implements ViewPage
         // 当要显示的图片可以进行缓存的时候，会调用这个方法进行显示图片的初始化，我们将要显示的ImageView加入到ViewGroup中，然后作为返回值返回即可
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-//            container.in
-//         View view=   LayoutInflater.from(GalleryDetailActivity.this).inflate(R.layout.item_photo_view,container);
-//          PhotoView imageView= (PhotoView) view.findViewById(R.id.photo);
             PhotoView imageView = new PhotoView(mContext);
             imageView.enable();
             imageView.setImageResource(R.drawable.img01);
@@ -155,15 +153,9 @@ public class GalleryDetailActivity extends AppCompatActivity implements ViewPage
 
             imageView.setLayoutParams(params);
             imageView.setMaxWidth(width);
-            imageView.setMaxHeight(width * 10);
-//            设置图片给ImageView对象
-//            mAttacher=new PhotoViewAttacher(imageView);
-//            mAttacher.setOnPhotoTapListener((PhotoViewAttacher.OnPhotoTapListener) GalleryDetailActivity.this);
-            Glide.with(mContext)
+            imageView.setMaxHeight(width * 30);
+            Glide.with(GalleryDetailActivity.this)
                     .load(lis.get(position).toString())
-                    .centerCrop()
-                    .placeholder(R.drawable.loading_4)
-                    .fitCenter()
                     .into(imageView);
 
             container.addView(imageView);
