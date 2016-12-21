@@ -209,10 +209,10 @@ public class MyActivity extends AppCompatActivity
         url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
 
         HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
-        file_maps.put("Hannibal",R.drawable.hd01);
-        file_maps.put("Big Bang Theory",R.drawable.hd01);
-        file_maps.put("House of Cards",R.drawable.hd01);
-        file_maps.put("Game of Thrones", R.drawable.hd01);
+        file_maps.put("Hannibal",R.drawable.bigbang);
+        file_maps.put("Big Bang Theory",R.drawable.bigbang);
+        file_maps.put("House of Cards",R.drawable.bigbang);
+        file_maps.put("Game of Thrones", R.drawable.bigbang);
 
         for(String name : file_maps.keySet()){
             TextSliderView textSliderView = new TextSliderView(this);
