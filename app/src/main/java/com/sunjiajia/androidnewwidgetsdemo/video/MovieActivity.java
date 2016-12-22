@@ -28,6 +28,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ import com.sunjiajia.androidnewwidgetsdemo.view.CustomJcVideo;
 
 import java.io.File;
 
+import fm.jiecao.jcvideoplayer_lib.JCBuriedPoint;
 import fm.jiecao.jcvideoplayer_lib.JCBuriedPointStandard;
 import fm.jiecao.jcvideoplayer_lib.JCUtils;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
@@ -69,11 +71,6 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 //        http://video.jiecao.fm/11/23/xin/%E5%81%87%E4%BA%BA.mp4
-
-//        /storage/emulated/0/Movies/Starry_Night.mp4
-//        /storage/emulated/0/Movies/Starry_Night.mp4
-//        /storage/emulated/0/video/01.mp4
-//        file.exists() ? file.getPath() : ""
 
 
         if (position.equals("0")) {
@@ -231,7 +228,7 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
         mSensorEventListener = new JCVideoPlayer.JCAutoFullscreenListener();
         mJcVideoPlayerStandard.startPlayLogic();
         mJcVideoPlayerStandard.startWindowFullscreen();
-//        mJcVideoPlayerStandard.backButton.setOnClickListener(this);
+
 
 
     }
@@ -262,21 +259,6 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
         JCVideoPlayer.releaseAllVideos();
         finish();
     }
-
-    @Override
-    public void onClick(View v) {
-
-        int i = v.getId();
-        if (i == R.id.back) {
-
-
-            finish();
-            finish();
-        }
-
-    }
-
-
     class MyJCBuriedPointStandard implements JCBuriedPointStandard {
 
         @Override
@@ -284,6 +266,16 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
 
         }
     }
+    @Override
+    public void onClick(View v) {
+
+        int i = v.getId();
+
+
+    }
+
+
+
 
 
 }
