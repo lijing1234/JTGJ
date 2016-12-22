@@ -26,19 +26,19 @@
     tools:context="com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryActivity"
     android:orientation="vertical">
     <include layout="@layout/toolbar" />
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/id_galleryrecyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:foregroundGravity="center"
-        />
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/id_galleryrecyclerview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:foregroundGravity="center"-->
+        <!--/>-->
 
-    <!--<android.support.v4.view.ViewPager-->
-        <!--android:id="@+id/pptvp"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"></android.support.v4.view.ViewPager>-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pptvp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
     <!--<Gallery-->
-        <!--android:id="@+id/mygallery"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"></Gallery>-->
+    <!--android:id="@+id/mygallery"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"></Gallery>-->
 </LinearLayout>

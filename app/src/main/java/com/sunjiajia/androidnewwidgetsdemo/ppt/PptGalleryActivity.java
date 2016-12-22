@@ -20,29 +20,30 @@
 package com.sunjiajia.androidnewwidgetsdemo.ppt;
 
 
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Gallery;
+import android.widget.LinearLayout;
 
-import com.sunjiajia.androidnewwidgetsdemo.FileComparator;
+import com.bm.library.PhotoView;
+import com.bumptech.glide.Glide;
 import com.sunjiajia.androidnewwidgetsdemo.R;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyGalleryRecyclerViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
-import com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryDetailActivity;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
-public class PptGalleryActivity extends AppCompatActivity implements MyGalleryRecyclerViewAdapter.OnItemClickListener {
+public class PptGalleryActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
     Gallery g = null;
 
     ;// 遍历符合条件的列表
@@ -53,6 +54,7 @@ public class PptGalleryActivity extends AppCompatActivity implements MyGalleryRe
 
             .getExternalStorageDirectory().getAbsolutePath();
     ArrayList<String> it ;
+    int width;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -60,15 +62,62 @@ public class PptGalleryActivity extends AppCompatActivity implements MyGalleryRe
     private MyStaggeredViewAdapter mStaggeredAdapter;
     private static final int SPAN_COUNT = 2;
 
+    ViewPager vp;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gallery);
+        setContentView(R.layout.activity_ppt_gallery);
+        WindowManager wm = (WindowManager) this
+                .getSystemService(Context.WINDOW_SERVICE);
+        width = wm.getDefaultDisplay().getWidth();
         String position = getIntent().getStringExtra("a");
         Log.e("position", position);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
-        mRecyclerView = (RecyclerView) findViewById(R.id.id_galleryrecyclerview);
-        toolbar.setTitle("图片");
+       toolbar = (Toolbar) findViewById(R.id.id_toolbar);
+
+        if (position.equals("0")) {
+
+            FILE_NAME = "JT/ppt/11635营销宝典";
+
+
+            toolbar.setTitle("635营销宝典");
+
+
+        } else if (position.equals("1")) {
+
+            FILE_NAME = "JT/ppt/10金天国际 基础训";
+            toolbar.setTitle("金天国际 基础训");
+        } else if (position.equals("2")) {
+
+            FILE_NAME = "JT/ppt/09生态保养咨询过程中需掌握的技巧和方法";
+            toolbar.setTitle("生态保养咨询过程中需掌握的技巧和方法");
+        } else if (position.equals("3")) {
+            FILE_NAME = "JT/ppt/08专业咨询需掌握的基础知识";
+            toolbar.setTitle("专业咨询需掌握的基础知识");
+
+        } else if (position.equals("4")) {
+            FILE_NAME = "JT/ppt/07讲师基本素质";
+            toolbar.setTitle("讲师基本素质");
+        } else if (position.equals("5")) {
+            FILE_NAME = "JT/ppt/06讲师训班前训";
+            toolbar.setTitle("讲师训班前训");
+        } else if (position.equals("6")) {
+            FILE_NAME = "JT/ppt/05十大亮点";
+            toolbar.setTitle("十大亮点");
+        } else if (position.equals("7")) {
+            FILE_NAME = "JT/ppt/04十大举措";
+            toolbar.setTitle("十大举措");
+        } else if (position.equals("8")) {
+            FILE_NAME = "JT/ppt/03模式篇";
+            toolbar.setTitle("模式篇");
+        } else if (position.equals("9")) {
+            FILE_NAME = "JT/ppt/02产品篇";
+            toolbar.setTitle("产品篇");
+        } else if (position.equals("10")) {
+            FILE_NAME = "JT/ppt/01企业篇";
+            toolbar.setTitle("企业篇");
+        }
+
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -77,56 +126,16 @@ public class PptGalleryActivity extends AppCompatActivity implements MyGalleryRe
                 finish();
             }
         });
-        if (position.equals("0")) {
+        vp = (ViewPager) findViewById(R.id.pptvp);
+        vp.setAdapter(new ImageAdapter(this, getSD()));
+        vp.setOnPageChangeListener(this);
+        vp.setCurrentItem(0);
 
-            FILE_NAME = "JT/ppt/11635营销宝典";
-
-        } else if (position.equals("1")) {
-
-            FILE_NAME = "JT/ppt/10金天国际 基础训";
-        } else if (position.equals("2")) {
-
-            FILE_NAME = "JT/ppt/09生态保养咨询过程中需掌握的技巧和方法";
-        } else if (position.equals("3")) {
-            FILE_NAME = "JT/ppt/08专业咨询需掌握的基础知识";
-
-        } else if (position.equals("4")) {
-            FILE_NAME = "JT/ppt/07讲师基本素质";
-
-        } else if (position.equals("5")) {
-            FILE_NAME = "JT/ppt/06讲师训班前训";
-
-        } else if (position.equals("6")) {
-
-            FILE_NAME = "JT/ppt/05十大亮点";
-        } else if (position.equals("7")) {
-            FILE_NAME = "JT/ppt/04十大举措";
-
-        } else if (position.equals("8")) {
-            FILE_NAME = "JT/ppt/03模式篇";
-
-        } else if (position.equals("9")) {
-            FILE_NAME = "JT/ppt/02产品篇";
-
-        } else if (position.equals("10")) {
-            FILE_NAME = "JT/ppt/01企业篇";
-
-        }
-
-
-        mLayoutManager =
-                new StaggeredGridLayoutManager(SPAN_COUNT, StaggeredGridLayoutManager.VERTICAL);
-
-        mRecyclerViewAdapter = new MyGalleryRecyclerViewAdapter(getSD(), this);
-        mRecyclerViewAdapter.setOnItemClickListener(this);
-        mRecyclerView.setAdapter(mRecyclerViewAdapter);
-        mRecyclerViewAdapter.notifyDataSetChanged();
-        mRecyclerView.setLayoutManager(mLayoutManager);
 
     }
 
     //遍历SD卡中某一路径下指定类型的图片
-    private List<String> getSD() {
+    private ArrayList<String> getSD() {
 
 
 
@@ -182,19 +191,77 @@ public class PptGalleryActivity extends AppCompatActivity implements MyGalleryRe
         return re;
     }
 
+
+
+
     @Override
-    public void onItemClick(View view, int position) {
-        Intent intent = new Intent(PptGalleryActivity.this, GalleryDetailActivity.class);
-        intent.putExtra("a", it.get(position));
-        intent.putExtra("c", position);
-        intent.putStringArrayListExtra("b", it);
-        startActivity(intent);
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
     }
 
     @Override
-    public void onItemLongClick(View view, int position) {
+    public void onPageSelected(int position) {
 
     }
 
+    @Override
+    public void onPageScrollStateChanged(int state) {
 
+    }
+
+    //改写BaseAdapter自定义一ImageAdapter class
+    public class ImageAdapter extends PagerAdapter {
+        private Context mContext;
+        private ArrayList<String> lis;
+
+        public ImageAdapter(Context c, ArrayList<String> li) {
+            mContext = c;
+            lis = li;
+
+        }
+
+        //重写的方法，返回图片数目
+        public int getCount() {
+            return lis.size();
+        }
+
+        @Override
+        public int getItemPosition(Object object) {
+            return super.getItemPosition(object);
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return view == object;
+        }
+
+
+        // PagerAdapter只缓存三张要显示的图片，如果滑动的图片超出了缓存的范围，就会调用这个方法，将图片销毁
+        @Override
+        public void destroyItem(ViewGroup view, int position, Object object) {
+
+            view.removeView((View) object);
+        }
+
+        // 当要显示的图片可以进行缓存的时候，会调用这个方法进行显示图片的初始化，我们将要显示的ImageView加入到ViewGroup中，然后作为返回值返回即可
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            PhotoView imageView = new PhotoView(mContext);
+            imageView.enable();
+            imageView.setImageResource(R.drawable.img01);
+            imageView.setAdjustViewBounds(true);
+//            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+            imageView.setLayoutParams(params);
+            imageView.setMaxWidth(width);
+            imageView.setMaxHeight(width * 30);
+            Glide.with(PptGalleryActivity.this)
+                    .load(lis.get(position).toString())
+                    .into(imageView);
+
+            container.addView(imageView);
+            return imageView;
+        }
+    }
 }
