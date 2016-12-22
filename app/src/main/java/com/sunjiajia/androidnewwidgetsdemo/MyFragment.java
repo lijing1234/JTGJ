@@ -45,6 +45,7 @@ import com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun.RongYUZiZhiDetail
 import com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun.RongYuZiZhiDetailPdfActivity;
 import com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryActivity;
 import com.sunjiajia.androidnewwidgetsdemo.ppt.PptActivity;
+import com.sunjiajia.androidnewwidgetsdemo.ppt.PptGalleryActivity;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 import com.sunjiajia.androidnewwidgetsdemo.video.MovieActivity;
 
@@ -1020,7 +1021,7 @@ public class MyFragment extends Fragment
 
                 break;
             case PPT_LIST:
-                Intent intent3 = new Intent(getActivity(), PptActivity.class);
+                Intent intent3 = new Intent(getActivity(), PptGalleryActivity.class);
                 intent3.putExtra("a", String.valueOf(position));
 
                 startActivity(intent3);

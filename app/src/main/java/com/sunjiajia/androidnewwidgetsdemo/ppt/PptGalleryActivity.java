@@ -17,35 +17,34 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai;
+package com.sunjiajia.androidnewwidgetsdemo.ppt;
 
 
 import android.content.Intent;
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-
 import android.widget.Gallery;
 
-
+import com.sunjiajia.androidnewwidgetsdemo.FileComparator;
 import com.sunjiajia.androidnewwidgetsdemo.R;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyGalleryRecyclerViewAdapter;
-
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
+import com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryDetailActivity;
 
 import java.io.File;
 import java.util.ArrayList;
-
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyclerViewAdapter.OnItemClickListener {
+public class PptGalleryActivity extends AppCompatActivity implements MyGalleryRecyclerViewAdapter.OnItemClickListener {
     Gallery g = null;
-    ArrayList<String> it = new ArrayList<String>();
+
     ;// 遍历符合条件的列表
     public String actionUrl = null;
     private String FILE_NAME = "Pictures/图片素材/pc01";
@@ -53,7 +52,7 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
     private final String SD_PATH = android.os.Environment
 
             .getExternalStorageDirectory().getAbsolutePath();
-
+    ArrayList<String> it ;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -80,28 +79,37 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
         });
         if (position.equals("0")) {
 
-            FILE_NAME = "JT/Pictures/图片素材/08金天国际25周年梦想盛典暨公益筑梦远航";
+            FILE_NAME = "JT/ppt/11635营销宝典";
 
         } else if (position.equals("1")) {
 
-            FILE_NAME = "JT/Pictures/图片素材/07金天国际宿迁智能化产业园落成典礼";
+            FILE_NAME = "JT/ppt/10金天国际 基础训";
         } else if (position.equals("2")) {
 
-            FILE_NAME = "JT/Pictures/图片素材/06金天国际2015年度优秀领导人表彰暨获牌盛典";
+            FILE_NAME = "JT/ppt/09生态保养咨询过程中需掌握的技巧和方法";
         } else if (position.equals("3")) {
-            FILE_NAME = "JT/Pictures/图片素材/05金天国际直销启动暨“和谐与活力”公益盛典";
+            FILE_NAME = "JT/ppt/08专业咨询需掌握的基础知识";
 
         } else if (position.equals("4")) {
-            FILE_NAME = "JT/Pictures/图片素材/04培训基地";
+            FILE_NAME = "JT/ppt/07讲师基本素质";
 
         } else if (position.equals("5")) {
-            FILE_NAME = "JT/Pictures/图片素材/03星湖半岛";
+            FILE_NAME = "JT/ppt/06讲师训班前训";
 
         } else if (position.equals("6")) {
 
-            FILE_NAME = "JT/Pictures/图片素材/02生产基地";
+            FILE_NAME = "JT/ppt/05十大亮点";
         } else if (position.equals("7")) {
-            FILE_NAME = "JT/Pictures/图片素材/01办公环境";
+            FILE_NAME = "JT/ppt/04十大举措";
+
+        } else if (position.equals("8")) {
+            FILE_NAME = "JT/ppt/03模式篇";
+
+        } else if (position.equals("9")) {
+            FILE_NAME = "JT/ppt/02产品篇";
+
+        } else if (position.equals("10")) {
+            FILE_NAME = "JT/ppt/01企业篇";
 
         }
 
@@ -120,15 +128,41 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
     //遍历SD卡中某一路径下指定类型的图片
     private List<String> getSD() {
 
+
+
         File f = new File(SD_PATH + "//" + FILE_NAME);
         File[] files = f.listFiles();
+         it = new ArrayList<String>(files.length);
 
         for (int i = 0; i < files.length; i++) {
             File file = files[i];
-            if (getImageFile(file.getPath()))
-                it.add(file.getPath());
+            Log.e("file", String.valueOf(file));
+            String ss = file.getName();
+            Log.e("ss", ss);
+            String rel = ss.trim().substring(3, ss.lastIndexOf("."));
+            Log.e("rel", rel);
+            int dd = Integer.parseInt(rel) - 1;
+            Log.e("rel", String.valueOf(dd));
+            if (dd == it.size()) {
+                if (getImageFile(file.getPath())) {
+                    it.add(dd, file.getPath());
+                }
 
-            Log.e("sds",String.valueOf(it.get(i)));
+            } else {
+                for (int j = 0; j < files.length; j++) {
+                    File fi = files[j];
+                    Log.e("file", String.valueOf(fi));
+                    String s = fi.getName();
+                    Log.e("ss", ss);
+                    String re = s.trim().substring(3, s.lastIndexOf("."));
+                    Log.e("re", re);
+                    int d = Integer.parseInt(re) - 1;
+                    if (d == it.size()) {
+                        it.add(d, fi.getPath());
+                    }
+                }
+            }
+
         }
         return it;
     }
@@ -140,7 +174,7 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
                 .substring(fName.lastIndexOf(".") + 1, fName.length())
                 .toLowerCase();
         if (end.equals("jpg") || end.equals("gif") || end.equals("png")
-                || end.equals("jpeg") || end.equals("bmp")) {
+                || end.equals("jpeg") || end.equals("bmp") || end.equals("JPG")) {
             re = true;
         } else {
             re = false;
@@ -150,7 +184,7 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
 
     @Override
     public void onItemClick(View view, int position) {
-        Intent intent = new Intent(GalleryActivity.this, GalleryDetailActivity.class);
+        Intent intent = new Intent(PptGalleryActivity.this, GalleryDetailActivity.class);
         intent.putExtra("a", it.get(position));
         intent.putExtra("c", position);
         intent.putStringArrayListExtra("b", it);

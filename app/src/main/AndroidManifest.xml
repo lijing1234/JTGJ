@@ -64,6 +64,7 @@
         <activity android:name=".pdf.qiyezizhi.QiyezixunPdfActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".ppt.PptActivity" />
+        <activity android:name=".ppt.PptGalleryActivity" />
         <activity android:name=".picture.tupiansucai.GalleryActivity" />
         <activity android:name=".picture.tupiansucai.GalleryDetailActivity" />
         <activity android:name=".picture.rongyuzixun.RongYUZiZhiDetailPictureActivity" />
