@@ -66,7 +66,7 @@ public class WelcomeActivity extends AppCompatActivity {
             }
 
             ;
-        }.sendEmptyMessageDelayed(0, 5000);
+        }.sendEmptyMessageDelayed(0, 4000);
     }
 
 
