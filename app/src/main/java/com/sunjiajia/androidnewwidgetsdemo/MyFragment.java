@@ -69,13 +69,13 @@ public class MyFragment extends Fragment
 
     MypdfRecyclerViewAdapter mypdfRecyclerViewAdapter;
 
-    private static final int MOVIE_LIST = 0;
-    private static final int KEPUYANGSHENG_LIST = 1;
-    private static final int HANGYEDONGTAI_LIST = 2;
-    private static final int QIYEZIXUN_LIST = 3;
-    private static final int PPT_LIST = 4;
-    private static final int PICTURE_LIST = 5;
-    private static final int RONYUZIXUN_LIST = 6;
+    private static final int MOVIE_LIST = 3 ;
+    private static final int KEPUYANGSHENG_LIST = 2;
+    private static final int HANGYEDONGTAI_LIST = 1;
+    private static final int QIYEZIXUN_LIST = 0;
+    private static final int PPT_LIST = 6;
+    private static final int PICTURE_LIST = 4;
+    private static final int RONYUZIXUN_LIST = 5;
     private static final int HUIYIWULIAO_LIST = 7;
     private static final int SPAN_COUNT = 2;
     private int flag = 0;
