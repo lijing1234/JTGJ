@@ -358,7 +358,7 @@ public class MyFragment extends Fragment
                 info46.image = R.drawable.kp46;
                 Imageinfo info47 = new Imageinfo();
                 info47.imagename = "你每天是怎么醒的？这么醒来对身体伤害非常大，几乎人人中招！";
-                info47.image = R.drawable.kp46;
+                info47.image = R.drawable.ys01;
                 Imageinfo info48 = new Imageinfo();
                 info48.imagename = "女人经期绝不能踫的7种食物！一碰就痛经！";
                 info48.image = R.drawable.kp48;
@@ -385,7 +385,7 @@ public class MyFragment extends Fragment
                 info55.image = R.drawable.kp55;
                 Imageinfo info56 = new Imageinfo();
                 info56.imagename = "私处干净=没有妇科病？这种想法大错特错！";
-                info56.image = R.drawable.kp55;
+                info56.image = R.drawable.ys02;
                 Imageinfo info57 = new Imageinfo();
                 info57.imagename = "阴道炎反复发作，竟是因为你忽略了这";
                 info57.image = R.drawable.kp57;
@@ -686,7 +686,7 @@ public class MyFragment extends Fragment
                 qiyezixun28.imagename = "“筑梦金天 荣耀尊享”红酒晚宴---致英雄与王者的尊贵之礼！";
                 qiyezixun28.image = R.drawable.qy28;
                 Imageinfo qiyezixun29 = new Imageinfo();
-                qiyezixun29.imagename = "【金天专题】“活力金天，助力中国”金天国际25周年梦想盛典暨公益筑梦远航精彩回顾";
+                qiyezixun29.imagename = "lunbo02";
                 qiyezixun29.image = R.drawable.qy29;
                 Imageinfo qiyezixun30 = new Imageinfo();
                 qiyezixun30.imagename = "【央视特别报道】金天国际护苗计划：圆贫困残障儿童学习梦";
@@ -701,10 +701,10 @@ public class MyFragment extends Fragment
                 qiyezixun33.imagename = "产业筑梦，共创共赢 ——金天国际2016领袖训成功举办";
                 qiyezixun33.image = R.drawable.qy33;
                 Imageinfo qiyezixun34 = new Imageinfo();
-                qiyezixun34.imagename = "【工具致胜】金天国际新版工具流正式上线！";
+                qiyezixun34.imagename = "lunbo01";
                 qiyezixun34.image = R.drawable.qy34;
                 Imageinfo qiyezixun35 = new Imageinfo();
-                qiyezixun35.imagename = "金天国际荣耀受邀出席2016年APEC工商领导人峰会";
+                qiyezixun35.imagename = "lunbo03";
                 qiyezixun35.image = R.drawable.qy35;
                 Imageinfo qiyezixun36 = new Imageinfo();
                 qiyezixun36.imagename = "【聚焦APEC】金天国际代表祖明军出席中厄经贸合作论坛并发表主题演讲";
@@ -932,10 +932,10 @@ public class MyFragment extends Fragment
                 //改完
                 Imageinfo huiyiwuliao1 = new Imageinfo();
                 huiyiwuliao1.imagename = "店主培训会";
-                huiyiwuliao1.image = R.drawable.wa1;
+                huiyiwuliao1.image = R.drawable.hw16;
                 Imageinfo huiyiwuliao2 = new Imageinfo();
                 huiyiwuliao2.imagename = "公益讲座";
-                huiyiwuliao2.image = R.drawable.wa2;
+                huiyiwuliao2.image = R.drawable.hw15;
 
                 list1 = new ArrayList<Imageinfo>();
                 list1.add(0, huiyiwuliao1);

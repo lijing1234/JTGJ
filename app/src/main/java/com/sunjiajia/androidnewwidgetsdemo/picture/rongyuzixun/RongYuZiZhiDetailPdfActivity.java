@@ -67,19 +67,19 @@ public class RongYuZiZhiDetailPdfActivity extends AppCompatActivity implements M
 
         Imageinfo hangyedongtai1 = new Imageinfo();
         hangyedongtai1.imagename = "产品检测报告";
-        hangyedongtai1.image = R.drawable.kp01;
+        hangyedongtai1.image = R.drawable.jc;
         Imageinfo hangyedongtai2 = new Imageinfo();
         hangyedongtai2.imagename = "天保得乐、雪莲保养贴、雪莲要垫荧光剂检测最新报告";
-        hangyedongtai2.image = R.drawable.kp02;
+        hangyedongtai2.image = R.drawable.jc;
         Imageinfo hangyedongtai3 = new Imageinfo();
         hangyedongtai3.imagename = "天保得乐、雪莲生态保养检测报告";
-        hangyedongtai3.image = R.drawable.kp01;
+        hangyedongtai3.image = R.drawable.jc;
         Imageinfo hangyedongtai4 = new Imageinfo();
         hangyedongtai4.imagename = "卫生检测报告";
-        hangyedongtai4.image = R.drawable.kp02;
+        hangyedongtai4.image = R.drawable.jc;
         Imageinfo hangyedongtai5 = new Imageinfo();
         hangyedongtai5.imagename = "新加坡TÜV SÜD PSB检测";
-        hangyedongtai5.image = R.drawable.kp01;
+        hangyedongtai5.image = R.drawable.jc;
 
         list1 = new ArrayList<Imageinfo>();
         list1.add(0, hangyedongtai1);

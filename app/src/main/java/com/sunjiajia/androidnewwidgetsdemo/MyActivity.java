@@ -44,6 +44,8 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyViewPagerAdapter;
+import com.sunjiajia.androidnewwidgetsdemo.pdf.kepuyangsheng.PdfActivity;
+import com.sunjiajia.androidnewwidgetsdemo.pdf.slide.SlidePdfActivity;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 
 import java.util.ArrayList;
@@ -53,7 +55,7 @@ import java.util.List;
 import static android.support.design.widget.TabLayout.*;
 
 public class MyActivity extends AppCompatActivity
-        implements ViewPager.OnPageChangeListener, OnClickListener,BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
+        implements ViewPager.OnPageChangeListener, OnClickListener, BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
     //初始化各种控件，照着xml中的顺序写
     private DrawerLayout mDrawerLayout;
@@ -200,21 +202,20 @@ public class MyActivity extends AppCompatActivity
         mTabLayout = (TabLayout) findViewById(R.id.id_tablayout);
         mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
 
-        mDemoSlider = (SliderLayout)findViewById(R.id.slider);
+        mDemoSlider = (SliderLayout) findViewById(R.id.slider);
 
-        HashMap<String,String> url_maps = new HashMap<String, String>();
+        HashMap<String, String> url_maps = new HashMap<String, String>();
         url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
         url_maps.put("Big Bang Theory", "http://tvfiles.alphacoders.com/100/hdclearart-10.png");
         url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
         url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
 
-        HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
-        file_maps.put("Hannibal",R.drawable.bigbang);
-        file_maps.put("Big Bang Theory",R.drawable.bigbang);
-        file_maps.put("House of Cards",R.drawable.bigbang);
-        file_maps.put("Game of Thrones", R.drawable.bigbang);
+        HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
+        file_maps.put("【工具致胜】金天国际新版工具流正式上线！", R.drawable.lunbo01);
+        file_maps.put("【金天专题】“活力金天，助力中国”金天国际25周年梦想盛典暨公益筑梦远航精彩回顾", R.drawable.lunbo02);
+        file_maps.put("金天国际荣耀受邀出席2016年APEC工商领导人峰会", R.drawable.lunbo03);
 
-        for(String name : file_maps.keySet()){
+        for (String name : file_maps.keySet()) {
             TextSliderView textSliderView = new TextSliderView(this);
             // initialize a SliderLayout
             textSliderView
@@ -226,7 +227,7 @@ public class MyActivity extends AppCompatActivity
             //add your extra information
             textSliderView.bundle(new Bundle());
             textSliderView.getBundle()
-                    .putString("extra",name);
+                    .putString("extra", name);
 
             mDemoSlider.addSlider(textSliderView);
         }
@@ -248,7 +249,6 @@ public class MyActivity extends AppCompatActivity
 
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
 
 
         return super.onOptionsItemSelected(item);
@@ -293,6 +293,10 @@ public class MyActivity extends AppCompatActivity
 
     @Override
     public void onSliderClick(BaseSliderView slider) {
+        int position = mDemoSlider.getCurrentPosition();
+        Intent intent1 = new Intent(MyActivity.this, SlidePdfActivity.class);
+        intent1.putExtra("a", position);
+        startActivity(intent1);
 
     }
 
