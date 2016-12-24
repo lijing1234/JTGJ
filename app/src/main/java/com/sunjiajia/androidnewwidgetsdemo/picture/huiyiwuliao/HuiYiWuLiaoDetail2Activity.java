@@ -192,6 +192,7 @@ public class HuiYiWuLiaoDetail2Activity extends AppCompatActivity implements MyG
     public void onItemClick(View view, int position) {
         Intent intent = new Intent(HuiYiWuLiaoDetail2Activity.this, HuiyiwuliaoDetailshowActivity.class);
         intent.putExtra("a", it.get(position));
+        intent.putExtra("title", toolbar.getTitle().toString());
         intent.putExtra("c", position);
         intent.putStringArrayListExtra("b", it);
         startActivity(intent);

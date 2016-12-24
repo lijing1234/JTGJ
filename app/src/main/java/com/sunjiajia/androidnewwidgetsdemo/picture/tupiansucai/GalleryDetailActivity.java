@@ -64,9 +64,9 @@ public class GalleryDetailActivity extends AppCompatActivity implements ViewPage
         width = wm.getDefaultDisplay().getWidth();
         int height = wm.getDefaultDisplay().getHeight();
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
+        String title = getIntent().getStringExtra("title");
 
-
-        toolbar.setTitle("图片");
+        toolbar.setTitle(title);
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

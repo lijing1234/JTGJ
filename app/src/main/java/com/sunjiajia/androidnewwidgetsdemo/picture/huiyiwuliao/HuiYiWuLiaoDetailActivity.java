@@ -219,6 +219,7 @@ public class HuiYiWuLiaoDetailActivity extends AppCompatActivity implements MyGa
         Intent intent = new Intent(HuiYiWuLiaoDetailActivity.this, HuiyiwuliaoDetailshowActivity.class);
         intent.putExtra("a", it.get(position));
         intent.putExtra("c", position);
+        intent.putExtra("title", toolbar.getTitle().toString());
         intent.putStringArrayListExtra("b", it);
         startActivity(intent);
     }

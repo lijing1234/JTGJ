@@ -61,13 +61,14 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
     private MyStaggeredViewAdapter mStaggeredAdapter;
     private static final int SPAN_COUNT = 2;
     Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
         String position = getIntent().getStringExtra("a");
         Log.e("position", position);
-         toolbar = (Toolbar) findViewById(R.id.id_toolbar);
+        toolbar = (Toolbar) findViewById(R.id.id_toolbar);
         mRecyclerView = (RecyclerView) findViewById(R.id.id_galleryrecyclerview);
 
 
@@ -135,7 +136,7 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
             if (getImageFile(file.getPath()))
                 it.add(file.getPath());
 
-            Log.e("sds",String.valueOf(it.get(i)));
+            Log.e("sds", String.valueOf(it.get(i)));
         }
         return it;
     }
@@ -160,6 +161,7 @@ public class GalleryActivity extends AppCompatActivity implements MyGalleryRecyc
         Intent intent = new Intent(GalleryActivity.this, GalleryDetailActivity.class);
         intent.putExtra("a", it.get(position));
         intent.putExtra("c", position);
+        intent.putExtra("title", toolbar.getTitle().toString());
         intent.putStringArrayListExtra("b", it);
         startActivity(intent);
     }

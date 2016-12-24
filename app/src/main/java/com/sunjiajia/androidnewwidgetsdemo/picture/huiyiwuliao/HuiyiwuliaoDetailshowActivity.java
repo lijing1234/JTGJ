@@ -55,9 +55,9 @@ public class HuiyiwuliaoDetailshowActivity extends AppCompatActivity implements 
         width = wm.getDefaultDisplay().getWidth();
         int height = wm.getDefaultDisplay().getHeight();
         mLayoutInflater = LayoutInflater.from(this);
-
+        String title = getIntent().getStringExtra("title");
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
-        toolbar.setTitle("图片");
+        toolbar.setTitle(title);
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

@@ -187,6 +187,7 @@ public class RongYUZiZhiDetailPictureActivity extends AppCompatActivity implemen
         Intent intent = new Intent(RongYUZiZhiDetailPictureActivity.this, GalleryDetailActivity.class);
         intent.putExtra("a", it.get(position));
         intent.putExtra("c", position);
+        intent.putExtra("title", toolbar.getTitle().toString());
         intent.putStringArrayListExtra("b", it);
         startActivity(intent);
     }
