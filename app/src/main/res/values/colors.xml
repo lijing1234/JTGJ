@@ -26,7 +26,8 @@
   <color name="main_red_dark">#a0064e</color>
   <color name="main_white">#FFFFFF</color>
   <color name="main_black">#000000</color>
-  <color name="main_black_grey">#a1a1a1</color>
+  <color name="main_black_grey">#504e4a</color>
+  <color name="main_black_grey1">#fb9e7b88</color>
   <color name="fab_red">#ff0000</color>
   <color name="cart_bg">#E5E6E5</color>
 

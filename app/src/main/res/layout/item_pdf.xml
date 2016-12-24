@@ -69,14 +69,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="3dp"
+            android:layout_marginLeft="10dp"
 
             android:layout_toEndOf="@+id/id_image"
             android:text=""
-            android:gravity="center_horizontal"
+
 
             android:textColor="@color/main_black_grey"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textStyle="normal"/>
         <!--<TextView-->
         <!--android:id="@+id/id_tv1"-->
         <!--android:text="b"-->
