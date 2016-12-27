@@ -63,6 +63,7 @@
         <activity android:name=".pdf.hangyedongtai.HangyedongtaiPdfActivity" />
         <activity android:name=".pdf.qiyezizhi.QiyezixunPdfActivity" />
         <activity android:name=".pdf.slide.SlidePdfActivity" />
+        <activity android:name=".pdf.JiKan.JkPdfActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".ppt.PptActivity" />
         <activity android:name=".ppt.PptGalleryActivity" />

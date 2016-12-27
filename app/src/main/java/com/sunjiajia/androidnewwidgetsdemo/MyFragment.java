@@ -37,6 +37,7 @@ import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MypdfRecyclerViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.bean.Imageinfo;
 import com.sunjiajia.androidnewwidgetsdemo.bean.ProductAllInfo;
+import com.sunjiajia.androidnewwidgetsdemo.pdf.JiKan.JkPdfActivity;
 import com.sunjiajia.androidnewwidgetsdemo.pdf.hangyedongtai.HangyedongtaiPdfActivity;
 import com.sunjiajia.androidnewwidgetsdemo.pdf.kepuyangsheng.PdfActivity;
 import com.sunjiajia.androidnewwidgetsdemo.pdf.qiyezizhi.QiyezixunPdfActivity;
@@ -77,6 +78,8 @@ public class MyFragment extends Fragment
     private static final int PICTURE_LIST = 4;
     private static final int RONYUZIXUN_LIST = 5;
     private static final int HUIYIWULIAO_LIST = 7;
+    private static final int JK_LIST = 8;
+
     private static final int SPAN_COUNT = 2;
     private int flag = 0;
     List<Imageinfo> list1;
@@ -142,6 +145,10 @@ public class MyFragment extends Fragment
                         new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 break;
             case HUIYIWULIAO_LIST:
+                mLayoutManager =
+                        new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+                break;
+            case JK_LIST:
                 mLayoutManager =
                         new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 break;
@@ -948,6 +955,21 @@ public class MyFragment extends Fragment
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
                 break;
+            case JK_LIST:
+                //改完
+                Imageinfo jk1 = new Imageinfo();
+                jk1.imagename = "季刊";
+                jk1.image = R.drawable.jk;
+
+                list1 = new ArrayList<Imageinfo>();
+                list1.add(0, jk1);
+
+                mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
+                mypdfRecyclerViewAdapter.setOnItemClickListener(this);
+                mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
+                mypdfRecyclerViewAdapter.notifyDataSetChanged();
+                mRecyclerView.setLayoutManager(mLayoutManager);
+                break;
             default:
                 break;
         }
@@ -1051,6 +1073,12 @@ public class MyFragment extends Fragment
                 intent6.putExtra("a", position);
 
                 startActivity(intent6);
+                break;
+            case JK_LIST:
+                Intent intent8 = new Intent(getActivity(), JkPdfActivity.class);
+                intent8.putExtra("a", position);
+
+                startActivity(intent8);
                 break;
             default:
                 break;
