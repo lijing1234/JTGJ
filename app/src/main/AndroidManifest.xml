@@ -64,6 +64,7 @@
         <activity android:name=".pdf.qiyezizhi.QiyezixunPdfActivity" />
         <activity android:name=".pdf.slide.SlidePdfActivity" />
         <activity android:name=".pdf.JiKan.JkPdfActivity" />
+        <activity android:name=".pdf.vi.ViPdfActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".ppt.PptActivity" />
         <activity android:name=".ppt.PptGalleryActivity" />

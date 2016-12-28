@@ -41,6 +41,7 @@ import com.sunjiajia.androidnewwidgetsdemo.pdf.JiKan.JkPdfActivity;
 import com.sunjiajia.androidnewwidgetsdemo.pdf.hangyedongtai.HangyedongtaiPdfActivity;
 import com.sunjiajia.androidnewwidgetsdemo.pdf.kepuyangsheng.PdfActivity;
 import com.sunjiajia.androidnewwidgetsdemo.pdf.qiyezizhi.QiyezixunPdfActivity;
+import com.sunjiajia.androidnewwidgetsdemo.pdf.vi.ViPdfActivity;
 import com.sunjiajia.androidnewwidgetsdemo.picture.huiyiwuliao.HuiYiWuLiaoActivity;
 import com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun.RongYUZiZhiDetailPictureActivity;
 import com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun.RongYuZiZhiDetailPdfActivity;
@@ -70,15 +71,16 @@ public class MyFragment extends Fragment
 
     MypdfRecyclerViewAdapter mypdfRecyclerViewAdapter;
 
-    private static final int MOVIE_LIST = 3 ;
+    private static final int MOVIE_LIST = 4 ;
+    private static final int VI_LIST = 3;
     private static final int KEPUYANGSHENG_LIST = 2;
     private static final int HANGYEDONGTAI_LIST = 1;
     private static final int QIYEZIXUN_LIST = 0;
-    private static final int PPT_LIST = 6;
-    private static final int PICTURE_LIST = 4;
-    private static final int RONYUZIXUN_LIST = 5;
-    private static final int HUIYIWULIAO_LIST = 7;
-    private static final int JK_LIST = 8;
+    private static final int PPT_LIST = 7;
+    private static final int PICTURE_LIST = 5;
+    private static final int RONYUZIXUN_LIST = 6;
+    private static final int HUIYIWULIAO_LIST = 8;
+    private static final int JK_LIST = 9;
 
     private static final int SPAN_COUNT = 2;
     private int flag = 0;
@@ -149,6 +151,9 @@ public class MyFragment extends Fragment
                         new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 break;
             case JK_LIST:
+                mLayoutManager =
+                        new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+            case VI_LIST:
                 mLayoutManager =
                         new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 break;
@@ -958,11 +963,26 @@ public class MyFragment extends Fragment
             case JK_LIST:
                 //改完
                 Imageinfo jk1 = new Imageinfo();
-                jk1.imagename = "季刊";
+                jk1.imagename = "金天季刊";
                 jk1.image = R.drawable.jk;
 
                 list1 = new ArrayList<Imageinfo>();
                 list1.add(0, jk1);
+
+                mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
+                mypdfRecyclerViewAdapter.setOnItemClickListener(this);
+                mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
+                mypdfRecyclerViewAdapter.notifyDataSetChanged();
+                mRecyclerView.setLayoutManager(mLayoutManager);
+                break;
+            case VI_LIST:
+                //改完
+                Imageinfo VI1 = new Imageinfo();
+                VI1.imagename = "vi系统";
+                VI1.image = R.drawable.vi;
+
+                list1 = new ArrayList<Imageinfo>();
+                list1.add(0, VI1);
 
                 mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
                 mypdfRecyclerViewAdapter.setOnItemClickListener(this);
@@ -1080,6 +1100,12 @@ public class MyFragment extends Fragment
 
                 startActivity(intent8);
                 break;
+            case VI_LIST:
+                Intent intent9 = new Intent(getActivity(), ViPdfActivity.class);
+                intent9.putExtra("a", position);
+
+                startActivity(intent9);
+                break;
             default:
                 break;
         }
@@ -1089,8 +1115,6 @@ public class MyFragment extends Fragment
 
     @Override
     public void onItemLongClick(View view, int position) {
-        SnackbarUtil.show(mRecyclerView, getString(R.string.item_longclicked), 0);
-        Intent intent = new Intent(getActivity(), MovieActivity.class);
-        startActivity(intent);
+
     }
 }
