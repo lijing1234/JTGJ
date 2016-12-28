@@ -45,7 +45,7 @@ public class JkPdfActivity extends AppCompatActivity {
         int posi = getIntent().getIntExtra("a", 1);
         Log.e("position", String.valueOf(posi));
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
-        toolbar.setTitle("季刊");
+        toolbar.setTitle("金天季刊");
         setSupportActionBar(toolbar);  // 用ToolBar代替ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
