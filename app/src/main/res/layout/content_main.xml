@@ -154,7 +154,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:src="@mipmap/up"
-        app:backgroundTint="@color/fab_red"
+        app:backgroundTint="@color/main_red_light"
         app:elevation="6dp"
         app:fabSize="normal"
         app:pressedTranslationZ="12dp"
