@@ -27,6 +27,7 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.sunjiajia.androidnewwidgetsdemo.R;
+import com.sunjiajia.androidnewwidgetsdemo.view.SurperRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ import java.util.List;
 /**
  * Created by Monkey on 2015/6/29.
  */
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHolder> implements View.OnClickListener {
+public class MyRecyclerViewAdapter extends SurperRecyclerView.Adapter<MyRecyclerViewHolder> implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {

@@ -25,11 +25,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sunjiajia.androidnewwidgetsdemo.R;
+import com.sunjiajia.androidnewwidgetsdemo.view.SurperRecyclerView;
 
 /**
  * Created by Monkey on 2015/6/29.
  */
-public class MyRecyclerViewHolder extends RecyclerView.ViewHolder {
+public class MyRecyclerViewHolder extends SurperRecyclerView.ViewHolder {
 
     public ImageView mimage;
 //  public TextView mtv;

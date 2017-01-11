@@ -28,6 +28,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.sunjiajia.androidnewwidgetsdemo.bean.Imageinfo;
 import com.sunjiajia.androidnewwidgetsdemo.R;
+import com.sunjiajia.androidnewwidgetsdemo.view.SurperRecyclerView;
 
 import java.util.List;
 import java.util.Map;
@@ -35,7 +36,7 @@ import java.util.Map;
 /**
  * Created by Monkey on 2015/6/29.
  */
-public class MypdfRecyclerViewAdapter extends RecyclerView.Adapter<MypdfRecyclerViewHolder> implements View.OnClickListener {
+public class MypdfRecyclerViewAdapter extends SurperRecyclerView.Adapter<MypdfRecyclerViewHolder> implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {

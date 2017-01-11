@@ -23,15 +23,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyRecyclerViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
@@ -47,19 +46,17 @@ import com.sunjiajia.androidnewwidgetsdemo.picture.huiyiwuliao.HuiYiWuLiaoActivi
 import com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun.RongYUZiZhiDetailPictureActivity;
 import com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun.RongYuZiZhiDetailPdfActivity;
 import com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryActivity;
-import com.sunjiajia.androidnewwidgetsdemo.ppt.PptActivity;
 import com.sunjiajia.androidnewwidgetsdemo.ppt.PptGalleryActivity;
 import com.sunjiajia.androidnewwidgetsdemo.utils.RxBus;
 import com.sunjiajia.androidnewwidgetsdemo.utils.RxBusData;
-import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 import com.sunjiajia.androidnewwidgetsdemo.video.MovieActivity;
+import com.sunjiajia.androidnewwidgetsdemo.view.SurperRecyclerView;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 
 /**
@@ -71,8 +68,8 @@ public class MyFragment extends Fragment
 
     private View mView;
     private SwipeRefreshLayout mSwipeRefreshLayout;
-    private RecyclerView mRecyclerView;
-    private RecyclerView.LayoutManager mLayoutManager;
+    private SurperRecyclerView mRecyclerView;
+    private SurperRecyclerView.LayoutManager mLayoutManager;
     private MyRecyclerViewAdapter mRecyclerViewAdapter;
     private MyStaggeredViewAdapter mStaggeredAdapter;
 
@@ -128,7 +125,7 @@ public class MyFragment extends Fragment
         super.onActivityCreated(savedInstanceState);
 
 //        mSwipeRefreshLayout = (SwipeRefreshLayout) mView.findViewById(R.id.id_swiperefreshlayout);
-        mRecyclerView = (RecyclerView) mView.findViewById(R.id.id_recyclerview);
+        mRecyclerView = (SurperRecyclerView) mView.findViewById(R.id.id_recyclerview);
 
         flag = (int) getArguments().get("flag");
         configRecyclerView();
@@ -251,6 +248,12 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
+                    @Override
+                    public void onBottom() {
+                        Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
 
                 break;
             case KEPUYANGSHENG_LIST:
@@ -511,6 +514,12 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
+                    @Override
+                    public void onBottom() {
+                        Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
                 break;
             case HANGYEDONGTAI_LIST:
                 Imageinfo hangyedongtai1 = new Imageinfo();
@@ -634,6 +643,12 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
+                    @Override
+                    public void onBottom() {
+                        Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
 
                 break;
             case QIYEZIXUN_LIST:
@@ -824,6 +839,12 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
+                    @Override
+                    public void onBottom() {
+                        Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
 
                 break;
             case PPT_LIST:
@@ -882,6 +903,12 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
+                    @Override
+                    public void onBottom() {
+                        Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
                 break;
             case PICTURE_LIST:
                 Imageinfo picture1 = new Imageinfo();
@@ -927,6 +954,12 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
+                    @Override
+                    public void onBottom() {
+                        Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
 
                 break;
             case RONYUZIXUN_LIST:
@@ -961,6 +994,12 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
+                    @Override
+                    public void onBottom() {
+                        Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
                 break;
             case HUIYIWULIAO_LIST:
                 //改完
@@ -981,6 +1020,12 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
+                    @Override
+                    public void onBottom() {
+                        Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
                 break;
             case JK_LIST:
                 //改完
@@ -996,6 +1041,12 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
+                    @Override
+                    public void onBottom() {
+                        Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
                 break;
             case VI_LIST:
                 //改完
@@ -1011,6 +1062,12 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
+                    @Override
+                    public void onBottom() {
+                        Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
                 break;
             default:
                 break;

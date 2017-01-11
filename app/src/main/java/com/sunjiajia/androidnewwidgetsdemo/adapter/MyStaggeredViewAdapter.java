@@ -29,13 +29,14 @@ import com.bumptech.glide.Glide;
 import com.sunjiajia.androidnewwidgetsdemo.model.HttpModel;
 import com.sunjiajia.androidnewwidgetsdemo.bean.ProductInfo;
 import com.sunjiajia.androidnewwidgetsdemo.R;
+import com.sunjiajia.androidnewwidgetsdemo.view.SurperRecyclerView;
 
 import java.util.List;
 
 /**
  * Created by Monkey on 2015/6/29.
  */
-public class MyStaggeredViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHolder> {
+public class MyStaggeredViewAdapter extends SurperRecyclerView.Adapter<MyRecyclerViewHolder> {
 
     public interface OnItemClickListener {
         void onItemClick(View view, int position);

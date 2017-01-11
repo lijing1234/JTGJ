@@ -1,38 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-    <!--
-      ~ /*
-      ~  *
-      ~  *  *
-      ~  *  *  * ===================================
-      ~  *  *  * Copyright (c) 2016.
-      ~  *  *  * 作者：安卓猴
-      ~  *  *  * 微博：@安卓猴
-      ~  *  *  * 博客：http://sunjiajia.com
-      ~  *  *  * Github：https://github.com/opengit
-      ~  *  *  *
-      ~  *  *  * 注意**：如果您使用或者修改该代码，请务必保留此版权信息。
-      ~  *  *  * ===================================
-      ~  *  *
-      ~  *  *
-      ~  *
-      ~  */
-      -->
+<!--
+  ~ /*
+  ~  *
+  ~  *  *
+  ~  *  *  * ===================================
+  ~  *  *  * Copyright (c) 2016.
+  ~  *  *  * 作者：安卓猴
+  ~  *  *  * 微博：@安卓猴
+  ~  *  *  * 博客：http://sunjiajia.com
+  ~  *  *  * Github：https://github.com/opengit
+  ~  *  *  *
+  ~  *  *  * 注意**：如果您使用或者修改该代码，请务必保留此版权信息。
+  ~  *  *  * ===================================
+  ~  *  *
+  ~  *  *
+  ~  *
+  ~  */
+  -->
 
 
-    <!--
+<!--
 
-    SwipeRefreshLayout是伟大的Google在v4包中给出的下拉刷新组件。
+SwipeRefreshLayout是伟大的Google在v4包中给出的下拉刷新组件。
 
-    -->
-<!--<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--android:id="@+id/id_swiperefreshlayout"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"-->
-<!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-    <!--&gt;-->
+--><!--<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--android:id="@+id/id_swiperefreshlayout"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--app:layout_behavior="@string/appbar_scrolling_view_behavior"--><!--&gt;-->
 
 <!--
         使用RecyclerView需要在build.gradle中添加
@@ -40,25 +33,29 @@
 -->
 
 
-
-
 <!--</android.support.v4.widget.SwipeRefreshLayout>-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/activity_gallery"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-
-tools:context="com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryActivity"
-android:orientation="vertical">
-<android.support.v7.widget.RecyclerView
-    android:id="@+id/id_recyclerview"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_gallery"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:foregroundGravity="center"
-    />
-<!--<Gallery-->
-<!--android:id="@+id/mygallery"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"></Gallery>-->
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context="com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryActivity">
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/id_recyclerview"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:foregroundGravity="center" />-->
+    <!--<Gallery-->
+    <!--android:id="@+id/mygallery"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"></Gallery>-->
+    <com.sunjiajia.androidnewwidgetsdemo.view.SurperRecyclerView
+        android:id="@+id/id_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"></com.sunjiajia.androidnewwidgetsdemo.view.SurperRecyclerView>
 </LinearLayout>
+
