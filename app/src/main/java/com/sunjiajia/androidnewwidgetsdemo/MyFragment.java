@@ -128,7 +128,15 @@ public class MyFragment extends Fragment
 
 //        mSwipeRefreshLayout = (SwipeRefreshLayout) mView.findViewById(R.id.id_swiperefreshlayout);
         mRecyclerView = (SurperRecyclerView) mView.findViewById(R.id.id_recyclerview);
-
+        mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
+            @Override
+            public void onBottom() {
+                Snackbar snackbar = Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT);
+                snackbar.getView().setBackgroundColor(Color.parseColor("#b7035a"));
+//                        setSnackbarMessageTextColor(snackbar, Color.parseColor("#FF0000"));
+                snackbar.show();
+            }
+        });
         flag = (int) getArguments().get("flag");
         configRecyclerView();
         attemptLeaveMsg();
@@ -253,15 +261,7 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
-                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
-                    @Override
-                    public void onBottom() {
-                        Snackbar snackbar = Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT);
-                        snackbar.getView().setBackgroundColor(Color.parseColor("#b7035a"));
-//                        setSnackbarMessageTextColor(snackbar, Color.parseColor("#FF0000"));
-                        snackbar.show();
-                    }
-                });
+
 
 
                 break;
@@ -523,15 +523,7 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
-                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
-                    @Override
-                    public void onBottom() {
-                        Snackbar snackbar = Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT);
-                        snackbar.getView().setBackgroundColor(Color.parseColor("#b7035a"));
-//                        setSnackbarMessageTextColor(snackbar, Color.parseColor("#FF0000"));
-                        snackbar.show();
-                    }
-                });
+
                 break;
             case HANGYEDONGTAI_LIST:
                 Imageinfo hangyedongtai1 = new Imageinfo();
@@ -655,15 +647,7 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
-                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
-                    @Override
-                    public void onBottom() {
-                        Snackbar snackbar = Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT);
-                        snackbar.getView().setBackgroundColor(Color.parseColor("#b7035a"));
-//                        setSnackbarMessageTextColor(snackbar, Color.parseColor("#FF0000"));
-                        snackbar.show();
-                    }
-                });
+
 
                 break;
             case QIYEZIXUN_LIST:
@@ -854,15 +838,7 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
-                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
-                    @Override
-                    public void onBottom() {
-                        Snackbar snackbar = Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT);
-                        snackbar.getView().setBackgroundColor(Color.parseColor("#b7035a"));
-//                        setSnackbarMessageTextColor(snackbar, Color.parseColor("#FF0000"));
-                        snackbar.show();
-                    }
-                });
+
 
                 break;
             case PPT_LIST:
@@ -921,15 +897,7 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
-                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
-                    @Override
-                    public void onBottom() {
-                        Snackbar snackbar = Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT);
-                        snackbar.getView().setBackgroundColor(Color.parseColor("#b7035a"));
-//                        setSnackbarMessageTextColor(snackbar, Color.parseColor("#FF0000"));
-                        snackbar.show();
-                    }
-                });
+
                 break;
             case PICTURE_LIST:
                 Imageinfo picture1 = new Imageinfo();
@@ -975,15 +943,7 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
-                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
-                    @Override
-                    public void onBottom() {
-                        Snackbar snackbar = Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT);
-                        snackbar.getView().setBackgroundColor(Color.parseColor("#b7035a"));
-//                        setSnackbarMessageTextColor(snackbar, Color.parseColor("#FF0000"));
-                        snackbar.show();
-                    }
-                });
+
 
                 break;
             case RONYUZIXUN_LIST:
@@ -1018,15 +978,7 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
-                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
-                    @Override
-                    public void onBottom() {
-                        Snackbar snackbar = Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT);
-                        snackbar.getView().setBackgroundColor(Color.parseColor("#b7035a"));
-//                        setSnackbarMessageTextColor(snackbar, Color.parseColor("#FF0000"));
-                        snackbar.show();
-                    }
-                });
+
                 break;
             case HUIYIWULIAO_LIST:
                 //改完
@@ -1047,15 +999,7 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
-                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
-                    @Override
-                    public void onBottom() {
-                        Snackbar snackbar = Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT);
-                        snackbar.getView().setBackgroundColor(Color.parseColor("#b7035a"));
-//                        setSnackbarMessageTextColor(snackbar, Color.parseColor("#FF0000"));
-                        snackbar.show();
-                    }
-                });
+
                 break;
             case JK_LIST:
                 //改完
@@ -1071,15 +1015,7 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
-                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
-                    @Override
-                    public void onBottom() {
-                        Snackbar snackbar = Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT);
-                        snackbar.getView().setBackgroundColor(Color.parseColor("#b7035a"));
-//                        setSnackbarMessageTextColor(snackbar, Color.parseColor("#FF0000"));
-                        snackbar.show();
-                    }
-                });
+
                 break;
             case VI_LIST:
                 //改完
@@ -1095,15 +1031,7 @@ public class MyFragment extends Fragment
                 mRecyclerView.setAdapter(mypdfRecyclerViewAdapter);
                 mypdfRecyclerViewAdapter.notifyDataSetChanged();
                 mRecyclerView.setLayoutManager(mLayoutManager);
-                mRecyclerView.setOnBottomCallback(new SurperRecyclerView.OnBottomCallback() {
-                    @Override
-                    public void onBottom() {
-                        Snackbar snackbar = Snackbar.make(mRecyclerView, "滚动到了底部", Snackbar.LENGTH_SHORT);
-                        snackbar.getView().setBackgroundColor(Color.parseColor("#b7035a"));
-//                        setSnackbarMessageTextColor(snackbar, Color.parseColor("#FF0000"));
-                        snackbar.show();
-                    }
-                });
+
                 break;
             default:
                 break;
