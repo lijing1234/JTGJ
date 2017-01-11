@@ -46,7 +46,10 @@ import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyViewPagerAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.pdf.kepuyangsheng.PdfActivity;
 import com.sunjiajia.androidnewwidgetsdemo.pdf.slide.SlidePdfActivity;
+import com.sunjiajia.androidnewwidgetsdemo.utils.RxBus;
+import com.sunjiajia.androidnewwidgetsdemo.utils.RxBusData;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
+import com.sunjiajia.androidnewwidgetsdemo.view.SuperToolbar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,7 +64,7 @@ public class MyActivity extends AppCompatActivity
     private DrawerLayout mDrawerLayout;
     private CoordinatorLayout mCoordinatorLayout;
     private AppBarLayout mAppBarLayout;
-    private Toolbar mToolbar;
+    private SuperToolbar mToolbar;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private FloatingActionButton mFloatingActionButton;
@@ -198,11 +201,23 @@ public class MyActivity extends AppCompatActivity
         mDrawerLayout = (DrawerLayout) findViewById(R.id.id_drawerlayout);
         mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.id_coordinatorlayout);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.id_appbarlayout);
-        mToolbar = (Toolbar) findViewById(R.id.id_toolbar);
+        mToolbar = (SuperToolbar) findViewById(R.id.id_toolbar);
         mTabLayout = (TabLayout) findViewById(R.id.id_tablayout);
         mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
 
         mDemoSlider = (SliderLayout) findViewById(R.id.slider);
+
+
+        mToolbar.setOnTwoTapListener(new SuperToolbar.OnTwoTapListener() {
+            @Override
+            public void onTwoTap() {
+                //我的一个工具显示Toast，在双击后让RecyclerView返回列表顶部
+                // 在这里可以干你自己想干的事情，whatever，who care！
+//                mUtils.sToast("双击！双击！Toolbar！");
+//                mRecycler.smoothScrollToPosition(0);
+                RxBus.get().post("rxbus", new RxBusData("a","s"));
+            }
+        });
 
         HashMap<String, String> url_maps = new HashMap<String, String>();
         url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");

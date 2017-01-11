@@ -74,6 +74,11 @@ dependencies {
   compile 'com.daimajia.slider:library:1.1.5@aar'
 
 
+
+  compile 'io.reactivex:rxjava:1.2.0'
+  compile 'io.reactivex:rxandroid:1.2.1'
+
+
   // 其他依赖
 //  compile 'com.facebook.fresco:fresco:0.12.0'
   

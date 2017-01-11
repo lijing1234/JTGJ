@@ -31,6 +31,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyRecyclerViewAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
@@ -48,12 +49,18 @@ import com.sunjiajia.androidnewwidgetsdemo.picture.rongyuzixun.RongYuZiZhiDetail
 import com.sunjiajia.androidnewwidgetsdemo.picture.tupiansucai.GalleryActivity;
 import com.sunjiajia.androidnewwidgetsdemo.ppt.PptActivity;
 import com.sunjiajia.androidnewwidgetsdemo.ppt.PptGalleryActivity;
+import com.sunjiajia.androidnewwidgetsdemo.utils.RxBus;
+import com.sunjiajia.androidnewwidgetsdemo.utils.RxBusData;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 import com.sunjiajia.androidnewwidgetsdemo.video.MovieActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 
 /**
  * Created by Monkey on 2015/6/29.
@@ -71,7 +78,7 @@ public class MyFragment extends Fragment
 
     MypdfRecyclerViewAdapter mypdfRecyclerViewAdapter;
 
-    private static final int MOVIE_LIST = 4 ;
+    private static final int MOVIE_LIST = 4;
     private static final int VI_LIST = 3;
     private static final int KEPUYANGSHENG_LIST = 2;
     private static final int HANGYEDONGTAI_LIST = 1;
@@ -89,13 +96,30 @@ public class MyFragment extends Fragment
     private List<ProductAllInfo> productinfo;
     List<Integer> listmovie;
     List<Integer> listppt;
-
+    //    3.观察者申明
+    private Observable<RxBusData> rxBusDataObservable;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.frag_main, container, false);
+        rxBusDataObservable = RxBus.get().register("rxbus", RxBusData.class);
+        rxBusDataObservable
+                .subscribe(new Action1<RxBusData>() {
+                               @Override
+                               public void call(RxBusData userEvent) {
+                                   mRecyclerView.smoothScrollToPosition(0);
+                                   String name = userEvent.getMsg();
+
+                               }
+                           },
+                        new Action1<Throwable>() {
+                            @Override
+                            public void call(Throwable throwable) {
+                                // TODO: 处理异常
+                            }
+                        });
         return mView;
     }
 
@@ -805,7 +829,6 @@ public class MyFragment extends Fragment
             case PPT_LIST:
 
 
-
                 Imageinfo ppt1 = new Imageinfo();
                 ppt1.imagename = "企业篇";
                 ppt1.image = R.drawable.ppt01;
@@ -931,7 +954,6 @@ public class MyFragment extends Fragment
                 list1.add(2, rngyuzixun3);
                 list1.add(3, rngyuzixun4);
                 list1.add(4, rngyuzixun5);
-
 
 
                 mypdfRecyclerViewAdapter = new MypdfRecyclerViewAdapter(list1, getActivity());
@@ -1116,5 +1138,11 @@ public class MyFragment extends Fragment
     @Override
     public void onItemLongClick(View view, int position) {
 
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        RxBus.get().unregister("rxbus", rxBusDataObservable);
     }
 }
