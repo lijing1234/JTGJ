@@ -64,14 +64,14 @@
             而前面两种模式基本是需要一起使用的，也就是说，这些flag的使用场景，基本已经固定了。
         -->
         <!--<android.support.v7.widget.Toolbar-->
-            <!--android:id="@+id/id_toolbar"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="?attr/actionBarSize"-->
-            <!--android:background="?attr/colorPrimary"-->
-            <!--app:layout_scrollFlags="scroll|enterAlways"-->
-            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-            <!--app:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
-            <!--app:title="金天国际" />-->
+        <!--android:id="@+id/id_toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--app:layout_scrollFlags="scroll|enterAlways"-->
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+        <!--app:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
+        <!--app:title="金天国际" />-->
         <com.sunjiajia.androidnewwidgetsdemo.view.SuperToolbar
             android:id="@+id/id_toolbar"
             android:layout_width="match_parent"
@@ -80,7 +80,7 @@
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:title="金天国际" ></com.sunjiajia.androidnewwidgetsdemo.view.SuperToolbar>
+            app:title="金天国际"></com.sunjiajia.androidnewwidgetsdemo.view.SuperToolbar>
 
 
         <com.daimajia.slider.library.SliderLayout
@@ -147,19 +147,18 @@
             app:rippleColor    ：设置涟漪的颜色，默认是由背景色生成的暗色调，可以自己指定。
             app:pressedTranslationZ  ：FAB动画效果，在它被按下的时候阴影就会增大。
     -->
-    <!--<android.support.design.widget.FloatingActionButton-->
-    <!--android:id="@+id/id_floatingactionbutton"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="bottom|end"-->
-    <!--android:layout_margin="16dp"-->
-    <!--android:src="@mipmap/ic_action_plusone"-->
-    <!--app:backgroundTint="@color/fab_red"-->
-    <!--app:elevation="6dp"-->
-    <!--app:fabSize="normal"-->
-    <!--app:pressedTranslationZ="12dp"-->
-    <!--app:rippleColor="@color/main_blue_dark"-->
-    <!--/>-->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/id_floatingactionbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@mipmap/up"
+        app:backgroundTint="@color/fab_red"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:pressedTranslationZ="12dp"
+        app:rippleColor="@color/main_blue_dark" />
     <!--<android.support.design.widget.FloatingActionButton-->
     <!--android:id="@+id/id_floatingactionbutton1"-->
     <!--android:layout_width="wrap_content"-->

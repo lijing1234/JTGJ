@@ -68,8 +68,7 @@ public class MyActivity extends AppCompatActivity
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private FloatingActionButton mFloatingActionButton;
-    private FloatingActionButton mFloatingActionButton1;
-    private FloatingActionButton mFloatingActionButton2;
+
     private NavigationView mNavigationView;
 
     // TabLayout中的tab标题
@@ -152,7 +151,7 @@ public class MyActivity extends AppCompatActivity
         mTabLayout.setTabsFromPagerAdapter(mViewPagerAdapter);
 
         // 设置FloatingActionButton的点击事件
-//    mFloatingActionButton.setOnClickListener(this);
+        mFloatingActionButton.setOnClickListener(this);
 //    mFloatingActionButton1.setOnClickListener(this);
 //    mFloatingActionButton2.setOnClickListener(this);
     }
@@ -204,7 +203,7 @@ public class MyActivity extends AppCompatActivity
         mToolbar = (SuperToolbar) findViewById(R.id.id_toolbar);
         mTabLayout = (TabLayout) findViewById(R.id.id_tablayout);
         mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
-
+        mFloatingActionButton = (FloatingActionButton) findViewById(R.id.id_floatingactionbutton);
         mDemoSlider = (SliderLayout) findViewById(R.id.slider);
 
 
@@ -215,7 +214,7 @@ public class MyActivity extends AppCompatActivity
                 // 在这里可以干你自己想干的事情，whatever，who care！
 //                mUtils.sToast("双击！双击！Toolbar！");
 //                mRecycler.smoothScrollToPosition(0);
-                RxBus.get().post("rxbus", new RxBusData("a","s"));
+                RxBus.get().post("rxbus", new RxBusData("a", "s"));
             }
         });
 
@@ -288,9 +287,10 @@ public class MyActivity extends AppCompatActivity
     public void onClick(View v) {
         switch (v.getId()) {
             // FloatingActionButton的点击事件
-//      case R.id.id_floatingactionbutton:
-//        SnackbarUtil.show(v, getString(R.string.plusone), 0);
-//        break;
+            case R.id.id_floatingactionbutton:
+//                SnackbarUtil.show(v, getString(R.string.plusone), 0);
+                RxBus.get().post("rxbus", new RxBusData("a", "s"));
+                break;
 //      case R.id.id_floatingactionbutton1:
 //        SnackbarUtil.show(v, getString(R.string.plustwo), 0);
 //        break;
