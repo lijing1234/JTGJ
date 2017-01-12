@@ -157,6 +157,7 @@
         app:backgroundTint="@color/main_red_light"
         app:elevation="6dp"
         app:fabSize="normal"
+        app:layout_behavior="com.sunjiajia.androidnewwidgetsdemo.behavior.ScaleUpShowBehavior"
         app:pressedTranslationZ="12dp"
         app:rippleColor="@color/main_blue_dark" />
     <!--<android.support.design.widget.FloatingActionButton-->
