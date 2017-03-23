@@ -119,6 +119,7 @@
             app:tabGravity="fill"
             app:tabIndicatorColor="@color/main_white"
             app:tabTextColor="@color/main_black_grey1"
+            app:tabTextAppearance="@style/TabLayoutTextStyle"
 
             />
 
